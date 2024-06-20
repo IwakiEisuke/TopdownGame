@@ -41,8 +41,8 @@ public class StairsCreator : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(createEnvs.Length);
-        Debug.Log(CreateEnvs.Length);
+        Debug.Log("createEnvs.Length : " + createEnvs.Length);
+        Debug.Log("CreateEnvs.Length : " + CreateEnvs.Length);
     }
 
     private static void CreateMapSetOnChunk()

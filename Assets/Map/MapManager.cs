@@ -72,10 +72,17 @@ public class MapManager : MonoBehaviour
             _currentGroundMap.gameObject.SetActive(true);
             _currentObjectMap.gameObject.SetActive(true);
             _currentObjectsParent.SetActive(true);
-            LightController.setting = map._env._envGlobalLightSetting;
+            if (LightController != null)
+            {
+                LightController.setting = map._env._envGlobalLightSetting;
+            }
+            else
+            {
+                Debug.LogWarning("LightControllerがアタッチされていません");
+            }
 
 
-            FollowTarget.SetBounds();
+                FollowTarget.SetBounds();
         }
 
         _currentLayer = map._layer;
@@ -193,6 +200,12 @@ public class MapManager : MonoBehaviour
         });
     }
 
+    public static void PlaceStair(int index)
+    {
+        var mapData = Maps[index];
+        PlaceStair(mapData);
+    }
+
     private static void SelectStair(Action<Vector3Int, TileBase> process)
     {
         foreach (var stairSet in StairsCreator.CreatedMapSets)
@@ -210,7 +223,6 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    //まだ製作中
     public static List<Vector2Int> GetStairs(int mapIndex)
     {
         var _currentStairsPos = new List<Vector2Int>();
