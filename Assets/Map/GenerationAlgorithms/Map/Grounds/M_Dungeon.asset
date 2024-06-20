@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716a1cb28871fce458b2484a35e84db8, type: 3}
+  m_Name: M_Dungeon
+  m_EditorClassIdentifier: 
+  _tileSettings:
+  - _tile: {fileID: 11400000, guid: a406db9da7e8b5e49b7af3c9a7dc2785, type: 2}
+    _weight: 1
+  _mapBounds: {x: 30, y: 30}

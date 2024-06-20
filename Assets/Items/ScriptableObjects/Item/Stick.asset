@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3520c01c40f6de4498d4bab181cf72b5, type: 3}
+  m_Name: Stick
+  m_EditorClassIdentifier: 
+  ID: 1
+  amount: 7
+  name: Stick
+  sprite: {fileID: 21300000, guid: 87f3f4be7996e204d928cd1f3331f4f3, type: 3}
+  itemTiles:
+  - {fileID: 11400000, guid: 35f15e41735aa1e41bd44553244b4d2c, type: 2}
+  replaceTile: {fileID: 11400000, guid: 05e4f0b1b34f88946a31b16d1d8a1d35, type: 2}
+  isThrowable: 1
+  recipes: []
+  recipesTransform: []
+  status:
+    atk: 1
+    mass: 0.7
+    power: 10
+    torque: 1
+    linearDrag: 3
+    angularDrag: 3
+  light: {fileID: 0}

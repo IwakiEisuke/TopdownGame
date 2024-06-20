@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86c4d9c48b6f904d964efc99feb1dc2, type: 3}
+  m_Name: Pig
+  m_EditorClassIdentifier: 
+  entityBase: {fileID: 6420331526236845362, guid: 3f2abda5f7f2c5046b6475b899a3aae5, type: 3}
+  name: Pig
+  sprite: {fileID: 21300000, guid: 15629438d3739ea4b97766e51a7fbf68, type: 3}
+  hp: 5
+  atk: 1
+  def: 0
+  drops:
+  - dropItem: {fileID: 11400000, guid: ae2dc9192184b1d4f90b749079a32b4f, type: 2}
+    amount: 1
+    fluctuation: 2
+  AI: {fileID: 11400000, guid: 8ad322d674390b34db41fdee534d0a44, type: 2}
