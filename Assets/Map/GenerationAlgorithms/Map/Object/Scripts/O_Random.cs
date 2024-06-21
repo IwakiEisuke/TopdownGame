@@ -7,8 +7,10 @@ using UnityEngine.Tilemaps;
 public class O_Random : ObjectGenerationAlgorithm
 {
     [SerializeField] int count;
-    public override Tilemap CreateMap(MapEnvironment env, int mapIndex)
+    public override Tilemap Algorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
     {
+        var map = refmap;
+
         Vector2Int[] pos = new Vector2Int[count];
         var mapbounds = env._mapAlgo._mapBounds;
 
@@ -18,7 +20,6 @@ public class O_Random : ObjectGenerationAlgorithm
             pos[i] = new Vector2Int(Random.Range(-mapbounds.x, mapbounds.x), Random.Range(-mapbounds.y, mapbounds.y));
         }
 
-        var map = InitMap();
         var weights = GetWeights();
         foreach (var randomPos in pos)
         {
@@ -31,6 +32,7 @@ public class O_Random : ObjectGenerationAlgorithm
             });
         }
 
-        return map;
+        refmap = map;
+        return refmap;
     }
 }

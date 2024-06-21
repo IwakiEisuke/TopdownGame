@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class DebugMapCreator : MonoBehaviour
 {
-    [SerializeField] MapEnvironment env;
+    [SerializeField] MapManager manager;
     // Start is called before the first frame update
-    void Start()
+    public void MyFunction()
     {
-        env._objectAlgo.CreateMap(env, 0);
-        MapManager.PlaceStair(0);
+        manager.StartProcess();
     }
 }

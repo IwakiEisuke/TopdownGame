@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 199470610}
   - component: {fileID: 199470613}
   - component: {fileID: 199470612}
-  - component: {fileID: 199470614}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -150,12 +149,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199470609}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e3137b29b2915446a245b560072e3b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  env: {fileID: 11400000, guid: 8cc77d233b1222a42b8a3fa57cd6538b, type: 2}
+  manager: {fileID: 199470612}
 --- !u!4 &199470611
 Transform:
   m_ObjectHideFlags: 0
@@ -184,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maps: []
-  _startEnv: {fileID: 11400000, guid: 8cc77d233b1222a42b8a3fa57cd6538b, type: 2}
+  _startEnv: {fileID: 11400000, guid: 4252c22038811154695e3c36ee845f0e, type: 2}
   lightController: {fileID: 0}
 --- !u!114 &199470613
 MonoBehaviour:
@@ -211,35 +210,6 @@ MonoBehaviour:
         mapIndex: 0
       - pos: {x: 5, y: 5, z: 0}
         mapIndex: 0
---- !u!114 &199470614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199470609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d70d183437e06e46bcabb9cd9037013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mapManager: {fileID: 199470612}
-  stairsCreator: {fileID: 199470613}
-  startEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 199470612}
-        m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
-        m_MethodName: StartProcess
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &214006067
 GameObject:
   m_ObjectHideFlags: 0
