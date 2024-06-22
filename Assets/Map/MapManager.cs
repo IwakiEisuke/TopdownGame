@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -35,9 +33,11 @@ public class MapManager : MonoBehaviour
             Destroy(Instance);
             return;
         }
-
-        Instance = this;
-        //DontDestroyOnLoad(Instance);
+        else if (Instance == null)
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(Instance);
     }
 
     public void StartProcess()
@@ -82,7 +82,7 @@ public class MapManager : MonoBehaviour
             }
 
 
-                FollowTarget.SetBounds();
+            FollowTarget.SetBounds();
         }
 
         _currentLayer = map._layer;

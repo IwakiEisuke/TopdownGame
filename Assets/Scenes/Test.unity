@@ -203,12 +203,12 @@ MonoBehaviour:
   - index: 0
     topLayer: 0
     lowLayer: 1
-    env: {fileID: 11400000, guid: 8cc77d233b1222a42b8a3fa57cd6538b, type: 2}
+    env: {fileID: 11400000, guid: 4252c22038811154695e3c36ee845f0e, type: 2}
     stairs:
     - points:
-      - pos: {x: -5, y: -5, z: 0}
+      - pos: {x: -25, y: -25, z: 0}
         mapIndex: 0
-      - pos: {x: 5, y: 5, z: 0}
+      - pos: {x: -25, y: 25, z: 0}
         mapIndex: 0
 --- !u!1 &214006067
 GameObject:
