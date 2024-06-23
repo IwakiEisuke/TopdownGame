@@ -16,5 +16,6 @@ MonoBehaviour:
   - _tile: {fileID: 11400000, guid: af7ca37132e477742a03d8e3963286e2, type: 2}
     _weight: 1
   _mapBounds: {x: 0, y: 0}
-  vertexCount: 5
+  vertexCount: 20
   lineWidth: 1
+  step: {x: 4, y: 4}

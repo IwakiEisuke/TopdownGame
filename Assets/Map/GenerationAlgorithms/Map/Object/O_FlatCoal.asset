@@ -16,4 +16,4 @@ MonoBehaviour:
   - _tile: {fileID: 11400000, guid: d3d9106cc9d273941b58319812bec42a, type: 2}
     _weight: 3
   _mapBounds: {x: 0, y: 0}
-  count: 200
+  count: 100

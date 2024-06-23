@@ -12,8 +12,6 @@ public class FlatAlgo : MapGenerationAlgorithm
 {
     public override Tilemap CreateMap(MapEnvironment env)
     {
-        var debug_timer = Time.realtimeSinceStartup;
-
         var mapAlgo = env._mapAlgo;
 
         if (mapAlgo._tileSettings.Length == 0)
@@ -34,7 +32,6 @@ public class FlatAlgo : MapGenerationAlgorithm
             }
         }
 
-        Debug.Log("ê∂ê¨éûä‘:" + (Time.realtimeSinceStartup - debug_timer));
         return map;
     }
 }

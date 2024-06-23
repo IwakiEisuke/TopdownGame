@@ -3,17 +3,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEditor.PlayerSettings;
 
 public static class Extensions
 {
-    public static void SelectTile(this Tilemap map, Vector2Int mapbounds, Action<Vector2Int> tileProcess)
+    public static void SelectTile(this Tilemap map, Vector2Int mapBounds, Action<Vector3Int> tileProcess)
     {
-        for (int i = -mapbounds.x; i < mapbounds.x; i++)
+        for (int x = -mapBounds.x; x < mapBounds.x; x++)
         {
-            for (int j = -mapbounds.x; j < mapbounds.y; j++)
+            for (int y = -mapBounds.y; y < mapBounds.y; y++)
             {
-                var processTilePos = new Vector2Int(i, j);
-                tileProcess(processTilePos);
+                tileProcess(new Vector3Int(x, y));
+            }
+        }
+    }
+
+    public static void Fill(this Tilemap map, Vector2Int mapBounds, TileBase tile)
+    {
+        for (int x = -mapBounds.x; x < mapBounds.x; x++)
+        {
+            for (int y = -mapBounds.y; y < mapBounds.y; y++)
+            {
+                map.SetTile(new Vector3Int(x, y), tile);
+            }
+        }
+    }
+
+    public static void SetTileNullInLine(this Tilemap map, float lineWidth, Vector3Int pos)
+    {
+        var lw = Mathf.CeilToInt(lineWidth);
+        for (int x = pos.x - lw; x <= pos.x + lw; x++)
+        {
+            for (int y = pos.y - lw; y <= pos.y + lw; y++)
+            {
+                var targetPos = new Vector3Int(x, y);
+                if (Vector3Int.Distance(pos, targetPos) <= lineWidth)
+                {
+                    map.SetTile(Vector3Int.FloorToInt(targetPos), null);
+                }
+            }
+        }
+    }
+
+    public static void SetTileInLine(this Tilemap map, float lineWidth, Vector3Int pos, Action<Vector3Int> tileProcess)
+    {
+        var lw = Mathf.CeilToInt(lineWidth);
+        for (int x = pos.x - lw; x <= pos.x + lw; x++)
+        {
+            for (int y = pos.y - lw; y <= pos.y + lw; y++)
+            {
+                var targetPos = new Vector3Int(x, y);
+                if (Vector3Int.Distance(pos, targetPos) <= lineWidth)
+                {
+                    tileProcess(targetPos);
+                }
             }
         }
     }

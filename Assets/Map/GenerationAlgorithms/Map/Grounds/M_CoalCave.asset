@@ -19,4 +19,4 @@ MonoBehaviour:
     _weight: 5
   - _tile: {fileID: 11400000, guid: 80e6898a544be9a4e9d8d90623cd303f, type: 2}
     _weight: 1
-  _mapBounds: {x: 30, y: 30}
+  _mapBounds: {x: 20, y: 20}

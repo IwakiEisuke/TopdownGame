@@ -15,5 +15,5 @@ MonoBehaviour:
   _tileSettings: []
   _mapBounds: {x: 0, y: 0}
   algos:
-  - {fileID: 11400000, guid: c3f71a23ed5267842a7cfe3e57b3718c, type: 2}
   - {fileID: 11400000, guid: 649859eea6d75da42be7babd660b6f37, type: 2}
+  - {fileID: 11400000, guid: c3f71a23ed5267842a7cfe3e57b3718c, type: 2}

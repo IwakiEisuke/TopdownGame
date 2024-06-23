@@ -11,23 +11,23 @@ public class O_Random : ObjectGenerationAlgorithm
     {
         var map = refmap;
 
-        Vector2Int[] pos = new Vector2Int[count];
+        Vector3Int[] randomPos = new Vector3Int[count];
         var mapbounds = env._mapAlgo._mapBounds;
 
 
         for (int i = 0; i < count; i++)
         {
-            pos[i] = new Vector2Int(Random.Range(-mapbounds.x, mapbounds.x), Random.Range(-mapbounds.y, mapbounds.y));
+            randomPos[i] = new Vector3Int(Random.Range(-mapbounds.x, mapbounds.x), Random.Range(-mapbounds.y, mapbounds.y));
         }
 
         var weights = GetWeights();
-        foreach (var randomPos in pos)
+        foreach (var p in randomPos)
         {
             map.SelectTile(mapbounds, (pos) =>
             {
-                if (randomPos == pos)
+                if (p == pos && map.GetTile(pos) == null)
                 {
-                    map.SetTile((Vector3Int)pos, _tileSettings[ChooseWeight(weights)]._tile);
+                    map.SetTile(pos, _tileSettings[ChooseWeight(weights)]._tile);
                 }
             });
         }

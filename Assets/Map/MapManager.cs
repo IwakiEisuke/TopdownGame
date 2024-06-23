@@ -144,7 +144,7 @@ public class MapManager : MonoBehaviour
         //var newObjectTile = new GameObject("ObjectTile").AddComponent<Tilemap>();
         //newObjectTile.AddComponent<TilemapRenderer>();
         //newObjectTile.transform.parent = FindObjectOfType<Grid>().transform;
-
+        var debug_timer = Time.realtimeSinceStartup;
         var map = new MapData(
                 env._objectAlgo.CreateMap(env, 0),
                 env._mapAlgo.CreateMap(env),
@@ -158,8 +158,9 @@ public class MapManager : MonoBehaviour
         if (setMapCurrent) SetCurrentMap(map);
 
         StairsCreator.StartProcess();
-
         PlaceStair(map);
+
+        Debug.Log("ê∂ê¨éûä‘:" + (Time.realtimeSinceStartup - debug_timer));
 
         return map;
     }
@@ -170,7 +171,7 @@ public class MapManager : MonoBehaviour
         //var newObjectTile = new GameObject("ObjectTile").AddComponent<Tilemap>();
         //newObjectTile.AddComponent<TilemapRenderer>();
         //newObjectTile.transform.parent = FindObjectOfType<Grid>().transform;
-
+        var debug_timer = Time.realtimeSinceStartup;
         Maps[index] = new MapData(
                 env._objectAlgo.CreateMap(env, index),
                 env._mapAlgo.CreateMap(env),
@@ -182,6 +183,8 @@ public class MapManager : MonoBehaviour
 
         SetCurrentMap(index);
         PlaceStair(Maps[index]);
+
+        Debug.Log("ê∂ê¨éûä‘:" + (Time.realtimeSinceStartup - debug_timer));
 
         return Maps[index];
     }
