@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 [CreateAssetMenu(menuName = "GenerationAlgorithm/Object/BresenhamLine")]
@@ -62,6 +61,9 @@ public class O_BresenhamLine : ObjectGenerationAlgorithm
         }
 
         Road.CreateTree(vertices);
+
+        var tttt = new Triangulator();
+        tttt.CreateInfluencePolygon(vertices);
 
         var tiles = new List<Vector2Int>();
 
@@ -163,12 +165,6 @@ class Road
 
     public static void CreateTree(Vertice[] vertices)
     {
-        //var combines = 0;
-        //for (int i = vertices.Length - 1; i > 0; i--)
-        //{
-        //    combines += i;
-        //}
-
         List<Edgerr> edges = new();
 
         var count = 0;
@@ -183,7 +179,6 @@ class Road
         }
 
         edges.Sort((x, y) => x.dist.CompareTo(y.dist));
-        //vertices[0].Check();
 
         foreach (var edge in edges) //デバッグ用
         {
@@ -208,11 +203,6 @@ class Road
             {
                 foreach (var v in vers)
                 {
-                    foreach(var c in v.connectedV)
-                    {
-                        
-                    }
-
                     if (!v.IsChecked)
                     {
                         allChecked = false;
@@ -227,8 +217,6 @@ class Road
             }
 
             Debug.DrawLine(edge.start.Pos, edge.end.Pos, Color.yellow, 2);
-            edge.start.Check(edge.end);
-            edge.end.Check(edge.start);
         }
 
         foreach (var a in vertices)
@@ -258,7 +246,7 @@ class Edgerr : IEnumerable<Vertice[]>
     {
         var vertices = new Vertice[] { start, end };
         yield return vertices;
-        
+
     }
 
     IEnumerator IEnumerable.GetEnumerator()
@@ -270,7 +258,7 @@ class Edgerr : IEnumerable<Vertice[]>
 /// <summary>
 /// 道を生成するためのノード。曲がり角
 /// </summary>
-class Vertice
+public class Vertice
 {
     public Vector2 Pos { get; private set; }
     public bool alreadySet { get; private set; } = false;
@@ -299,17 +287,19 @@ class Vertice
     /// </summary>
     public void Check()
     {
-        connect++;
-        if (connect == 2)
-        {
-            IsChecked = true;
-        }
+        IsChecked = true;
     }
 
-    public void Check(Vertice vertice)
+    public void Connect(params Vertice[] vertices)
     {
-        connectedV.Add(vertice);
-        Check();
+        foreach (var v in vertices)
+        {
+            Debug.Log(!connectedV.Contains(v));
+            if (!connectedV.Contains(v))
+            {
+                connectedV.Add(v);
+            }
+        }
     }
 }
 

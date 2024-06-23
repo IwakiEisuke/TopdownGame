@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 struct Triangle
 {
@@ -78,17 +80,17 @@ public class Triangulator
     }
 
 
-    GameObject CreateInfluencePolygon(Vector2[] XZofVertices)
+    public GameObject CreateInfluencePolygon(Vertice[] XZofVertices)
     {
         Vector3[] Vertices = new Vector3[XZofVertices.Length];
         for (int ii1 = 0; ii1 < XZofVertices.Length; ii1++)
         {
-            Vertices[ii1] = new Vector3(XZofVertices[ii1].x, 0, XZofVertices[ii1].y);
+            Vertices[ii1] = new Vector3(XZofVertices[ii1].Pos.x, XZofVertices[ii1].Pos.y);
         }
         GameObject OurNewMesh = new GameObject("OurNewMesh1");
         Mesh mesh = new Mesh();
         mesh.vertices = Vertices;
-        mesh.uv = XZofVertices;
+        mesh.uv = XZofVertices.Select(p => p.Pos).ToArray();
         mesh.triangles = TriangulatePolygon(XZofVertices);
         mesh.RecalculateNormals();
         MeshFilter mf = OurNewMesh.AddComponent<MeshFilter>();
@@ -100,30 +102,30 @@ public class Triangulator
     }
 
 
-    int[] TriangulatePolygon(Vector2[] XZofVertices)
+    int[] TriangulatePolygon(Vertice[] XZofVertices)
     {
         int VertexCount = XZofVertices.Length;
-        float xmin = XZofVertices[0].x;
-        float ymin = XZofVertices[0].y;
+        float xmin = XZofVertices[0].Pos.x;
+        float ymin = XZofVertices[0].Pos.y;
         float xmax = xmin;
         float ymax = ymin;
         for (int ii1 = 1; ii1 < VertexCount; ii1++)
         {
-            if (XZofVertices[ii1].x < xmin)
+            if (XZofVertices[ii1].Pos.x < xmin)
             {
-                xmin = XZofVertices[ii1].x;
+                xmin = XZofVertices[ii1].Pos.x;
             }
-            else if (XZofVertices[ii1].x > xmax)
+            else if (XZofVertices[ii1].Pos.x > xmax)
             {
-                xmax = XZofVertices[ii1].x;
+                xmax = XZofVertices[ii1].Pos.x;
             }
-            if (XZofVertices[ii1].y < ymin)
+            if (XZofVertices[ii1].Pos.y < ymin)
             {
-                ymin = XZofVertices[ii1].y;
+                ymin = XZofVertices[ii1].Pos.x;
             }
-            else if (XZofVertices[ii1].y > ymax)
+            else if (XZofVertices[ii1].Pos.y > ymax)
             {
-                ymax = XZofVertices[ii1].y;
+                ymax = XZofVertices[ii1].Pos.y;
             }
         }
         float dx = xmax - xmin;
@@ -134,13 +136,15 @@ public class Triangulator
         Vector2[] ExpandedXZ = new Vector2[3 + VertexCount];
         for (int ii1 = 0; ii1 < VertexCount; ii1++)
         {
-            ExpandedXZ[ii1] = XZofVertices[ii1];
+            ExpandedXZ[ii1] = XZofVertices[ii1].Pos;
         }
         ExpandedXZ[VertexCount] = new Vector2((xmid - 2 * dmax), (ymid - dmax));
         ExpandedXZ[VertexCount + 1] = new Vector2(xmid, (ymid + 2 * dmax));
         ExpandedXZ[VertexCount + 2] = new Vector2((xmid + 2 * dmax), (ymid - dmax));
-        List<Triangle> TriangleList = new List<Triangle>();
-        TriangleList.Add(new Triangle(VertexCount, VertexCount + 1, VertexCount + 2));
+        List<Triangle> TriangleList = new List<Triangle>
+        {
+            new Triangle(VertexCount, VertexCount + 1, VertexCount + 2) //全ての点を含む三角形
+        };
         for (int ii1 = 0; ii1 < VertexCount; ii1++)
         {
             List<Edge> Edges = new List<Edge>();
@@ -193,6 +197,19 @@ public class Triangulator
             Triangles[3 * ii1] = TriangleList[ii1].p1;
             Triangles[3 * ii1 + 1] = TriangleList[ii1].p2;
             Triangles[3 * ii1 + 2] = TriangleList[ii1].p3;
+
+            var v = XZofVertices;
+            Debug.DrawLine(v[TriangleList[ii1].p1].Pos, v[TriangleList[ii1].p2].Pos, Color.green, 3);
+            Debug.DrawLine(v[TriangleList[ii1].p2].Pos, v[TriangleList[ii1].p3].Pos, Color.green, 3);
+            Debug.DrawLine(v[TriangleList[ii1].p3].Pos, v[TriangleList[ii1].p1].Pos, Color.green, 3);
+
+            var v1 = v[TriangleList[ii1].p1];
+            var v2 = v[TriangleList[ii1].p2];
+            var v3 = v[TriangleList[ii1].p3];
+
+            v1.Connect(v2, v3);
+            v2.Connect(v1, v3);
+            v3.Connect(v1, v2);
         }
         return Triangles;
     }
