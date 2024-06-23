@@ -199,9 +199,9 @@ public class Triangulator
             Triangles[3 * ii1 + 2] = TriangleList[ii1].p3;
 
             var v = XZofVertices;
-            Debug.DrawLine(v[TriangleList[ii1].p1].Pos, v[TriangleList[ii1].p2].Pos, Color.green, 3);
-            Debug.DrawLine(v[TriangleList[ii1].p2].Pos, v[TriangleList[ii1].p3].Pos, Color.green, 3);
-            Debug.DrawLine(v[TriangleList[ii1].p3].Pos, v[TriangleList[ii1].p1].Pos, Color.green, 3);
+            //Debug.DrawLine(v[TriangleList[ii1].p1].Pos, v[TriangleList[ii1].p2].Pos, Color.green, 3);
+            //Debug.DrawLine(v[TriangleList[ii1].p2].Pos, v[TriangleList[ii1].p3].Pos, Color.green, 3);
+            //Debug.DrawLine(v[TriangleList[ii1].p3].Pos, v[TriangleList[ii1].p1].Pos, Color.green, 3);
 
             var v1 = v[TriangleList[ii1].p1];
             var v2 = v[TriangleList[ii1].p2];

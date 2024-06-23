@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
@@ -19,7 +20,7 @@ public class O_BresenhamLine : ObjectGenerationAlgorithm
         Vertice[] vertices = new Vertice[count];
         for (int i = 0; i < vertices.Length; i++)
         {
-            vertices[i] = new Vertice();
+            vertices[i] = new Vertice(i);
         }
 
         //階段を頂点に指定。
@@ -61,9 +62,6 @@ public class O_BresenhamLine : ObjectGenerationAlgorithm
         }
 
         Road.CreateTree(vertices);
-
-        var tttt = new Triangulator();
-        tttt.CreateInfluencePolygon(vertices);
 
         var tiles = new List<Vector2Int>();
 
@@ -165,25 +163,40 @@ class Road
 
     public static void CreateTree(Vertice[] vertices)
     {
-        List<Edgerr> edges = new();
+        var tttt = new Triangulator();
+        tttt.CreateInfluencePolygon(vertices);
 
-        var count = 0;
+        List<Edgerr> edges = new();
+        var union = new UnionTree();
+
         for (int i = 0; i < vertices.Length - 1; i++)
         {
             for (int j = i + 1; j < vertices.Length; j++)
             {
-                edges.Add(new Edgerr(vertices[i], vertices[j]));
-
-                count++;
+                if (vertices[i].connectedV.Contains(vertices[j]))
+                {
+                    Debug.DrawLine(vertices[i].Pos, vertices[j].Pos, Color.blue, 2);
+                    edges.Add(new Edgerr(vertices[i], vertices[j]));
+                }
             }
         }
 
         edges.Sort((x, y) => x.dist.CompareTo(y.dist));
 
+        foreach (var edge in edges)
+        {
+            var v1 = edge.start;
+            var v2 = edge.end;
+            if (!union.same(v1, v2))
+            {
+                union.unite(v1, v2);
+                Debug.DrawLine(v1.Pos, v2.Pos, Color.yellow, 2);
+            }
+        }
+
         foreach (var edge in edges) //デバッグ用
         {
             Debug.Log(edge.start.Pos + " | " + edge.end.Pos + " ||" + edge.dist);
-            Debug.DrawLine(edge.start.Pos, edge.end.Pos, Color.blue, 2);
         }
 
         foreach (var edge in edges)
@@ -201,13 +214,10 @@ class Road
             bool allChecked = true;
             foreach (var vers in edge)
             {
-                foreach (var v in vers)
+                if (!vers.IsChecked)
                 {
-                    if (!v.IsChecked)
-                    {
-                        allChecked = false;
-                        break;
-                    }
+                    allChecked = false;
+                    break;
                 }
             }
 
@@ -216,7 +226,6 @@ class Road
                 break;
             }
 
-            Debug.DrawLine(edge.start.Pos, edge.end.Pos, Color.yellow, 2);
         }
 
         foreach (var a in vertices)
@@ -229,8 +238,9 @@ class Road
     }
 }
 
-class Edgerr : IEnumerable<Vertice[]>
+class Edgerr : IEnumerable<Vertice>
 {
+    public static List<Edgerr> edges = new();
     public Vertice start { get; private set; }
     public Vertice end { get; private set; }
     public float dist { get; private set; }
@@ -240,13 +250,16 @@ class Edgerr : IEnumerable<Vertice[]>
         this.start = start;
         this.end = end;
         dist = Vector2.Distance(start.Pos, end.Pos);
+        edges.Add(this);
     }
 
-    public IEnumerator<Vertice[]> GetEnumerator()
+    public IEnumerator<Vertice> GetEnumerator()
     {
         var vertices = new Vertice[] { start, end };
-        yield return vertices;
-
+        foreach (var v in vertices)
+        {
+            yield return v;
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()
@@ -269,12 +282,16 @@ public class Vertice
     public int connect { get; private set; } = 0;
     public List<Vertice> connectedV = new();
 
-    public Vertice(Vector2 pos)
+    private Vertice root;
+    public readonly int id;
+
+    public Vertice(int id)
     {
-        Pos = pos;
+        this.id = id;
+        root = this;
     }
 
-    public Vertice() { }
+    public Vertice() { root = this; }
 
     public void Set(Vector2 pos)
     {
@@ -294,12 +311,68 @@ public class Vertice
     {
         foreach (var v in vertices)
         {
-            Debug.Log(!connectedV.Contains(v));
             if (!connectedV.Contains(v))
             {
                 connectedV.Add(v);
             }
         }
     }
+
+    public void SetRoot(Vertice root)
+    {
+        this.root = root;
+    }
+
+    public Vertice GetRoot()
+    {
+        if (root == this)
+        {
+            return this;
+        }
+        else
+        {
+            return root.GetRoot();
+        }
+    }
 }
 
+class UnionTree
+{
+    public UnionTree()
+    {
+
+    }
+
+    public Vertice Root(Vertice v)
+    {
+        if (v.GetRoot() == v)
+        {
+            return v;
+        }
+        else
+        {
+            return v.GetRoot();
+        }
+    }
+
+    public bool same(Vertice v1, Vertice v2)
+    {
+        return v1.GetRoot() == v2.GetRoot();
+    }
+
+    public void unite(Vertice v1, Vertice v2)
+    {
+        v1 = v1.GetRoot();
+        v2 = v2.GetRoot();
+        if (v1 == v2) return;
+
+        if(v1.id < v2.id)
+        {
+            v2.SetRoot(v1);
+        }
+        else
+        {
+            v1.SetRoot(v2);
+        }
+    }
+}
