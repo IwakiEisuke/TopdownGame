@@ -223,7 +223,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    public static List<Vector2Int> GetStairs(int mapIndex)
+    public static List<Vector2Int> GetCurStairsPos(int mapIndex)
     {
         var _currentStairsPos = new List<Vector2Int>();
         foreach (var stairSet in StairsCreator.CreatedMapSets)

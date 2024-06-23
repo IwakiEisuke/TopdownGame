@@ -35,7 +35,6 @@ class Edge
 
 public class Triangulator
 {
-
     bool TriangulatePolygonSubFunc_InCircle(Vector2 p, Vector2 p1, Vector2 p2, Vector2 p3)
     {
         if (Mathf.Abs(p1.y - p2.y) < float.Epsilon && Mathf.Abs(p2.y - p3.y) < float.Epsilon)
@@ -80,25 +79,26 @@ public class Triangulator
     }
 
 
-    public GameObject CreateInfluencePolygon(Vertice[] XZofVertices)
+    public void CreateTriangles(Vertice[] XZofVertices)
     {
         Vector3[] Vertices = new Vector3[XZofVertices.Length];
         for (int ii1 = 0; ii1 < XZofVertices.Length; ii1++)
         {
             Vertices[ii1] = new Vector3(XZofVertices[ii1].Pos.x, XZofVertices[ii1].Pos.y);
         }
-        GameObject OurNewMesh = new GameObject("OurNewMesh1");
-        Mesh mesh = new Mesh();
-        mesh.vertices = Vertices;
-        mesh.uv = XZofVertices.Select(p => p.Pos).ToArray();
-        mesh.triangles = TriangulatePolygon(XZofVertices);
-        mesh.RecalculateNormals();
-        MeshFilter mf = OurNewMesh.AddComponent<MeshFilter>();
-        OurNewMesh.AddComponent<MeshRenderer>();
+        //GameObject OurNewMesh = new GameObject("OurNewMesh1");
+        //Mesh mesh = new Mesh();
+        //mesh.vertices = Vertices;
+        //mesh.uv = XZofVertices.Select(p => p.Pos).ToArray();
+        //mesh.triangles = TriangulatePolygon(XZofVertices);
+        TriangulatePolygon(XZofVertices);
+        //mesh.RecalculateNormals();
+        //MeshFilter mf = OurNewMesh.AddComponent<MeshFilter>();
+        //OurNewMesh.AddComponent<MeshRenderer>();
         //OurNewMesh.GetComponent().castShadows = false;
         //OurNewMesh.GetComponent().receiveShadows = false;
-        mf.mesh = mesh;
-        return OurNewMesh;
+        //mf.mesh = mesh;
+        //return OurNewMesh;
     }
 
 

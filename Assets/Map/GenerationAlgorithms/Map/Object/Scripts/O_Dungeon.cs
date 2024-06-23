@@ -16,7 +16,7 @@ public class O_Dungeon : ObjectGenerationAlgorithm
     public override Tilemap Algorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
     {
         var map = refmap;
-        var curStairsPos = MapManager.GetStairs(mapIndex);
+        var curStairsPos = MapManager.GetCurStairsPos(mapIndex);
 
         //Šù‘¶‚Ì’¸“_‚Æƒ‰ƒ“ƒ_ƒ€‚É‚Â‚È‚°‚é‚½‚ß‚Ì’¸“_‚Ì”
         var add = Random.Range(0, 5);
