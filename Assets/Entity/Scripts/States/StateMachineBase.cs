@@ -4,11 +4,10 @@ using UnityEngine.Windows;
 public abstract class StateMachineBase : MonoBehaviour
 {
     protected StateBase currentState;
-    public virtual void SwitchState<T>(T state)
+    public virtual void SwitchState<T>(T state) where T : StateBase
     {
-        StateBase stateBase = state as StateBase;
         currentState.Exit(this);
-        currentState = stateBase;
+        currentState = state;
         currentState.Enter(this);
     }
 }
