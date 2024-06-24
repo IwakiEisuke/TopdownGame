@@ -8,18 +8,13 @@ public class EntityController : MonoBehaviour
     public float speed;
     public EntityData entityData;
     public EntityStatus status;
-    private AIBase AI;
 
     void Start()
     {
-        AI = entityData.AI;
+
+        gameObject.AddComponent(Type.GetType(entityData.stateMachine.name));
         
         status.hp = entityData.hp;
-
-        if (AI != null)
-        {
-            AI.Act(gameObject);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -47,12 +42,6 @@ public class EntityController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-
-    private void OnDestroy()
-    {
-        var sequence = AI.GetSequence();
-        sequence.Kill();
     }
 }
 

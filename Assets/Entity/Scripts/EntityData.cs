@@ -13,7 +13,7 @@ public class EntityData : ScriptableObject
     public float atk;
     public float def;
     public DropItemSetting[] drops;
-    public AIBase AI;
+    public MonoScript stateMachine;
 
     public GameObject CreateEntityInstance(Vector3 pos, GameObject parent)
     {

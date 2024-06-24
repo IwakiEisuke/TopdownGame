@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class SM_Slime : MonoBehaviour
+public class SM_Slime : StateMachineBase
 {
-    protected S_SlimeBase currentState;
     public S_SlimeWander wander = new();
     public S_SlimeIdle idle = new();
     private void Start()
@@ -15,12 +14,5 @@ public class SM_Slime : MonoBehaviour
     private void Update()
     {
         currentState.Update(this);
-    }
-
-    public void SwitchState(S_SlimeBase state)
-    {
-        currentState.Exit(this);
-        currentState = state;
-        currentState.Enter(this);
     }
 }

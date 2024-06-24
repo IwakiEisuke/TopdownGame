@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class S_SlimeIdle : S_SlimeBase
+public class S_SlimeIdle : StateBase
 {
     float enterTime, addTime;
-    public override void Enter(SM_Slime slime)
+    SM_Slime slime;
+    public override void Enter<T>(T obj)
     {
-        Debug.Log("Enter Idle");
         enterTime = Time.time;
-        addTime = Random.Range(1f, 3f);
+        addTime = 1.5f;
+        slime = obj as SM_Slime;
     }
 
-    public override void Exit(SM_Slime slime)
+    public override void Exit<T>(T obj)
     {
-        Debug.Log("Exit Idle");
+
     }
 
-    public override void Update(SM_Slime slime)
+    public override void Update<T>(T obj)
     {
         if (Time.time > enterTime + addTime)
         {

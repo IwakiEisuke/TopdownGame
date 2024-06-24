@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a2d17b03bd72964bb39c9f552461cb9, type: 3}
-  m_Name: Pig AI
+  m_Script: {fileID: 11500000, guid: 716a1cb28871fce458b2484a35e84db8, type: 3}
+  m_Name: M_EntityTest
   m_EditorClassIdentifier: 
-  duration: 1
-  distance: 2
-  AIScript: {fileID: 0}
+  _tileSettings:
+  - _tile: {fileID: 11400000, guid: a406db9da7e8b5e49b7af3c9a7dc2785, type: 2}
+    _weight: 1
+  _mapBounds: {x: 10, y: 10}

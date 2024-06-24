@@ -15,7 +15,7 @@ MonoBehaviour:
   _environmentName: Dungeon
   _mapAlgo: {fileID: 11400000, guid: 32e4d07aafef86d4e86a428c380183df, type: 2}
   _objectAlgo: {fileID: 11400000, guid: 0c7e6931de345c742be87d04740a6674, type: 2}
-  _entityAlgo: {fileID: 11400000, guid: 2785069e24e58e9408cab92524e84e24, type: 2}
+  _entityAlgo: {fileID: 11400000, guid: 776680a90c47fe248ab9882dc0557e3d, type: 2}
   _envGlobalLightSetting: {fileID: 11400000, guid: ea16b55d70f1aaf4e9691e85604bfafc, type: 2}
   _maxFloor: 5
   _appearSettings:
