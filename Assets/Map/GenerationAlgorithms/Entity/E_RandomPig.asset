@@ -17,5 +17,5 @@ MonoBehaviour:
   - _spawnEntityDatas:
     - _entityData: {fileID: 11400000, guid: bddbc6eaae579f6429c60e6a7564d1a3, type: 2}
       _entityCount: 10
-    _spawnCount: 5
+    _spawnCount: 1
     _spawnProbability: 1
