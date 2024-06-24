@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class MapManager : MonoBehaviour
 {
-    public static MapManager Instance { get; private set; }
+    private static MapManager Instance { get; set; }
 
     public static Tilemap _currentGroundMap;
     public static Tilemap _currentObjectMap;
@@ -15,15 +15,14 @@ public class MapManager : MonoBehaviour
     public static List<MapData> Maps { get => Instance.maps; private set => Instance.maps = value; }
 
     public static MapData _currentMapData;
-
     public static int _currentLayer;
     public static int _currentLocalLayer;
-
     public static List<Vector2Int> _currentStairsPos;
 
-    public MapEnvironment _startEnv;
-
+    [SerializeField] MapEnvironment _startEnv;
     [SerializeField] GlobalLightController lightController;
+    private static Tilemap currentGroundMap;
+
     public static GlobalLightController LightController { get => Instance.lightController; private set => Instance.lightController = value; }
 
     private void Awake()
@@ -43,13 +42,51 @@ public class MapManager : MonoBehaviour
     public void StartProcess()
     {
         Maps = new List<MapData>();
-        CreateMap(_startEnv, setMapCurrent: true);
+        CreateStartMap(_startEnv);
     }
 
     public static void AddMap(MapData map)
     {
         Maps.Add(map);
     }
+
+    /*
+    static Tilemap SetGroundMap(Tilemap groundmap)
+    {
+        if (_currentMapData != null)
+        {
+            _currentGroundMap.gameObject.SetActive(false);
+        }
+
+        _currentGroundMap = groundmap;
+        _currentGroundMap.gameObject.SetActive(true);
+        return _currentGroundMap;
+    }
+
+    static Tilemap SetObjectMap(Tilemap objectmap)
+    {
+        if (_currentMapData != null)
+        {
+            _currentObjectMap.gameObject.SetActive(false);
+        }
+
+        _currentObjectMap = objectmap;
+        _currentObjectMap.gameObject.SetActive(true);
+        return _currentObjectMap;
+    }
+
+    static GameObject SetObjectsParent(GameObject objectsParent)
+    {
+        if (_currentMapData != null)
+        {
+            _currentObjectsParent.gameObject.SetActive(false);
+        }
+
+        _currentObjectsParent = objectsParent;
+        _currentObjectsParent.SetActive(true);
+        return _currentObjectsParent;
+    }
+    */
 
     public static void SetCurrentMap(MapData map)
     {
@@ -80,13 +117,10 @@ public class MapManager : MonoBehaviour
             {
                 Debug.LogWarning("LightControllerがアタッチされていません");
             }
-
-
             FollowTarget.SetBounds();
         }
-
         _currentLayer = map._layer;
-        Debug.Log(_currentLayer);
+        Debug.Log("currentLayer : " + _currentLayer);
     }
 
     public static void SetCurrentMap(int index)
@@ -107,8 +141,6 @@ public class MapManager : MonoBehaviour
         }
     }
 
-
-
     public static MapData GetMap(int index)
     {
         return Maps[index];
@@ -123,8 +155,12 @@ public class MapManager : MonoBehaviour
         return -1;
     }
 
-
-    public static MapData CreateMap(int layer)
+    /// <summary>
+    /// indexとlayerのみ設定したマップデータを生成しMapsリストに追加します
+    /// </summary>
+    /// <param name="layer"></param>
+    /// <returns></returns>
+    public static MapData CreateNullMap(int layer)
     {
         var map = new MapData(
                 null,
@@ -139,43 +175,52 @@ public class MapManager : MonoBehaviour
         return map;
     }
 
-    public static MapData CreateMap(MapEnvironment env, int layer = 0, bool setMapCurrent = false)
+    /// <summary>
+    /// ゲーム開始時用のマップ生成メソッド
+    /// </summary>
+    /// <param name="env"></param>
+    /// <param name="layer"></param>
+    /// <param name="setMapCurrent"></param>
+    /// <returns></returns>
+    public static MapData CreateStartMap(MapEnvironment env)
     {
-        //var newObjectTile = new GameObject("ObjectTile").AddComponent<Tilemap>();
-        //newObjectTile.AddComponent<TilemapRenderer>();
-        //newObjectTile.transform.parent = FindObjectOfType<Grid>().transform;
+        Tilemap O_map;
+        Tilemap G_map;
+
         var debug_timer = Time.realtimeSinceStartup;
         var map = new MapData(
-                env._objectAlgo.CreateMap(env, 0),
-                env._mapAlgo.CreateMap(env),
-                env._entityAlgo.SpawnEntity(env),
+                G_map = env._objectAlgo.CreateMap(env, 0),
+                O_map = env._mapAlgo.CreateMap(env),
+                env._entityAlgo.SpawnEntity(env, G_map, O_map),
                 env,
                 Maps.Count,
-                layer
+                0
                 );
 
         AddMap(map);
-        if (setMapCurrent) SetCurrentMap(map);
-
+        SetCurrentMap(map);
         StairsCreator.StartProcess();
         PlaceStair(map);
-
         Debug.Log("生成時間:" + (Time.realtimeSinceStartup - debug_timer));
-
         return map;
     }
 
-
+    /// <summary>
+    /// 指定したインデックスのマップインスタンスに指定したマップ環境のマップを生成し、現在のマップに設定する
+    /// </summary>
+    /// <param name="env"></param>
+    /// <param name="index"></param>
+    /// <returns></returns>
     public static MapData CreateAndSetMap(MapEnvironment env, int index)
     {
-        //var newObjectTile = new GameObject("ObjectTile").AddComponent<Tilemap>();
-        //newObjectTile.AddComponent<TilemapRenderer>();
-        //newObjectTile.transform.parent = FindObjectOfType<Grid>().transform;
         var debug_timer = Time.realtimeSinceStartup;
+        Tilemap O_map;
+        Tilemap G_map;
+
         Maps[index] = new MapData(
-                env._objectAlgo.CreateMap(env, index),
-                env._mapAlgo.CreateMap(env),
-                env._entityAlgo.SpawnEntity(env),
+                G_map = env._objectAlgo.CreateMap(env, index),
+                O_map = env._mapAlgo.CreateMap(env),
+                env._entityAlgo.SpawnEntity(env, G_map, O_map),
                 env,
                 Maps[index]._index,
                 Maps[index]._layer
@@ -183,16 +228,33 @@ public class MapManager : MonoBehaviour
 
         SetCurrentMap(index);
         PlaceStair(Maps[index]);
-
         Debug.Log("生成時間:" + (Time.realtimeSinceStartup - debug_timer));
-
         return Maps[index];
     }
 
     /// <summary>
-    /// 実際には階段の表示処理といった所
+    /// Mapsに登録されているMapDataの_indexの中にmapIndexと一致するものがある場合trueを返します
     /// </summary>
-    /// <param name="mapData"></param>
+    /// <param name="mapIndex"></param>
+    /// <returns></returns>
+    public static bool IsCreated(int mapIndex)
+    {
+        if (mapIndex < 0)
+        {
+            Debug.LogError($"IsCreated({mapIndex})は生成されない範囲を指定しています。0以上の値を渡すようにしてください");
+        }
+
+        foreach (MapData map in Maps)
+        {
+            if (map._index == mapIndex)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private static void PlaceStair(MapData mapData)
     {
         SelectStair((pos, tile) =>
@@ -263,34 +325,12 @@ public class MapManager : MonoBehaviour
         }
     }
 
-
-
-    public static bool IsCreated(int mapIndex)
-    {
-        if (mapIndex < 0)
-        {
-            throw new Exception($"IsCreated({mapIndex})は生成されない範囲を指定しています");
-        }
-        foreach (MapData map in Maps)
-        {
-            if (map._index == mapIndex)
-            {
-                return true;
-            }
-        }
-
-
-        return false;
-    }
-
     public static bool IsMapEmpty(int mapIndex)
     {
         return GetMap(mapIndex)._groundmap == null;
     }
 
-
-
-    public static bool IsMap(MapEnvironment env)
+    public static bool IsCurEnv(MapEnvironment env)
     {
         if (_currentMapData._env == env)
         {
@@ -302,7 +342,7 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    public static bool IsMap(Env env)
+    public static bool IsCurEnv(Env env)
     {
         try
         {

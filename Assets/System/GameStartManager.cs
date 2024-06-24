@@ -10,7 +10,7 @@ public class GameStartManager : MonoBehaviour
 
     public UnityEvent startEvent;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         startEvent.Invoke(); 
     }

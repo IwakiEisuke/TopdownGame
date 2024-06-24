@@ -8,12 +8,14 @@ using Random = UnityEngine.Random;
 
 public class EntitySpawnManager : MonoBehaviour
 {
-    public GameObject entityBasePrefab;
-    public SpawnSetting[] spawnSetting;
-    public Vector2Int spawnBounds;
+    [SerializeField] GameObject entityBasePrefab;
+    [SerializeField] SpawnSetting[] spawnSetting;
+    [SerializeField] Vector2Int spawnBounds;
+    //[SerializeField] EntityGenerationAlgorithm algo;
 
     public void Spawn()
     {
+        //algo.SpawnEntity(MapManager._currentMapData._env);
         var currentGroundMap = MapManager._currentGroundMap;
         var centerPos = new Vector3Int(Random.Range(0, spawnBounds.x), Random.Range(0, spawnBounds.x));
 
@@ -38,7 +40,7 @@ public class EntitySpawnManager : MonoBehaviour
                     {
                         var entityData = setting.spawnEntityTypeSetting[index].entityType;
                         
-                        entityData.CreateEntityInstance(pos);
+                        entityData.CreateEntityInstance(pos, MapManager._currentObjectsParent);
                         //instance.transform.position = pos;
                         //instance.GetComponent<SpriteRenderer>().sprite = setting.spawnEntityTypeSetting[index].entityType.sprite;
 
@@ -49,13 +51,13 @@ public class EntitySpawnManager : MonoBehaviour
         }
     }
 
-    void StartSpawn()
+    void StartSpawnRoutine()
     {
         foreach (var setting in spawnSetting)
         {
             foreach (var spawn in setting.spawnEntityTypeSetting)
             {
-                Invoke(nameof(StartSpawn), Random.Range(spawn.spawnLate.min, spawn.spawnLate.max));
+                Invoke(nameof(StartSpawnRoutine), Random.Range(spawn.spawnLate.min, spawn.spawnLate.max));
                 Spawn();
             }
         }

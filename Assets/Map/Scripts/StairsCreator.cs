@@ -208,8 +208,8 @@ public class StairsCreator : MonoBehaviour
         var topPos = new Vector3Int(Random.Range(-bounds.x, bounds.x), Random.Range(-bounds.y, bounds.y));
         var lowPos = new Vector3Int(Random.Range(-bounds.x, bounds.x), Random.Range(-bounds.y, bounds.y));
 
-        var topIndex = MapManager.GetIndex(MapManager.IsCreated(mapIndex1) ? MapManager.GetMap(mapIndex1) : MapManager.CreateMap(topLayer));
-        var lowIndex = MapManager.GetIndex(MapManager.IsCreated(mapIndex2) ? MapManager.GetMap(mapIndex2) : MapManager.CreateMap(lowLayer));
+        var topIndex = MapManager.GetIndex(MapManager.IsCreated(mapIndex1) ? MapManager.GetMap(mapIndex1) : MapManager.CreateNullMap(topLayer));
+        var lowIndex = MapManager.GetIndex(MapManager.IsCreated(mapIndex2) ? MapManager.GetMap(mapIndex2) : MapManager.CreateNullMap(lowLayer));
 
         var top = new WarpPoint(topPos, topIndex);
         var low = new WarpPoint(lowPos, lowIndex);

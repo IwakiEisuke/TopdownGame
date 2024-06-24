@@ -15,9 +15,10 @@ public class EntityData : ScriptableObject
     public DropItemSetting[] drops;
     public AIBase AI;
 
-    public GameObject CreateEntityInstance(Vector3 pos)
+    public GameObject CreateEntityInstance(Vector3 pos, GameObject parent)
     {
         var obj = Instantiate(entityBase, pos, Quaternion.identity);
+        obj.transform.parent = parent.transform;
         obj.GetComponent<SpriteRenderer>().sprite = sprite;
         obj.GetComponent<EntityController>().entityData = this;
         return obj;

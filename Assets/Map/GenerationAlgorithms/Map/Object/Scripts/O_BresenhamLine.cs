@@ -32,10 +32,7 @@ public class O_BresenhamLine : ObjectGenerationAlgorithm
                 var random = Random.Range(0, count);
                 if (!vertices[random].AlreadySet)
                 {
-                    Debug.Log("before : " + vertices[random].Pos);
                     vertices[random].Set(currentMapStairsPos[1]);
-                    Debug.Log("after : " + vertices[random].Pos);
-                    Debug.Log("階段に道路頂点が生成されました");
                     break;
                 }
             }
@@ -55,7 +52,6 @@ public class O_BresenhamLine : ObjectGenerationAlgorithm
                     vertices[i].Set(pos);
                 }
             }
-            Debug.Log("vertex : " + vertices[i].Pos);
         }
 
         //ドロネー三角形分割でグラフを生成した後、最小全域木から通路を生成

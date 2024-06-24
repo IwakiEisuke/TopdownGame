@@ -43,11 +43,6 @@ public class MinimumSpanningTree
             }
         }
 
-        foreach (var path in selectedPaths)
-        {
-            Debug.Log(path.start.Pos + " | " + path.end.Pos + " ||" + path.dist);
-        }
-
         foreach (var v in vertices)
         {
             Debug.DrawLine(v.Pos + Vector2.left, v.Pos + Vector2.up, Color.red, 2);

@@ -9,7 +9,9 @@ public abstract class EntityGenerationAlgorithm : ScriptableObject
 {
     public GameObject controller;
     public SpawnData[] _spawnDatas;
-    public abstract GameObject SpawnEntity(MapEnvironment env);
+
+    public abstract GameObject SpawnEntity(MapEnvironment env, Tilemap groundmap, Tilemap objectmap);
+
     public bool[] CalcProbabilityOnSpawn()
     {
         bool[] canSpawn = new bool[_spawnDatas.Length];
@@ -23,7 +25,14 @@ public abstract class EntityGenerationAlgorithm : ScriptableObject
         return canSpawn;
     }
 
-    public List<GameObject> CreateEntity(Func<Vector3> pos)
+    /// <summary>
+    /// spawnCountフィールドの回数Entityをスポーンします。
+    /// </summary>
+    /// <remarks>pos関数を生成時に毎回評価し、その戻り値を生成位置にします。</remarks>
+    /// <param name="pos"></param>
+    /// <param name="parent"></param>
+    /// <returns></returns>
+    public List<GameObject> CreateEntity(Func<Vector3> pos, GameObject parent)
     {
         var obj = new List<GameObject>();
         foreach (var spawnData in _spawnDatas)
@@ -36,7 +45,7 @@ public abstract class EntityGenerationAlgorithm : ScriptableObject
                     {
                         for (int j = 0; j < spawnEntityData._entityCount; j++)
                         {
-                            obj.Add(spawnEntityData._entityData.CreateEntityInstance(pos()));
+                            obj.Add(spawnEntityData._entityData.CreateEntityInstance(pos(), parent));
                         }
                     }
                 }
@@ -44,6 +53,13 @@ public abstract class EntityGenerationAlgorithm : ScriptableObject
         }
 
         return obj;
+    }
+
+    public GameObject CreateParentObj()
+    {
+        var parentObject = new GameObject();
+        SetParentOnGrid(parentObject);
+        return parentObject;
     }
 
     public void SetParentOnGrid(GameObject gameObject)

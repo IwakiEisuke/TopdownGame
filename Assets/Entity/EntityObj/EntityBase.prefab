@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4297336250014333848}
   - component: {fileID: 615245210530003040}
   - component: {fileID: 5935316384179581484}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EntityBase
   m_TagString: Entity
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 384
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -200,4 +200,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4

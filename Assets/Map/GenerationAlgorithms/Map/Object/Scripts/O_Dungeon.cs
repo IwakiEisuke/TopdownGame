@@ -12,8 +12,6 @@ public class O_Dungeon : ObjectGenerationAlgorithm
 
     public override Tilemap Algorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
     {
-        var debug_timer = Time.realtimeSinceStartup;
-        Debug.Log("地点A:" + (Time.realtimeSinceStartup - debug_timer));
         var map = refmap;
         var currentMapStairsPos = MapManager.GetCurStairsPos(mapIndex); //生成するマップにある階段を取得
         //生成する通路の頂点（曲がり角の数）
@@ -35,10 +33,7 @@ public class O_Dungeon : ObjectGenerationAlgorithm
                 var random = Random.Range(0, count);
                 if (!vertices[random].AlreadySet)
                 {
-                    Debug.Log("before : " + vertices[random].Pos);
                     vertices[random].Set(currentMapStairsPos[1]);
-                    Debug.Log("after : " + vertices[random].Pos);
-                    Debug.Log("階段に道路頂点が生成されました");
                     break;
                 }
             }
@@ -46,14 +41,8 @@ public class O_Dungeon : ObjectGenerationAlgorithm
 
         //頂点を生成する範囲の決定のためにマップ範囲を取得
         var mapbounds = env._mapAlgo._mapBounds;
-
         var shrinkedBounds = (Vector2)mapbounds * 0.8f;
-
         var s = shrinkedBounds * 2 / step;
-
-
-        Debug.Log("地点B:" + (Time.realtimeSinceStartup - debug_timer));
-        debug_timer = Time.realtimeSinceStartup;
 
         int rx = 0;
         int ry = 0;
@@ -101,17 +90,10 @@ public class O_Dungeon : ObjectGenerationAlgorithm
                     }
                 }
             }
-            Debug.Log("vertex : " + vertices[i].Pos);
         }
-
-        Debug.Log("地点C:" + (Time.realtimeSinceStartup - debug_timer));
-        debug_timer = Time.realtimeSinceStartup;
 
         //ドロネー三角形分割でグラフを生成した後、最小全域木から通路を生成
         var paths = MinimumSpanningTree.CreateTree(vertices);
-
-        Debug.Log("地点D:" + (Time.realtimeSinceStartup - debug_timer));
-        debug_timer = Time.realtimeSinceStartup;
 
         //マップ全体を壁にする
         map.Fill(mapbounds, _tileSettings[0]._tile);
@@ -126,9 +108,6 @@ public class O_Dungeon : ObjectGenerationAlgorithm
                 map.SetTileNullInLine(lineWidth, pos);
             }
         }
-
-        Debug.Log("地点E:" + (Time.realtimeSinceStartup - debug_timer));
-        debug_timer = Time.realtimeSinceStartup;
 
         refmap = map;
         return refmap;

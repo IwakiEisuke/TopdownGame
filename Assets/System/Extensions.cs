@@ -7,6 +7,16 @@ using static UnityEditor.PlayerSettings;
 
 public static class Extensions
 {
+    public static List<GameObject> Times(this int count, Func<GameObject> action)
+    {
+        List<GameObject> obj = new List<GameObject>();
+        for (int i = 0; i < count; i++)
+        {
+            obj.Add(action());
+        }
+        return obj;
+    }
+
     public static void SelectTile(this Tilemap map, Vector2Int mapBounds, Action<Vector3Int> tileProcess)
     {
         for (int x = -mapBounds.x; x < mapBounds.x; x++)

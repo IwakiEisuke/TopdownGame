@@ -15,7 +15,7 @@ MonoBehaviour:
   _environmentName: Cave
   _mapAlgo: {fileID: 11400000, guid: 8c840a11a925e724499a5eec3ce81993, type: 2}
   _objectAlgo: {fileID: 11400000, guid: 17071c4a8da7f184ebd7b5b051498275, type: 2}
-  _entityAlgo: {fileID: 11400000, guid: 2785069e24e58e9408cab92524e84e24, type: 2}
+  _entityAlgo: {fileID: 11400000, guid: f185f2ff05b8b22419021b4284025a0d, type: 2}
   _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}
   _maxFloor: 5
   _appearSettings:
