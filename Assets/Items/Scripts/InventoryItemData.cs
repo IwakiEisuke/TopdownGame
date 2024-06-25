@@ -12,7 +12,6 @@ public class InventoryItemData : ScriptableObject
     [HideInInspector] new public string name;
     public Sprite sprite;
     public TileBase[] itemTiles;
-    public TileBase replaceTile;
     public bool isThrowable;
     public Recipe[] recipes;
     public TransformRecipe[] recipesTransform;

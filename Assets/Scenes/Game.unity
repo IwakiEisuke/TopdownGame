@@ -2931,7 +2931,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630841714}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2038685636}
+        m_TargetAssemblyTypeName: InteractUnderfootTile, Assembly-CSharp
+        m_MethodName: PlaceTile
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: bfb4f3ce2941c9a4797c59d4b9defe1e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: TileObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1630841714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3449,7 +3461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98581f350afa33d44a454437a8cf27a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHaveItems: 0a0000000a0000000a000000640000000100000005000000
+  initHaveItems: 64000000640000000a000000640000000100000005000000
   InventorySlotUI: {fileID: 461001434}
   items:
   - {fileID: 11400000, guid: 8a9873fa22f846a4e85178fff87ec146, type: 2}

@@ -50,44 +50,6 @@ public class MapManager : MonoBehaviour
         Maps.Add(map);
     }
 
-    /*
-    static Tilemap SetGroundMap(Tilemap groundmap)
-    {
-        if (_currentMapData != null)
-        {
-            _currentGroundMap.gameObject.SetActive(false);
-        }
-
-        _currentGroundMap = groundmap;
-        _currentGroundMap.gameObject.SetActive(true);
-        return _currentGroundMap;
-    }
-
-    static Tilemap SetObjectMap(Tilemap objectmap)
-    {
-        if (_currentMapData != null)
-        {
-            _currentObjectMap.gameObject.SetActive(false);
-        }
-
-        _currentObjectMap = objectmap;
-        _currentObjectMap.gameObject.SetActive(true);
-        return _currentObjectMap;
-    }
-
-    static GameObject SetObjectsParent(GameObject objectsParent)
-    {
-        if (_currentMapData != null)
-        {
-            _currentObjectsParent.gameObject.SetActive(false);
-        }
-
-        _currentObjectsParent = objectsParent;
-        _currentObjectsParent.SetActive(true);
-        return _currentObjectsParent;
-    }
-    */
-
     public static void SetCurrentMap(MapData map)
     {
         //ゲーム開始時には設定先のオブジェクトが存在しないためnullチェックする

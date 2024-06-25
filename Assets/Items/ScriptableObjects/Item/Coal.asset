@@ -15,13 +15,17 @@ MonoBehaviour:
   ID: 2
   amount: 10
   name: Coal
-  sprite: {fileID: 0}
+  sprite: {fileID: 2100143840, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: d3d9106cc9d273941b58319812bec42a, type: 2}
-  replaceTile: {fileID: 11400000, guid: ab0d61ff61595ce48a76bd2e1e90f39a, type: 2}
   isThrowable: 0
   recipes: []
   recipesTransform: []
   status:
-    mass: 0
     atk: 0
+    mass: 0
+    power: 10
+    torque: 1
+    linearDrag: 3
+    angularDrag: 3
+  light: {fileID: 0}

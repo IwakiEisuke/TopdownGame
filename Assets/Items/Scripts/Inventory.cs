@@ -55,7 +55,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public static void AddItemFromID(int ID)
+    public static void AddItem(int ID)
     {
         foreach (var item in Items)
         {
@@ -66,16 +66,37 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public static void AddItem(InventoryItemData itemData)
+    {
+        foreach (var item in Items)
+        {
+            if (item == itemData)
+            {
+                item.amount++;
+            }
+        }
+    }
+
+    public static void AddSelectedItem()
+    {
+        AddItem(ItemUseController.selectedItem);
+    }
+
     public static InventoryItemData GetInventoryItem(int ID)
     {
         return Items[ID];
+    }
+
+    public static InventoryItemData GetSelectedItem()
+    {
+        return GetInventoryItem(ItemUseController.selectedItem);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(Tag.EntityDropItem))
         {
-            AddItemFromID(collision.GetComponent<ItemController>().ID);
+            AddItem(collision.GetComponent<ItemController>().ID);
             Destroy(collision.gameObject);
         }
 

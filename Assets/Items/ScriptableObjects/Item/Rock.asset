@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   ID: 0
-  amount: 9
+  amount: 8
   name: Rock
-  sprite: {fileID: 21300000, guid: 70ffe58e76f7dc3478467dde8fc460fd, type: 3}
+  sprite: {fileID: 974909178, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: 145165fecd91a0c41bedea7da439c9e6, type: 2}
-  replaceTile: {fileID: 11400000, guid: 05e4f0b1b34f88946a31b16d1d8a1d35, type: 2}
   isThrowable: 1
   recipes: []
   recipesTransform: []

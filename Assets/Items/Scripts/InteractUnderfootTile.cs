@@ -28,7 +28,7 @@ public class InteractUnderfootTile : MonoBehaviour
                 }
             }
 
-            var selecteditem = Inventory.GetInventoryItem(ItemUseController.selectedItem);
+            var selecteditem = Inventory.GetSelectedItem();
 
             foreach (var recipe in selecteditem.recipesTransform)
             {
@@ -38,7 +38,7 @@ public class InteractUnderfootTile : MonoBehaviour
                     {
                         if (underfootTile == equipment && requireEq == equipment)
                         {
-                            CreateInventoryItem.CreateItem(RecipeType.Equipment, 0);
+                            CreateFromRecipe.CreateSelectedItem(RecipeType.Transform, 0);
                             Debug.Log("can create transformRecipe");
                         }
                     }
@@ -46,11 +46,9 @@ public class InteractUnderfootTile : MonoBehaviour
             }
 
 
-
+            //足元の階段を判定
             foreach (var mapSet in StairsCreator.CreatedMapSets)
             {
-                //CreateMapでStairを生成しているとエラーが起きる。処理を切り離すもしくは非推奨だがforループにする
-                //そもそもこのタイミングでStair生成しなくてよかったので生成個所を消して解決しました
                 foreach (var stair in mapSet.stairs)
                 {
                     foreach (var point in stair.points)
@@ -153,6 +151,15 @@ public class InteractUnderfootTile : MonoBehaviour
         if (underfootTile == null)
         {
             objectMap.SetTile(targetPos, placeTile);
+        }
+    }
+
+    public void PlaceTile(TileObject tileObj)
+    {
+        var pos = Vector3Int.FloorToInt(transform.position);
+        if(MapManager._currentObjectMap.GetTile(pos) == null)
+        {
+            CreateFromRecipe.CreateTile(pos, tileObj);
         }
     }
 }

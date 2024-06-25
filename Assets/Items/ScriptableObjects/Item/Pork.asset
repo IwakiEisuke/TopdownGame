@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Pork
   m_EditorClassIdentifier: 
   ID: 4
-  amount: 0
+  amount: 4
   name: Pork
-  sprite: {fileID: 21300000, guid: 07eea574a1387a549ab2e8027dc9818d, type: 3}
+  sprite: {fileID: -1472043193, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   itemTiles: []
-  replaceTile: {fileID: 0}
   isThrowable: 0
   recipes: []
   recipesTransform: []
