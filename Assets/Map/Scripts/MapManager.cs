@@ -36,7 +36,7 @@ public class MapManager : MonoBehaviour
         {
             Instance = this;
         }
-        DontDestroyOnLoad(Instance);
+        //DontDestroyOnLoad(Instance);
     }
 
     public void StartProcess()
