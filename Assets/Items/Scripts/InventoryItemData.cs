@@ -11,6 +11,7 @@ public class InventoryItemData : ScriptableObject
     [HideInInspector] public int ID, amount;
     [HideInInspector] new public string name;
     public Sprite sprite;
+    public Sprite UISprite;
     public TileBase[] itemTiles;
     public bool isThrowable;
     public Recipe[] recipes;
@@ -61,6 +62,12 @@ public class TransformRecipe : Recipe
 [Serializable]
 public class ConsumeItemSetting
 {
+    /// <summary>
+    /// 要求アイテム
+    /// </summary>
     public InventoryItemData item;
+    /// <summary>
+    /// 要求数
+    /// </summary>
     public int amount;
 }

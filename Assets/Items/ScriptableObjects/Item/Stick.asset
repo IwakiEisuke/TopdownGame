@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Stick
   m_EditorClassIdentifier: 
   ID: 1
-  amount: 8
+  amount: 100
   name: Stick
   sprite: {fileID: 1398262134, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
+  UISprite: {fileID: -1895089910, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: 35f15e41735aa1e41bd44553244b4d2c, type: 2}
   isThrowable: 1

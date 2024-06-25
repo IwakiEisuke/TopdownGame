@@ -16,6 +16,7 @@ MonoBehaviour:
   amount: 5
   name: GrilledPork
   sprite: {fileID: -1665511646, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
+  UISprite: {fileID: 1156323536, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
   isThrowable: 0
   recipes: []

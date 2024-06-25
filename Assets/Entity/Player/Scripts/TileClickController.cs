@@ -43,14 +43,14 @@ public class TileClickController : MonoBehaviour
                     {
                         ActiveTileObject = tile;
                         clickedPos = targetCellPos;
-                        tile.ClickEvent.Open(this, targetCellPos, tile.UI);
+                        tile.ClickEvent.Open(this, targetCellPos + Vector3Int.right, tile.UI);
                     }
                 }
             }
         }
         else if (ActiveTileObject)
         {
-            ActiveTileObject.ClickEvent.UpdateUI(clickedPos);
+            ActiveTileObject.ClickEvent.UpdateUI(clickedPos + Vector3Int.right);
         }
     }
 

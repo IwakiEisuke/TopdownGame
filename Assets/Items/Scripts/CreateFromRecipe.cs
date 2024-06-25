@@ -22,14 +22,14 @@ public class CreateFromRecipe : MonoBehaviour
         var selectedItem = Inventory.GetSelectedItem();
 
         var recipe = SelectRecipe(selectedItem, recipeType, recipeID);
-        CreateItem(recipe, () => Inventory.AddSelectedItem());
+        RecipeProcess(recipe, () => Inventory.AddSelectedItem());
     }
 
     public static void CreateTile(Vector3Int pos, TileObject obj)
     {
         var recipe = obj.Recipe;
         var tile = obj.Tile;
-        CreateItem(recipe, () => MapManager._currentObjectMap.SetTile(pos, tile));
+        RecipeProcess(recipe, () => MapManager._currentObjectMap.SetTile(pos, tile));
     }
 
     private static Recipe SelectRecipe(InventoryItemData item, RecipeType recipeType, int recipeID)
@@ -45,7 +45,12 @@ public class CreateFromRecipe : MonoBehaviour
         }
     }
 
-    private static void CreateItem(Recipe recipe, Action act)
+    /// <summary>
+    /// 要求されたアイテムを持っているかチェックした後消費し、actを実行します
+    /// </summary>
+    /// <param name="recipe"></param>
+    /// <param name="act"></param>
+    public static void RecipeProcess(Recipe recipe, Action act)
     {
         if (IsCreatable(recipe))
         {

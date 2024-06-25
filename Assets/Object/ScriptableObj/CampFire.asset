@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: CampFire
   m_EditorClassIdentifier: 
   tile: {fileID: 11400000, guid: 6bbe56a31eec76442a8da7564eb527db, type: 2}
+  tileUISprite: {fileID: -601945617, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   recipe:
     requireItems:
     - item: {fileID: 11400000, guid: 8a9873fa22f846a4e85178fff87ec146, type: 2}
@@ -20,4 +21,4 @@ MonoBehaviour:
     - item: {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}
       amount: 4
   clickEvent: {fileID: 11400000, guid: 214424887efeb3041adf2f32c3f5ee11, type: 2}
-  ui: {fileID: 6896107876522627602, guid: 5f0c0e00e45f4dc448482937522a5bb3, type: 3}
+  ui: {fileID: 5873672062127136683, guid: d3dd7fa2431623b4eb425b7bec35bb90, type: 3}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Object/TileOnClickEvent")]
@@ -8,17 +9,21 @@ public class TileOnClickEvent : ScriptableObject
 {
     GameObject uiInstance;
 
-    public void Open(TileClickController obj, Vector3Int pos, GameObject UIPref)
+    public void Open(TileClickController obj, Vector3Int cellPos, GameObject UIPref)
     {
-        Debug.Log(pos);
+        Debug.Log(cellPos);
         uiInstance = obj.CreateUI(UIPref);
-        uiInstance.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(pos);
-        UpdateUI(pos);
+        uiInstance.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(cellPos);
+        var creator = uiInstance.GetComponentInChildren<RecipeUICreator>();
+
+            creator.items = Inventory.Items;
+        
+        
     }
 
-    public void UpdateUI(Vector3Int pos)
+    public void UpdateUI(Vector3Int cellPos)
     {
-        uiInstance.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(pos);
+        uiInstance.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(cellPos);
     }
 
     public void Close(TileClickController obj)

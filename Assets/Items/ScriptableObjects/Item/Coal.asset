@@ -16,6 +16,7 @@ MonoBehaviour:
   amount: 10
   name: Coal
   sprite: {fileID: 2100143840, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
+  UISprite: {fileID: 103672493, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: d3d9106cc9d273941b58319812bec42a, type: 2}
   isThrowable: 0
