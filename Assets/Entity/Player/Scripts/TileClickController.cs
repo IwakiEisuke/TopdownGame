@@ -54,6 +54,11 @@ public class TileClickController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Canvas‚ğì¬‚µA‚»‚Ìq‚Æ‚µ‚Äui‚ğì¬‚·‚é
+    /// </summary>
+    /// <param name="ui"></param>
+    /// <returns></returns>
     public GameObject CreateUI(GameObject ui)
     {
         //‚±‚ÌUIê—p‚ÌCanvas‚ğì¬‚·‚é

@@ -5,20 +5,15 @@ using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Object/TileOnClickEvent")]
-public class TileOnClickEvent : ScriptableObject
+public abstract class TileOnClickEvent : ScriptableObject
 {
-    GameObject uiInstance;
+    protected GameObject uiInstance;
 
+    public abstract void OpenEx();
     public void Open(TileClickController obj, Vector3Int cellPos, GameObject UIPref)
     {
-        Debug.Log(cellPos);
-        uiInstance = obj.CreateUI(UIPref);
-        uiInstance.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(cellPos);
-        var creator = uiInstance.GetComponentInChildren<RecipeUICreator>();
-
-            creator.items = Inventory.Items;
-        
-        
+        SetupUI(obj, cellPos, UIPref);
+        OpenEx();
     }
 
     public void UpdateUI(Vector3Int cellPos)
@@ -29,5 +24,11 @@ public class TileOnClickEvent : ScriptableObject
     public void Close(TileClickController obj)
     {
         obj.DestroyUI(uiInstance);
+    }
+
+    public void SetupUI(TileClickController obj, Vector3Int cellPos, GameObject UIPref)
+    {
+        uiInstance = obj.CreateUI(UIPref);
+        uiInstance.GetComponent<RectTransform>().position = Camera.main.WorldToScreenPoint(cellPos);
     }
 }

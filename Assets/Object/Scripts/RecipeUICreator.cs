@@ -6,11 +6,9 @@ using UnityEngine;
 /// </summary>
 public class RecipeUICreator : MonoBehaviour
 {
-    public List<InventoryItemData> items = new();
-    public List<TileObject> tileObjects = new();
     [SerializeField] GameObject recipeUI;
-    // Start is called before the first frame update
-    void Start()
+
+    public void CreateItemUI(List<InventoryItemData> items)
     {
         foreach (var item in items)
         {
@@ -21,7 +19,23 @@ public class RecipeUICreator : MonoBehaviour
                 manager.CreateItemRecipeUI(item, i);
             }
         }
+    }
 
+    public void CreateTransformUI(List<InventoryItemData> items)
+    {
+        foreach (var item in items)
+        {
+            for (int i = 0; i < item.recipesTransform.Length; i++)
+            {
+                var ui = Instantiate(recipeUI, gameObject.transform);
+                var manager = ui.GetComponent<RecipeUIManager>();
+                manager.CreateTransformRecipeUI(item, i);
+            }
+        }
+    }
+
+    public void CreateTileUI(List<TileObject> tileObjects)
+    {
         foreach (var tile in tileObjects)
         {
             var ui = Instantiate(recipeUI, gameObject.transform);

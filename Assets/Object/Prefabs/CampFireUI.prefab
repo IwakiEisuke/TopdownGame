@@ -75,8 +75,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ff50967d418d04281662477a017e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  tileObjects: []
   recipeUI: {fileID: 2647935324637018440, guid: ddd2ae9bd2e77fe4da57c083edf1a586, type: 3}
 --- !u!1 &5300429731540108903
 GameObject:
@@ -228,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.64716977, b: 0.64716977, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
