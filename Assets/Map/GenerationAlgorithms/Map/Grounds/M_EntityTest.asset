@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: M_EntityTest
   m_EditorClassIdentifier: 
   _tileSettings:
-  - _tile: {fileID: 11400000, guid: a406db9da7e8b5e49b7af3c9a7dc2785, type: 2}
+  - _tile: {fileID: 11400000, guid: 0cd4635f712ae9c4f8dab5fb940807c3, type: 2}
     _weight: 1
   _mapBounds: {x: 10, y: 10}

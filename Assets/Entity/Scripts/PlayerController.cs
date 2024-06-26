@@ -1,13 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -45,9 +38,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Move();
+        if (rb != null)
+        {
+            Move();
+        }
         StatusEffect();
-        UpdateText();
+        if (statusUI != null)
+        {
+            UpdateText();
+        }
     }
 
     private void UpdateText()
@@ -57,7 +56,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
         var direction = new Vector2(horizontal, vertical);
@@ -80,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
     public static void Damage(float damage)
     {
-        Status.hp -= (int)Math.Clamp(damage - Status.bonusDef,0 ,9999);
+        Status.hp -= (int)Math.Clamp(damage - Status.bonusDef, 0, 9999);
     }
 
     private void StatusEffect()

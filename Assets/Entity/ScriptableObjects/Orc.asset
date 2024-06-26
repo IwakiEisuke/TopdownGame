@@ -24,4 +24,4 @@ MonoBehaviour:
   - dropItem: {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}
     amount: 0
     addFluctuation: 5
-  stateMachine: {fileID: 11500000, guid: b6c46ae69e12ec842a7a212e175f65cb, type: 3}
+  stateMachine: {fileID: 11500000, guid: 50e4c2134def57a4d807557718a09104, type: 3}
