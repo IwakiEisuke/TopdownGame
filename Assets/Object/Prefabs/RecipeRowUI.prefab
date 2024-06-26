@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8126840436515186461}
   - component: {fileID: 7603733605425485590}
   m_Layer: 5
-  m_Name: RecipeText
+  m_Name: RecipeRowUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,10 +67,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size=50><sprite name=bg_0> Camp Fire
+  m_text: '<size=50><sprite=0> Test
 
-    <size=36><sprite=0> x4  <sprite=1>
-    x4'
+    <size=36><sprite=0> x0  <sprite=0> x0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -153,8 +152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 8126840436515186461}
   button: {fileID: 4700959166991509792}
-  to: {fileID: 0}
-  recipeIndex: 0
 --- !u!1 &3988348236201429512
 GameObject:
   m_ObjectHideFlags: 0

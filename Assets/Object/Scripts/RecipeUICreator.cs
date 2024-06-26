@@ -1,12 +1,14 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 /// <summary>
 /// レシピUIをレシピから作成するクラス
 /// </summary>
 public class RecipeUICreator : MonoBehaviour
 {
-    [SerializeField] GameObject recipeUI;
+    [SerializeField] GameObject recipeRowUI;
 
     public void CreateItemUI(List<InventoryItemData> items)
     {
@@ -14,22 +16,26 @@ public class RecipeUICreator : MonoBehaviour
         {
             for (int i = 0; i < item.recipes.Length; i++)
             {
-                var ui = Instantiate(recipeUI, gameObject.transform);
-                var manager = ui.GetComponent<RecipeUIManager>();
+                var row = Instantiate(recipeRowUI, gameObject.transform);
+                var manager = row.GetComponent<RecipeUIManager>();
                 manager.CreateItemRecipeUI(item, i);
             }
         }
     }
 
-    public void CreateTransformUI(List<InventoryItemData> items)
+    public void CreateTransformUI(TileBase equipment)
     {
+        var items = Inventory.Items;
         foreach (var item in items)
         {
             for (int i = 0; i < item.recipesTransform.Length; i++)
             {
-                var ui = Instantiate(recipeUI, gameObject.transform);
-                var manager = ui.GetComponent<RecipeUIManager>();
-                manager.CreateTransformRecipeUI(item, i);
+                if (item.recipesTransform[i].equipments.Contains(equipment))
+                {
+                    var row = Instantiate(recipeRowUI, gameObject.transform);
+                    var manager = row.GetComponent<RecipeUIManager>();
+                    manager.CreateTransformRecipeUI(item, i);
+                }
             }
         }
     }
@@ -38,8 +44,8 @@ public class RecipeUICreator : MonoBehaviour
     {
         foreach (var tile in tileObjects)
         {
-            var ui = Instantiate(recipeUI, gameObject.transform);
-            var manager = ui.GetComponent<RecipeUIManager>();
+            var row = Instantiate(recipeRowUI, gameObject.transform);
+            var manager = row.GetComponent<RecipeUIManager>();
             manager.CreateTileRecipeUI(tile);
         }
     }

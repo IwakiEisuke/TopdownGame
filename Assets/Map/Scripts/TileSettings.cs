@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "TileSettings")]
 public class TileSettings : ScriptableObject
 {
-    public TileBase[] grounds;
-    public TileBase[] equipments;
+    [SerializeField] TileBase[] grounds;
+    [SerializeField] TileObject[] equipments;
+    public TileBase[] Grounds {  get { return grounds; } }
+    public TileObject[] Equipments { get { return equipments; } }
 }

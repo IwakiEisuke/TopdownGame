@@ -40,6 +40,18 @@ public class ItemUseController : MonoBehaviour
                 break;
             }
         }
+
+        if (Input.mouseScrollDelta.y > 0)
+        {
+            selectedItem--;
+        }
+        if(Input.mouseScrollDelta.y < 0)
+        {
+            selectedItem++;
+        }
+
+        selectedItem = (selectedItem + Inventory.Items.Count) % Inventory.Items.Count;
+
     }
 
     private void Throw(InventoryItemData itemData)

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TileClickController : MonoBehaviour
 {
-    [SerializeField] TileObject[] tileObjects;
+    [SerializeField] TileSettings tileSettings;
     [SerializeField] GameObject canvasUI;
     TileObject ActiveTileObject;
 
@@ -37,13 +37,13 @@ public class TileClickController : MonoBehaviour
             else
             {
                 //指定のタイルをクリックした場合イベントを実行
-                foreach (var tile in tileObjects)
+                foreach (var tile in tileSettings.Equipments)
                 {
                     if (map.GetTile(targetCellPos) == tile.Tile)
                     {
                         ActiveTileObject = tile;
                         clickedPos = targetCellPos;
-                        tile.ClickEvent.Open(this, targetCellPos + Vector3Int.right, tile.UI);
+                        tile.ClickEvent.Open(this, targetCellPos + Vector3Int.right, tile.UI, tile);
                     }
                 }
             }

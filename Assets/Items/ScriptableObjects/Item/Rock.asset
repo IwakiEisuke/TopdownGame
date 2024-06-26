@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Rock
   m_EditorClassIdentifier: 
   ID: 0
-  amount: 8
-  name: Rock
+  amount: 100
   sprite: {fileID: 974909178, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
-  UISprite: {fileID: -1332307924, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
+  UISprite: {fileID: -553857254, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: 145165fecd91a0c41bedea7da439c9e6, type: 2}
   isThrowable: 1

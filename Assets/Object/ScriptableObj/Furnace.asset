@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6421017bd5fade043a44f4a043808786, type: 3}
-  m_Name: CampFire
+  m_Name: Furnace
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: 6bbe56a31eec76442a8da7564eb527db, type: 2}
-  tileUISprite: {fileID: 1020519531, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
+  tile: {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
+  tileUISprite: {fileID: 467128516, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   recipe:
     requireItems:
     - item: {fileID: 11400000, guid: 8a9873fa22f846a4e85178fff87ec146, type: 2}
-      amount: 4
-    - item: {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}
+      amount: 8
+    - item: {fileID: 11400000, guid: 5880eb587f7582e4d85fb186c11049c2, type: 2}
       amount: 4
   clickEvent: {fileID: 11400000, guid: d148416405879244580fd0e0def574dc, type: 2}
-  _UI: {fileID: 5873672062127136683, guid: d3dd7fa2431623b4eb425b7bec35bb90, type: 3}
+  _UI: {fileID: 5873672062127136683, guid: 43a4faa1a236c28469706d1bfb7204d5, type: 3}

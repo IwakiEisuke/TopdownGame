@@ -32,9 +32,9 @@ public class InteractUnderfootTile : MonoBehaviour
 
             foreach (var recipe in selecteditem.recipesTransform)
             {
-                foreach (var requireEq in recipe.equipment)
+                foreach (var requireEq in recipe.equipments)
                 {
-                    foreach (var equipment in Settings.TileSettings.equipments)
+                    foreach (var equipment in Settings.TileSettings.Equipments)
                     {
                         if (underfootTile == equipment && requireEq == equipment)
                         {

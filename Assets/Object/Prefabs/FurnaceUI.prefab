@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 2402849532434998636}
   - component: {fileID: 538259208763152335}
   m_Layer: 5
-  m_Name: CampFireUI
+  m_Name: FurnaceUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.64716977, b: 0.64716977, a: 1}
+  m_Color: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -10,21 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3520c01c40f6de4498d4bab181cf72b5, type: 3}
-  m_Name: GrilledPork
+  m_Name: IronSword
   m_EditorClassIdentifier: 
-  ID: 5
-  amount: 5
-  sprite: {fileID: -1665511646, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
-  UISprite: {fileID: -223017114, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
+  ID: 9
+  amount: 13
+  sprite: {fileID: 423749916, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
+  UISprite: {fileID: -115775497, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
   isThrowable: 0
   recipes: []
   recipesTransform:
   - requireItems:
-    - item: {fileID: 11400000, guid: ae2dc9192184b1d4f90b749079a32b4f, type: 2}
-      amount: 1
+    - item: {fileID: 11400000, guid: 2d1a05a0c242bd1478bbdc29b7a7fa94, type: 2}
+      amount: 6
+    - item: {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}
+      amount: 2
+    - item: {fileID: 11400000, guid: ae1bd9380775c744295989e479336c55, type: 2}
+      amount: 4
     equipments:
-    - {fileID: 11400000, guid: 6bbe56a31eec76442a8da7564eb527db, type: 2}
+    - {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
   status:
     atk: 0
     mass: 1

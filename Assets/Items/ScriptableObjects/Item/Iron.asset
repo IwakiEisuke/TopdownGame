@@ -10,21 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3520c01c40f6de4498d4bab181cf72b5, type: 3}
-  m_Name: GrilledPork
+  m_Name: Iron
   m_EditorClassIdentifier: 
-  ID: 5
-  amount: 5
-  sprite: {fileID: -1665511646, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
-  UISprite: {fileID: -223017114, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
+  ID: 6
+  amount: 83
+  sprite: {fileID: 1476535869, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
+  UISprite: {fileID: -2067546955, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
   isThrowable: 0
   recipes: []
-  recipesTransform:
-  - requireItems:
-    - item: {fileID: 11400000, guid: ae2dc9192184b1d4f90b749079a32b4f, type: 2}
-      amount: 1
-    equipments:
-    - {fileID: 11400000, guid: 6bbe56a31eec76442a8da7564eb527db, type: 2}
+  recipesTransform: []
   status:
     atk: 0
     mass: 1

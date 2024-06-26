@@ -6,10 +6,10 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
 
-    public int[] initHaveItems;
-    public TextMeshProUGUI InventorySlotUI;
+    [SerializeField] int[] initHaveItems;
+    [SerializeField] List<InventoryItemData> items = new List<InventoryItemData>();
+    [SerializeField] TextMeshProUGUI InventorySlotUI;
 
-    [SerializeField] private List<InventoryItemData> items = new List<InventoryItemData>();
     public static List<InventoryItemData> Items
     {
         get { return Instance.items; }
@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -50,7 +50,17 @@ public class Inventory : MonoBehaviour
         InventorySlotUI.text = "";
         foreach (var item in Items)
         {
-            InventorySlotUI.text += item.name + " : " + item.amount + "\n";
+            var select = "";
+            if (ItemUseController.selectedItem == index)
+            {
+                for(int i = 0; i <  4 - item.amount.ToString().Length; i++)
+                {
+                    select += " ";
+                }
+                select += "<";
+            }
+
+            InventorySlotUI.text += $"<sprite name={item.UISprite.name}> : {item.amount}{select}\n";
             index++;
         }
     }

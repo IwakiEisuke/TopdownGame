@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Pork
   m_EditorClassIdentifier: 
   ID: 4
-  amount: 4
-  name: Pork
+  amount: 1
   sprite: {fileID: -1472043193, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
-  UISprite: {fileID: -369836248, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
+  UISprite: {fileID: -769893171, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
   isThrowable: 0
   recipes: []

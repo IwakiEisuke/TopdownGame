@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d20bf47b2b2d78449b9862977209d7d, type: 3}
   m_Name: Click Camp Fire Event
   m_EditorClassIdentifier: 
+  tileObject: {fileID: 11400000, guid: bfb4f3ce2941c9a4797c59d4b9defe1e, type: 2}

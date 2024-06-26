@@ -10,10 +10,11 @@ public abstract class TileOnClickEvent : ScriptableObject
     protected GameObject uiInstance;
 
     public abstract void OpenEx();
-    public void Open(TileClickController obj, Vector3Int cellPos, GameObject UIPref)
+    public void Open(TileClickController obj, Vector3Int cellPos, GameObject UIPref, TileObject tile)
     {
         SetupUI(obj, cellPos, UIPref);
-        OpenEx();
+        var creator = uiInstance.GetComponentInChildren<RecipeUICreator>();
+        creator.CreateTransformUI(tile.Tile);
     }
 
     public void UpdateUI(Vector3Int cellPos)

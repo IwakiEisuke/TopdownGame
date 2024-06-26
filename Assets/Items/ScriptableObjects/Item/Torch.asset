@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Torch
   m_EditorClassIdentifier: 
   ID: 3
-  amount: 113
-  name: Torch
+  amount: 97
   sprite: {fileID: -1888618777, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
-  UISprite: {fileID: -1578886681, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
+  UISprite: {fileID: 1497199551, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
   isThrowable: 1
   recipes:

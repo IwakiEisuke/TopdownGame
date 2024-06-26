@@ -8,7 +8,6 @@ public class ClickCampFireEvent : TileOnClickEvent
 {
     public override void OpenEx()
     {
-        var creator = uiInstance.GetComponentInChildren<RecipeUICreator>();
-        creator.CreateTransformUI(Inventory.Items);
+        
     }
 }

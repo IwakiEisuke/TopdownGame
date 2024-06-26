@@ -9,7 +9,6 @@ using UnityEngine.Tilemaps;
 public class InventoryItemData : ScriptableObject
 {
     [HideInInspector] public int ID, amount;
-    [HideInInspector] new public string name;
     public Sprite sprite;
     public Sprite UISprite;
     public TileBase[] itemTiles;
@@ -56,7 +55,7 @@ public class Recipe : IEnumerable<ConsumeItemSetting>
 [Serializable]
 public class TransformRecipe : Recipe
 {
-    public TileBase[] equipment;
+    public TileBase[] equipments;
 }
 
 [Serializable]
