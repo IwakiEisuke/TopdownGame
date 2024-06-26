@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Object/New Item")]
@@ -55,7 +56,7 @@ public class Recipe : IEnumerable<ConsumeItemSetting>
 [Serializable]
 public class TransformRecipe : Recipe
 {
-    public TileBase[] equipments;
+    public TileBase[] requireFacilities;
 }
 
 [Serializable]

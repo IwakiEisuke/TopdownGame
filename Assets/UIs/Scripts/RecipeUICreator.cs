@@ -30,7 +30,7 @@ public class RecipeUICreator : MonoBehaviour
         {
             for (int i = 0; i < item.recipesTransform.Length; i++)
             {
-                if (item.recipesTransform[i].equipments.Contains(equipment))
+                if (item.recipesTransform[i].requireFacilities.Contains(equipment))
                 {
                     var row = Instantiate(recipeRowUI, gameObject.transform);
                     var manager = row.GetComponent<RecipeUIManager>();

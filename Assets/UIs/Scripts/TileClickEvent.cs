@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Object/TileOnClickEvent")]
-public abstract class TileOnClickEvent : ScriptableObject
+public abstract class TileClickEvent : ScriptableObject
 {
     protected GameObject uiInstance;
 

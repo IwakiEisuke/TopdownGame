@@ -27,7 +27,7 @@ MonoBehaviour:
       amount: 2
     - item: {fileID: 11400000, guid: ae1bd9380775c744295989e479336c55, type: 2}
       amount: 4
-    equipments:
+    requireFacilities:
     - {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
   status:
     atk: 0

@@ -11,11 +11,13 @@ public class InteractUnderfootTile : MonoBehaviour
             var objectMap = MapManager._currentObjectMap;
             var targetPos = Vector3Int.FloorToInt(transform.position);
             TileBase underfootTile = objectMap.GetTile(targetPos);
-            if (underfootTile != null)
-            {
-                Debug.Log(underfootTile.name + " : " + targetPos);
-            }
 
+            //if (underfootTile != null)
+            //{
+            //    Debug.Log(underfootTile.name + " : " + targetPos);
+            //}
+
+            //‘«Œ³‚ÌƒAƒCƒeƒ€‚ðŠl“¾
             foreach (var item in Inventory.Items)
             {
                 foreach (var tile in item.itemTiles)
@@ -27,24 +29,6 @@ public class InteractUnderfootTile : MonoBehaviour
                     }
                 }
             }
-
-            var selecteditem = Inventory.GetSelectedItem();
-
-            foreach (var recipe in selecteditem.recipesTransform)
-            {
-                foreach (var requireEq in recipe.equipments)
-                {
-                    foreach (var equipment in Settings.TileSettings.Equipments)
-                    {
-                        if (underfootTile == equipment && requireEq == equipment)
-                        {
-                            CreateFromRecipe.CreateSelectedItem(RecipeType.Transform, 0);
-                            Debug.Log("can create transformRecipe");
-                        }
-                    }
-                }
-            }
-
 
             //‘«Œ³‚ÌŠK’i‚ð”»’è
             foreach (var mapSet in StairsCreator.CreatedMapSets)
@@ -88,55 +72,10 @@ public class InteractUnderfootTile : MonoBehaviour
 
                                     transform.position = movePos + new Vector3(0.5f, 0.5f);
                                 }
-
                             }
                         }
                     }
                 }
-
-                /*
-                var debug = "";
-
-                var index = -1;
-                var isUp = false;
-
-
-                Action action = () =>
-                {
-                    var pos = new Vector3Int[] { stair.top.pos, stair.low.pos };
-                    if (targetPos == pos[0] || targetPos == pos[1])
-                    {
-                        if (MapManager.IsCreated(stair.top.map._index))
-                        {
-                            debug = "isCreated";
-                            MapManager.SetMap(stair.index);
-                        }
-                        else
-                        {
-                            debug = "noCreated";
-                            MapManager.CreateMap(stair);
-                        }
-
-                        debug += $" | pos:{stair.pos}, up:{stair.topLayer}, low:{stair.lowLayer}, index:{stair.index}";
-                        Debug.Log(debug);
-                    }
-                };
-
-
-                if (stair.topMapIndex == MapManager._currentMapData._index)
-                {
-                    index = stair.topMapIndex;
-                    isUp = true;
-                    action();
-                }
-                else if (stair.lowMapIndex == MapManager._currentMapData._index)
-                {
-                    index = stair.lowMapIndex;
-                    isUp = false;
-                    action();
-                }
-                */
-
             }
         }
     }
