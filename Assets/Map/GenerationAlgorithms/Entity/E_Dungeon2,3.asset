@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ad3025eba8066741b8a2cd094918ff3, type: 3}
-  m_Name: E_RandomPig
+  m_Name: E_Dungeon2,3
   m_EditorClassIdentifier: 
   controller: {fileID: 6420331526236845362, guid: 3f2abda5f7f2c5046b6475b899a3aae5, type: 3}
   _spawnDatas:
   - _spawnEntityDatas:
-    - _entityData: {fileID: 11400000, guid: bddbc6eaae579f6429c60e6a7564d1a3, type: 2}
+    - _entityData: {fileID: 11400000, guid: 9f36b6612764d1d4bb4d635ebc2d1879, type: 2}
+      _entityCount: 10
+    - _entityData: {fileID: 11400000, guid: 17ab5865ca3234a4c8fd74a881de879a, type: 2}
       _entityCount: 10
     _spawnCount: 1
     _spawnProbability: 1

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95235132e651a9d438a5c37dc6df3689, type: 3}
+  m_Name: New Environment Setting
+  m_EditorClassIdentifier: 
+  environmentSettings:
+  - layer: -1
+    _mapAlgo: {fileID: 11400000, guid: 8c840a11a925e724499a5eec3ce81993, type: 2}
+    _objectAlgo: {fileID: 11400000, guid: 17071c4a8da7f184ebd7b5b051498275, type: 2}
+    _entityAlgo: {fileID: 11400000, guid: 49628d49514a59b49b2f494ba0a377d9, type: 2}
+    _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}
+  - layer: -2
+    _mapAlgo: {fileID: 11400000, guid: 8c840a11a925e724499a5eec3ce81993, type: 2}
+    _objectAlgo: {fileID: 11400000, guid: ce1ba51cf46058944b6e1d6978e7fb6e, type: 2}
+    _entityAlgo: {fileID: 11400000, guid: 49628d49514a59b49b2f494ba0a377d9, type: 2}
+    _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}
+  - layer: -3
+    _mapAlgo: {fileID: 11400000, guid: 8c840a11a925e724499a5eec3ce81993, type: 2}
+    _objectAlgo: {fileID: 11400000, guid: ce1ba51cf46058944b6e1d6978e7fb6e, type: 2}
+    _entityAlgo: {fileID: 11400000, guid: 49628d49514a59b49b2f494ba0a377d9, type: 2}
+    _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}
+  - layer: -4
+    _mapAlgo: {fileID: 11400000, guid: 8c840a11a925e724499a5eec3ce81993, type: 2}
+    _objectAlgo: {fileID: 11400000, guid: b526ae6b348d0884395a36f811092f9c, type: 2}
+    _entityAlgo: {fileID: 11400000, guid: 4c8f3a08ef3f3234eb19b074fc0bdf99, type: 2}
+    _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}
+  - layer: -5
+    _mapAlgo: {fileID: 11400000, guid: 8c840a11a925e724499a5eec3ce81993, type: 2}
+    _objectAlgo: {fileID: 11400000, guid: b526ae6b348d0884395a36f811092f9c, type: 2}
+    _entityAlgo: {fileID: 11400000, guid: 4c8f3a08ef3f3234eb19b074fc0bdf99, type: 2}
+    _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}

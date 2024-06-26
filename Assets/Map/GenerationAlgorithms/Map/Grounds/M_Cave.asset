@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 716a1cb28871fce458b2484a35e84db8, type: 3}
-  m_Name: M_CoalCave
+  m_Name: M_Cave
   m_EditorClassIdentifier: 
   _tileSettings:
   - _tile: {fileID: 11400000, guid: 0cd4635f712ae9c4f8dab5fb940807c3, type: 2}

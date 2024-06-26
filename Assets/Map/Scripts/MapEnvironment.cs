@@ -9,11 +9,11 @@ using UnityEngine.Tilemaps;
 public class MapEnvironment : ScriptableObject
 {
     [Header("Environment Settings")]
-    public string _environmentName;
     public MapGenerationAlgorithm _mapAlgo;
     public ObjectGenerationAlgorithm _objectAlgo;
     public EntityGenerationAlgorithm _entityAlgo;
     public EnvGlobalLightSetting _envGlobalLightSetting;
+    public EnvironmentSetting _environmentSetting;
 
     [Header("Elevator Settings")]
     public int _maxFloor;

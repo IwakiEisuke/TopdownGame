@@ -16,7 +16,8 @@ public class O_IfFloorIs : ObjectGenerationAlgorithm
         {
             if(set.floor == MapManager.Maps[mapIndex]._layer)
             {
-                set.algo.GenerateWithAlgorithm(env, mapIndex, ref refmap);
+                var algo = set.algo as ObjectGenerationAlgorithm;
+                algo.GenerateWithAlgorithm(env, mapIndex, ref refmap);
             }
         }
         return refmap;
@@ -31,6 +32,6 @@ public class O_IfFloorIs : ObjectGenerationAlgorithm
 [Serializable]
 public class MapInFloor
 {
-    public ObjectGenerationAlgorithm algo;
+    public TileGenerationBase algo;
     public int floor;
 }
