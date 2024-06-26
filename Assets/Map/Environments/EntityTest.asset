@@ -15,7 +15,7 @@ MonoBehaviour:
   _environmentName: EntityTest
   _mapAlgo: {fileID: 11400000, guid: 86a9f7ead0e5ea54fbad705ffa7c09a4, type: 2}
   _objectAlgo: {fileID: 11400000, guid: f7d193af6bfafd24693220e01346cdfe, type: 2}
-  _entityAlgo: {fileID: 11400000, guid: f185f2ff05b8b22419021b4284025a0d, type: 2}
+  _entityAlgo: {fileID: 11400000, guid: 4c8f3a08ef3f3234eb19b074fc0bdf99, type: 2}
   _envGlobalLightSetting: {fileID: 0}
   _maxFloor: 0
   _appearSettings: []

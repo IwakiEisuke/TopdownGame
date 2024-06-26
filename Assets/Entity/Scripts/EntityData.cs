@@ -7,7 +7,6 @@ using UnityEngine;
 public class EntityData : ScriptableObject
 {
     public GameObject entityBase;
-    public new string name;
     public Sprite sprite;
     public float hp;
     public float atk;

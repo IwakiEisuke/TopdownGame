@@ -51,7 +51,7 @@ public class EntitySpawnManager : MonoBehaviour
         }
     }
 
-    void StartSpawnRoutine()
+    public void StartSpawnRoutine()
     {
         foreach (var setting in spawnSetting)
         {

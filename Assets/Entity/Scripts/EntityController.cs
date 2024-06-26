@@ -38,7 +38,7 @@ public class EntityController : MonoBehaviour
             {
                 foreach (var drop in entityData.drops)
                 {
-                    for (int i = 0; i < drop.amount + Random.Range(0, drop.fluctuation); i++)
+                    for (int i = 0; i < drop.amount + Random.Range(0, drop.addFluctuation + 1); i++)
                     {
                         ItemObject.CreateAndDrop(gameObject, drop.dropItem, 2, 0, Tag.EntityDropItem);
                     }

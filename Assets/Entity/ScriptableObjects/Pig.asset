@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Pig
   m_EditorClassIdentifier: 
   entityBase: {fileID: 6420331526236845362, guid: 3f2abda5f7f2c5046b6475b899a3aae5, type: 3}
-  name: Pig
   sprite: {fileID: 21300000, guid: 15629438d3739ea4b97766e51a7fbf68, type: 3}
   hp: 5
   atk: 1
@@ -21,5 +20,5 @@ MonoBehaviour:
   drops:
   - dropItem: {fileID: 11400000, guid: ae2dc9192184b1d4f90b749079a32b4f, type: 2}
     amount: 1
-    fluctuation: 2
+    addFluctuation: 1
   stateMachine: {fileID: 11500000, guid: 0b10b579dc7a80a4295133cf1a0b15ca, type: 3}
