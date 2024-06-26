@@ -219,8 +219,9 @@ public class MapManager : MonoBehaviour
 
     private static void PlaceStair(MapData mapData)
     {
-        SelectStair((pos, tile) =>
+        SelectStair(_currentMapData, (stair, index, tile) =>
         {
+            var pos = stair.points[index].pos;
             mapData._objectmap.SetTile(pos, tile);
             Debug.Log("set : " + pos + " " + tile);
             //_currentStairsPos.Add((Vector2Int)pos);
@@ -233,7 +234,11 @@ public class MapManager : MonoBehaviour
         PlaceStair(mapData);
     }
 
-    private static void SelectStair(Action<Vector3Int, TileBase> process)
+    /// <summary>
+    /// 現在マップに存在する階段を第一引数に、階段のタイルベースを第二引数にとるActionを各階段で実行します
+    /// </summary>
+    /// <param name="process"></param>
+    public static void SelectStair(MapData mapData, Action<StairData, int, TileBase> process)
     {
         foreach (var stairSet in StairsCreator.CreatedMapSets)
         {
@@ -241,9 +246,10 @@ public class MapManager : MonoBehaviour
             {
                 for (int i = 0; i < stair.points.Length; i++)
                 {
-                    if (GetMap(stair.points[i].mapIndex) == _currentMapData)
+                    var mapIndex = stair.points[i].mapIndex;
+                    if (GetMap(mapIndex) == mapData)
                     {
-                        process(stair.points[i].pos, stairSet.env.stairTile);
+                        process(stair, i, stairSet.env.stairTile);
                     }
                 }
             }

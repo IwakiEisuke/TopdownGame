@@ -3,6 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class InteractUnderfootTile : MonoBehaviour
 {
+    [SerializeField] GameObject entranceLight;
     // Update is called once per frame
     void Update()
     {
@@ -61,7 +62,7 @@ public class InteractUnderfootTile : MonoBehaviour
                                 //階段生成時に空マップを生成しているため階段の移動先であればマップは作成済み
                                 if (MapManager.IsCreated(index))
                                 {
-                                    if (MapManager.IsMapEmpty(index)) //空マップの場合
+                                    if (MapManager.IsMapEmpty(index)) //空マップの場合新規作成
                                     {
                                         MapManager.CreateAndSetMap(mapSet.env, index);
                                     }

@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileSettings:
   - _tile: {fileID: 11400000, guid: 145165fecd91a0c41bedea7da439c9e6, type: 2}
-    _weight: 3
+    _weight: 1
   - _tile: {fileID: 11400000, guid: 35f15e41735aa1e41bd44553244b4d2c, type: 2}
     _weight: 3
-  _mapBounds: {x: 0, y: 0}
-  count: 100
+  count: 600

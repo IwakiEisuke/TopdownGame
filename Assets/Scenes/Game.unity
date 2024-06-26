@@ -3002,6 +3002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42fb3672a0791414dbf401b124f64875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entranceLight: {fileID: 3379862025857350126, guid: 2de5a12ad29dcd44e82b309eff3cbf64, type: 3}
 --- !u!114 &2038685637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3019,6 +3020,7 @@ MonoBehaviour:
   power: 10
   torque: 1
   text: {fileID: 401614288}
+  coolTime: 0
 --- !u!114 &2038685638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3031,7 +3033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98581f350afa33d44a454437a8cf27a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHaveItems: 64000000640000000a00000064000000010000000500000064000000640000006400000005000000
+  initHaveItems: 00000000000000000000000064000000000000000000000000000000000000000000000000000000
   items:
   - {fileID: 11400000, guid: 8a9873fa22f846a4e85178fff87ec146, type: 2}
   - {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}

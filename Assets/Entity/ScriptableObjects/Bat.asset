@@ -15,7 +15,7 @@ MonoBehaviour:
   entityBase: {fileID: 6420331526236845362, guid: 3f2abda5f7f2c5046b6475b899a3aae5, type: 3}
   sprite: {fileID: 21300000, guid: e55045e126399cc408009386402e01aa, type: 3}
   hp: 5
-  atk: 2
+  atk: 1
   def: 0
   drops: []
   stateMachine: {fileID: 11500000, guid: 50e4c2134def57a4d807557718a09104, type: 3}

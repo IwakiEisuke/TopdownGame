@@ -2,6 +2,12 @@ using UnityEngine.Tilemaps;
 
 public abstract class ObjectGenerationAlgorithm : TileGenerationBase
 {
+    /// <summary>
+    /// InitMapを開始時のみ行うためのメソッド。通常いじる必要はない
+    /// </summary>
+    /// <param name="env"></param>
+    /// <param name="mapIndex"></param>
+    /// <returns></returns>
     public virtual Tilemap CreateMap(MapEnvironment env, int mapIndex)
     {
         Tilemap map = InitMap();
@@ -9,16 +15,14 @@ public abstract class ObjectGenerationAlgorithm : TileGenerationBase
     }
 
     /// <summary>
-    /// refmapにマップを生成する
+    /// refmapにマップを生成し返す
     /// </summary>
     /// <param name="env"></param>
     /// <param name="mapIndex"></param>
     /// <param name="refmap"></param>
     /// <returns></returns>
-    public virtual Tilemap GenerateWithAlgorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
-    {
-        return refmap;
-    }
+    public abstract Tilemap GenerateWithAlgorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap);
+
     public Tilemap InitMap()
     {
         return base.InitMap("Object", "ObjectMap");
