@@ -153,7 +153,7 @@ public class MapManager : MonoBehaviour
         var map = new MapData(
                 G_map = env._objectAlgo.CreateMap(env, 0),
                 O_map = env._mapAlgo.CreateMap(env),
-                env._entityAlgo.SpawnEntity(env, G_map, O_map),
+                env._entityAlgo.SpawnEntity(env, 0, G_map, O_map),
                 env,
                 Maps.Count,
                 0
@@ -182,7 +182,7 @@ public class MapManager : MonoBehaviour
         Maps[index] = new MapData(
                 G_map = env._objectAlgo.CreateMap(env, index),
                 O_map = env._mapAlgo.CreateMap(env),
-                env._entityAlgo.SpawnEntity(env, G_map, O_map),
+                env._entityAlgo.SpawnEntity(env, index, G_map, O_map),
                 env,
                 Maps[index]._index,
                 Maps[index]._layer

@@ -1,26 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[CreateAssetMenu(menuName = "GenerationAlgorithm/Entity/IfFloorIs", fileName = "E_IfFloorIs")]
 public class E_IfFloorIs : EntityGenerationAlgorithm
 {
-    [SerializeField] MapInFloor[] generationSettings;
+    [SerializeField] EntityMapInFloor[] generationSettings;
 
-    public override GameObject SpawnEntity(MapEnvironment env, Tilemap groundmap, Tilemap objectmap)
+    public override GameObject SpawnEntity(MapEnvironment env, int mapIndex, Tilemap groundmap, Tilemap objectmap)
     {
-        throw new System.NotImplementedException();
+        foreach (var set in generationSettings)
+        {
+            if (set.floor == MapManager.Maps[mapIndex]._layer)
+            {
+                return set.algo.SpawnEntity(env, mapIndex, groundmap, objectmap);
+            }
+        }
+        return null;
     }
+}
 
-    //public override GameObject SpawnEntity(MapEnvironment env, Tilemap groundmap, Tilemap objectmap)
-    //{
-    //    foreach (var set in generationSettings)
-    //    {
-    //        if (set.floor == MapManager.Maps[mapIndex]._layer)
-    //        {
-    //            var algo = set.algo as ObjectGenerationAlgorithm;
-    //            algo.GenerateWithAlgorithm(env, mapIndex, ref refmap);
-    //        }
-    //    }
-    //}
+[Serializable]
+public class EntityMapInFloor
+{
+    public EntityGenerationAlgorithm algo;
+    public int floor;
 }

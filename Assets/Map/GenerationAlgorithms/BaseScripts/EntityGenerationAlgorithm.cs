@@ -7,10 +7,10 @@ using Random = UnityEngine.Random;
 
 public abstract class EntityGenerationAlgorithm : ScriptableObject
 {
-    public GameObject controller;
+    public GameObject _entityBase;
     public SpawnData[] _spawnDatas;
 
-    public abstract GameObject SpawnEntity(MapEnvironment env, Tilemap groundmap, Tilemap objectmap);
+    public abstract GameObject SpawnEntity(MapEnvironment env, int mapIndex, Tilemap groundmap, Tilemap objectmap);
 
     public bool[] CalcProbabilityOnSpawn()
     {

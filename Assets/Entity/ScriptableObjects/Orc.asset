@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityBase: {fileID: 6420331526236845362, guid: 3f2abda5f7f2c5046b6475b899a3aae5, type: 3}
   sprite: {fileID: 21300000, guid: 9c8951f3ef7bbeb488774f6d4863e37f, type: 3}
-  hp: 15
+  hp: 10
   atk: 4
   def: 3
   drops:

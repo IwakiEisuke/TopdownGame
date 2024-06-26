@@ -13,7 +13,6 @@ public class MapEnvironment : ScriptableObject
     public ObjectGenerationAlgorithm _objectAlgo;
     public EntityGenerationAlgorithm _entityAlgo;
     public EnvGlobalLightSetting _envGlobalLightSetting;
-    public EnvironmentSetting _environmentSetting;
 
     [Header("Elevator Settings")]
     public int _maxFloor;

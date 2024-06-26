@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Timeline.Actions.MenuPriority;
-using static UnityEngine.RuleTile.TilingRuleOutput;
-using Transform = UnityEngine.Transform;
 
 public class OrcPatrol : StateBase
 {
@@ -23,7 +18,7 @@ public class OrcPatrol : StateBase
 
     public override void Exit<T>(T obj)
     {
-        
+
     }
 
     public override void Update<T>(T obj)

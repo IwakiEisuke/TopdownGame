@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 [CreateAssetMenu(menuName = "GenerationAlgorithm/Entity/Random")]
 public class E_Random : EntityGenerationAlgorithm
 {
-    public override GameObject SpawnEntity(MapEnvironment env, Tilemap groundmap, Tilemap objectmap)
+    public override GameObject SpawnEntity(MapEnvironment env, int mapIndex, Tilemap groundmap, Tilemap objectmap)
     {
         var canSpawn = CalcProbabilityOnSpawn();
         var obj = new List<GameObject>();

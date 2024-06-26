@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20dcc87974d478e49a3473e1dc4f1515, type: 3}
+  m_Name: E_Dungeon
+  m_EditorClassIdentifier: 
+  _entityBase: {fileID: 0}
+  _spawnDatas: []
+  generationSettings:
+  - algo: {fileID: 11400000, guid: 776680a90c47fe248ab9882dc0557e3d, type: 2}
+    floor: -1
+  - algo: {fileID: 11400000, guid: c23a1af3710c6f94b8d36db31965424c, type: 2}
+    floor: -2
+  - algo: {fileID: 11400000, guid: c23a1af3710c6f94b8d36db31965424c, type: 2}
+    floor: -3
+  - algo: {fileID: 11400000, guid: 4f0360d4410c70f439d337f80f348c46, type: 2}
+    floor: -4
+  - algo: {fileID: 11400000, guid: 5c66c17440773cb41958f1bc88c4cd8e, type: 2}
+    floor: -5

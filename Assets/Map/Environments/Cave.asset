@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2721b75b9472ebf45a59dd9eddb1c726, type: 3}
   m_Name: Cave
   m_EditorClassIdentifier: 
-  _environmentName: Cave
   _mapAlgo: {fileID: 11400000, guid: 8c840a11a925e724499a5eec3ce81993, type: 2}
   _objectAlgo: {fileID: 11400000, guid: dcfca5c194305e04291119b021b4daf6, type: 2}
-  _entityAlgo: {fileID: 11400000, guid: f185f2ff05b8b22419021b4284025a0d, type: 2}
+  _entityAlgo: {fileID: 11400000, guid: 30fdce0fe0787714096b14dbc43e86f1, type: 2}
   _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}
+  _environmentSetting: {fileID: 0}
   _maxFloor: 5
   _appearSettings:
   - _appearEnv: {fileID: 11400000, guid: 29735999a95cf1d48a70837ff62df102, type: 2}

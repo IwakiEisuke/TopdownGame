@@ -28,7 +28,7 @@ MonoBehaviour:
     requireFacilities:
     - {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
   status:
-    atk: 3
+    atk: 5
     mass: 1
     power: 10
     torque: 1
