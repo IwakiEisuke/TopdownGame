@@ -10,7 +10,6 @@ using Random = UnityEngine.Random;
 public abstract class TileGenerationBase : ScriptableObject
 {
     public GenerateTileSetting[] _tileSettings;
-    public Vector2Int _mapBounds;
 
     public virtual Tilemap InitMap(string sortingLayerName, string mapName)
     {

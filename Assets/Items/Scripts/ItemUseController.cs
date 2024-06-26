@@ -11,6 +11,7 @@ public class ItemUseController : MonoBehaviour
     public float torque;
     public static int selectedItem;
     public TextMeshProUGUI text;
+    public float coolTime;
 
     private void Start()
     {
@@ -20,7 +21,9 @@ public class ItemUseController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        coolTime -= Time.deltaTime;
+        //アイテム使用処理
+        if (Input.GetKeyDown(KeyCode.Space) && coolTime <= 0)
         {
             var item = Inventory.GetSelectedItem();
 
@@ -33,6 +36,7 @@ public class ItemUseController : MonoBehaviour
             }
         }
 
+        //数字キーでアイテム選択
         for (int i = 0; i < Inventory.Items.Count; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
@@ -44,6 +48,7 @@ public class ItemUseController : MonoBehaviour
             }
         }
 
+        //マウスホイールでアイテム選択
         if (Input.mouseScrollDelta.y > 0)
         {
             selectedItem--;
@@ -53,13 +58,9 @@ public class ItemUseController : MonoBehaviour
             selectedItem++;
         }
 
+        //選択アイテム番号が範囲外にならない処理
         selectedItem = (selectedItem + Inventory.Items.Count) % Inventory.Items.Count;
 
-    }
-
-    private void Throw(InventoryItemData itemData)
-    {
-        ItemObject.CreateAndThrow(player, itemData, Tag.PlayerDropItem);
     }
 
     private void SetItemPointer(int i)

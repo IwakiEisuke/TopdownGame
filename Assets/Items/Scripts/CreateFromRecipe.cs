@@ -37,9 +37,17 @@ public class CreateFromRecipe : MonoBehaviour
         switch (recipeType)
         {
             case RecipeType.Craft:
-                return item.recipes[recipeID];
+                if (recipeID < item.recipes.Length)
+                {
+                    return item.recipes[recipeID];
+                }
+                return null;
             case RecipeType.Transform:
-                return item.recipesTransform[recipeID];
+                if (recipeID < item.recipesTransform.Length)
+                {
+                    return item.recipesTransform[recipeID];
+                }
+                return null;
             default:
                 return null;
         }

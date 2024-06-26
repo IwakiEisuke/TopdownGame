@@ -14,8 +14,11 @@ public class Swing : ItemActionBase
 
         
         itemInstance.transform.up = dir;
-        itemInstance.GetComponent<SwingController>().basisAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        itemInstance.GetComponentInChildren<ItemStatsContainer>().atk = item.status.atk;
-        itemInstance.GetComponentInChildren<ItemStatsContainer>().ID = item.ID;
+        var swing = itemInstance.GetComponent<SwingController>();
+        swing.basisAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        controller.coolTime = swing.swingDuration;
+        var stats = itemInstance.GetComponentInChildren<ItemStatsContainer>();
+        stats.atk = item.status.atk;
+        stats.ID = item.ID;
     }
 }

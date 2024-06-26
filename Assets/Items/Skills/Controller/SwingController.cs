@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwingController : MonoBehaviour
 {
-    [SerializeField] float swingDuration, swingAngle;
+    public float swingDuration, swingAngle;
     public float startTime, basisAngle;
     void Start()
     {

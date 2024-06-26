@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bfb239b07973da448326a1586795cc3, type: 3}
+  m_Name: O_CaveLayer
+  m_EditorClassIdentifier: 
+  _tileSettings: []
+  generationSettings:
+  - algo: {fileID: 11400000, guid: 17071c4a8da7f184ebd7b5b051498275, type: 2}
+    floor: -1
+  - algo: {fileID: 11400000, guid: ce1ba51cf46058944b6e1d6978e7fb6e, type: 2}
+    floor: -2
+  - algo: {fileID: 11400000, guid: ce1ba51cf46058944b6e1d6978e7fb6e, type: 2}
+    floor: -3
+  - algo: {fileID: 11400000, guid: b526ae6b348d0884395a36f811092f9c, type: 2}
+    floor: -4
+  - algo: {fileID: 11400000, guid: b526ae6b348d0884395a36f811092f9c, type: 2}
+    floor: -5

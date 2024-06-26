@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3520c01c40f6de4498d4bab181cf72b5, type: 3}
   m_Name: Iron
   m_EditorClassIdentifier: 
-  ID: 6
-  amount: 83
+  ID: 7
+  amount: 156
   sprite: {fileID: 1476535869, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   UISprite: {fileID: -2067546955, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
-  itemTiles: []
+  itemTiles:
+  - {fileID: 11400000, guid: a547755b0f5368f49a7f61c7a3695efc, type: 2}
   isThrowable: 0
   recipes: []
   recipesTransform: []
@@ -29,5 +30,3 @@ MonoBehaviour:
     angularDrag: 3
   light: {fileID: 0}
   skills: []
-  skillPrefs:
-  - {fileID: 3447550651377054467, guid: 76b9d610673336b47804e7663c6c49e4, type: 3}

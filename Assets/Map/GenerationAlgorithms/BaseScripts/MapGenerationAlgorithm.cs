@@ -9,6 +9,7 @@ using Random = UnityEngine.Random;
 
 public abstract class MapGenerationAlgorithm : TileGenerationBase
 {
+    public Vector2Int _mapBounds;
     public abstract Tilemap CreateMap(MapEnvironment env);
 
     public Tilemap InitMap()

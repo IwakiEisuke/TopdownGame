@@ -5,9 +5,17 @@ public abstract class ObjectGenerationAlgorithm : TileGenerationBase
     public virtual Tilemap CreateMap(MapEnvironment env, int mapIndex)
     {
         Tilemap map = InitMap();
-        return Algorithm(env, mapIndex, ref map);
+        return GenerateWithAlgorithm(env, mapIndex, ref map);
     }
-    public virtual Tilemap Algorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
+
+    /// <summary>
+    /// refmap‚Éƒ}ƒbƒv‚ğ¶¬‚·‚é
+    /// </summary>
+    /// <param name="env"></param>
+    /// <param name="mapIndex"></param>
+    /// <param name="refmap"></param>
+    /// <returns></returns>
+    public virtual Tilemap GenerateWithAlgorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
     {
         return refmap;
     }

@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class O_Random : ObjectGenerationAlgorithm
 {
     [SerializeField] int count;
-    public override Tilemap Algorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
+    public override Tilemap GenerateWithAlgorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
     {
         var map = refmap;
 

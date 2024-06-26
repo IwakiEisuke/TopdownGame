@@ -10,7 +10,7 @@ public class O_Dungeon : ObjectGenerationAlgorithm
     [SerializeField] float lineWidth;
     [SerializeField] Vector2 step;
 
-    public override Tilemap Algorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
+    public override Tilemap GenerateWithAlgorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
     {
         var map = refmap;
         var currentMapStairsPos = MapManager.GetCurStairsPos(mapIndex); //生成するマップにある階段を取得

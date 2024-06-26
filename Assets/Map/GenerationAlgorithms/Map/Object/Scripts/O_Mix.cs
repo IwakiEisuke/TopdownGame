@@ -13,13 +13,17 @@ public class O_Mix : ObjectGenerationAlgorithm
         var refmap = InitMap();
         foreach (var algo in algos)
         {
-            algo.Algorithm(env, mapIndex, ref refmap);
+            algo.GenerateWithAlgorithm(env, mapIndex, ref refmap);
         }
         return refmap;
     }
 
-    public override Tilemap Algorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
+    public override Tilemap GenerateWithAlgorithm(MapEnvironment env, int mapIndex, ref Tilemap refmap)
     {
-        throw new System.NotImplementedException();
+        foreach (var algo in algos)
+        {
+            algo.GenerateWithAlgorithm(env, mapIndex, ref refmap);
+        }
+        return refmap;
     }
 }

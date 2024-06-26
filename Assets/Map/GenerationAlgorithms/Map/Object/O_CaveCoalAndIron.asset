@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06bc73fa31fb37849967ca91a2666f9d, type: 3}
-  m_Name: O_CoalCave
+  m_Name: O_CaveCoalAndIron
   m_EditorClassIdentifier: 
   _tileSettings: []
-  _mapBounds: {x: 0, y: 0}
   algos:
   - {fileID: 11400000, guid: 649859eea6d75da42be7babd660b6f37, type: 2}
-  - {fileID: 11400000, guid: c3f71a23ed5267842a7cfe3e57b3718c, type: 2}
+  - {fileID: 11400000, guid: 0ab0a35f632e40c4682953a30f870311, type: 2}
