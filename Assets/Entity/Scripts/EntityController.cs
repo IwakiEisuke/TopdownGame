@@ -19,9 +19,9 @@ public class EntityController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag(Tag.PlayerDropItem) &&  collision.GetComponent<ItemController>() != null)
+        if (collision.GetComponent<ItemStatsContainer>() != null)
         {
-            var itemController = collision.GetComponent<ItemController>();
+            var itemController = collision.GetComponent<ItemStatsContainer>();
             var damage = itemController.atk + PlayerController.Status.bonusAtk - entityData.def;
 
             if (damage >= 0)
@@ -29,7 +29,11 @@ public class EntityController : MonoBehaviour
                 status.hp -= damage;
             }
 
-            Destroy(collision.gameObject);
+            if (collision.gameObject.CompareTag(Tag.PlayerDropItem))
+            {
+                Destroy(collision.gameObject);
+            }
+
             if (status.hp <= 0)
             {
                 foreach (var drop in entityData.drops)
@@ -41,6 +45,11 @@ public class EntityController : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+        }
+
+        if (collision.CompareTag(Tag.Player))
+        {
+            PlayerController.Damage(entityData.atk);
         }
     }
 }

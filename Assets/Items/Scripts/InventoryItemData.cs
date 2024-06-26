@@ -18,6 +18,7 @@ public class InventoryItemData : ScriptableObject
     public TransformRecipe[] recipesTransform;
     public ItemStatus status;
     public GameObject light;
+    public ItemActionBase[] skills;
 }
 
 [Serializable]

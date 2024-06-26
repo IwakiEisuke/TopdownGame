@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
         get { return Instance.status; }
         set { Instance.status = value; }
     }
+    public static Transform Transform { get { return Instance.transform; } }
 
     public TextMeshProUGUI statusUI;
 
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
     }
 
@@ -77,6 +78,11 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector2(Mathf.Clamp(pos.x, min.x + pSize.x, max.x - pSize.x), Mathf.Clamp(pos.y, min.y + pSize.y, max.y - pSize.y));
     }
 
+    public static void Damage(float damage)
+    {
+        Status.hp -= (int)Math.Clamp(damage - Status.bonusDef,0 ,9999);
+    }
+
     private void StatusEffect()
     {
         if (status.hp <= 0)
@@ -85,11 +91,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag(Tag.Entity))
-        {
-            Status.hp -= collision.GetComponent<EntityController>().entityData.atk;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag(Tag.Entity))
+    //    {
+    //        Status.hp -= collision.GetComponent<EntityController>().entityData.atk;
+    //    }
+    //}
 }

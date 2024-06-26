@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IronSword
   m_EditorClassIdentifier: 
   ID: 9
-  amount: 13
+  amount: 5
   sprite: {fileID: 423749916, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   UISprite: {fileID: -115775497, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
@@ -30,10 +30,12 @@ MonoBehaviour:
     requireFacilities:
     - {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
   status:
-    atk: 0
+    atk: 3
     mass: 1
     power: 10
     torque: 1
     linearDrag: 3
     angularDrag: 3
   light: {fileID: 0}
+  skills:
+  - {fileID: 11400000, guid: 63395ed2bf5e6d14c8481a281ed1320a, type: 2}

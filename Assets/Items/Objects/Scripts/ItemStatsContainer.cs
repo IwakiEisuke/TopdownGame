@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public class ItemStatsContainer : MonoBehaviour
 {
     //[HideInInspector]
     public float atk;

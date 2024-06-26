@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235382fe5cfe74040b809db7d7448a9e, type: 3}
+  m_Name: SwingIronSword
+  m_EditorClassIdentifier: 
+  effectSize: 0
+  swingObj: {fileID: 756946811644797760, guid: 16f9a3ef4c3cc9348b6769261ccb1af6, type: 3}

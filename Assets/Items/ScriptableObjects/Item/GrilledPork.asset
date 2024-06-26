@@ -33,3 +33,5 @@ MonoBehaviour:
     linearDrag: 3
     angularDrag: 3
   light: {fileID: 0}
+  skills:
+  - {fileID: 11400000, guid: c878f519e2f90254eaeb5211f4362ea2, type: 2}

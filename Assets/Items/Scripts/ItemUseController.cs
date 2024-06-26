@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -20,12 +22,13 @@ public class ItemUseController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            foreach (var item in Inventory.Items)
+            var item = Inventory.GetSelectedItem();
+
+            if (item.amount > 0)
             {
-                if (item.ID == selectedItem && item.amount > 0 && item.isThrowable)
+                foreach (var skill in item.skills)
                 {
-                    item.amount--;
-                    Throw(Inventory.Items[selectedItem]);
+                    skill.Action(this, item);
                 }
             }
         }
@@ -45,7 +48,7 @@ public class ItemUseController : MonoBehaviour
         {
             selectedItem--;
         }
-        if(Input.mouseScrollDelta.y < 0)
+        if (Input.mouseScrollDelta.y < 0)
         {
             selectedItem++;
         }

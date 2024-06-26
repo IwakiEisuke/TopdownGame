@@ -26,10 +26,12 @@ MonoBehaviour:
     requireFacilities:
     - {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
   status:
-    atk: 0
+    atk: 6
     mass: 1
     power: 10
     torque: 1
     linearDrag: 3
     angularDrag: 3
   light: {fileID: 0}
+  skills:
+  - {fileID: 11400000, guid: c39df12e50b745d46afb3af29cdf56b2, type: 2}

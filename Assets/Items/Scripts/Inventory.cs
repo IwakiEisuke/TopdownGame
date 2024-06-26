@@ -106,7 +106,7 @@ public class Inventory : MonoBehaviour
     {
         if (collision.CompareTag(Tag.EntityDropItem))
         {
-            AddItem(collision.GetComponent<ItemController>().ID);
+            AddItem(collision.GetComponent<ItemStatsContainer>().ID);
             Destroy(collision.gameObject);
         }
 
