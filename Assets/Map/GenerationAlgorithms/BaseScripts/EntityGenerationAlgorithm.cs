@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 
 public abstract class EntityGenerationAlgorithm : ScriptableObject
 {
-    public GameObject _entityBase;
     public SpawnData[] _spawnDatas;
 
     public abstract GameObject SpawnEntity(MapEnvironment env, int mapIndex, Tilemap groundmap, Tilemap objectmap);

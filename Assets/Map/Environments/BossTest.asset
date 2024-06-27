@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2721b75b9472ebf45a59dd9eddb1c726, type: 3}
-  m_Name: EntityTest
+  m_Name: BossTest
   m_EditorClassIdentifier: 
   _mapAlgo: {fileID: 11400000, guid: 86a9f7ead0e5ea54fbad705ffa7c09a4, type: 2}
   _objectAlgo: {fileID: 11400000, guid: 0c7e6931de345c742be87d04740a6674, type: 2}
   _entityAlgo: {fileID: 11400000, guid: 5f08c8827f794774f91841494f10619c, type: 2}
-  _envGlobalLightSetting: {fileID: 0}
+  _envGlobalLightSetting: {fileID: 11400000, guid: ea16b55d70f1aaf4e9691e85604bfafc, type: 2}
   _maxFloor: 0
   _appearSettings: []
   stairTile: {fileID: 11400000, guid: 40c6bc69056f96942b5e50189d881a1f, type: 2}

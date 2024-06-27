@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityBase: {fileID: 6420331526236845362, guid: 83c8a4e684257454692a1392624920dd, type: 3}
   sprite: {fileID: 21300000, guid: c629639a8fc6d0444adabd51bf5656a5, type: 3}
-  hp: 50
-  atk: 6
+  hp: 150
+  atk: 5
   def: 3
   drops:
   - dropItem: {fileID: 11400000, guid: 67c1a223b3a88b74891acdf56255be44, type: 2}
     amount: 1
     addFluctuation: 0
-  stateMachine: {fileID: 11500000, guid: 50e4c2134def57a4d807557718a09104, type: 3}
+  stateMachine: {fileID: 11500000, guid: 33d19f4ae9b2a2543b597c8a5e605674, type: 3}

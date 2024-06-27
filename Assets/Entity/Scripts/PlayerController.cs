@@ -98,7 +98,10 @@ public class PlayerController : MonoBehaviour
 
     private static void HPBarEffect()
     {
-        HPBar.value = Status.hp / Status.maxHP;
+        if(HPBar != null)
+        {
+            HPBar.value = Status.hp / Status.maxHP;
+        }
     }
 
     private static void IsGameOver()

@@ -17,7 +17,7 @@ public class E_Random : EntityGenerationAlgorithm
         Vector3 RandomNullTile()
         {
             var pos = RandomPosInBounds(bounds);
-            if (groundmap.GetTile(pos) != null)
+            if (objectmap.GetTile(pos) != null)
             {
                 return RandomNullTile();
             }

@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ad3025eba8066741b8a2cd094918ff3, type: 3}
-  m_Name: E_RandomBat
+  m_Name: E_Tester
   m_EditorClassIdentifier: 
-  controller: {fileID: 6420331526236845362, guid: 3f2abda5f7f2c5046b6475b899a3aae5, type: 3}
   _spawnDatas:
   - _spawnEntityDatas:
-    - _entityData: {fileID: 11400000, guid: e817819121e74cc4e9bb015b9096fc90, type: 2}
-      _entityCount: 10
+    - _entityData: {fileID: 11400000, guid: c3021863bfeb25a4e97e318cfa60968e, type: 2}
+      _entityCount: 1
     _spawnCount: 1
     _spawnProbability: 1

@@ -10,9 +10,7 @@ public class EntityController : MonoBehaviour
 
     void Start()
     {
-
         gameObject.AddComponent(Type.GetType(entityData.stateMachine.name));
-
         status.hp = entityData.hp;
     }
 

@@ -24,6 +24,10 @@ public class DamageNumberEffect : MonoBehaviour
         numberObj.GetComponent<DamageNumberEffectController>().pos = transform.position;
         var tmp = numberObj.GetComponent<TextMeshProUGUI>();
         tmp.text = amount.ToString();
+        if(amount >= PlayerController.Status.maxHP / 2)
+        {
+            tmp.fontSize = 54;
+        }
         tmp.color = Color.red;
     }
 
@@ -35,6 +39,10 @@ public class DamageNumberEffect : MonoBehaviour
         numberObj.GetComponent<DamageNumberEffectController>().pos = transform.position;
         var tmp = numberObj.GetComponent<TextMeshProUGUI>();
         tmp.text = amount.ToString();
+        if (amount >= PlayerController.Status.maxHP / 2)
+        {
+            tmp.fontSize = 72;
+        }
         tmp.color = Color.green;
     }
 
