@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 5260178673982841875}
   - component: {fileID: 1126887621173695623}
   - component: {fileID: 2223251987798149523}
+  - component: {fileID: 5283738629882233883}
   m_Layer: 8
   m_Name: IronSword
   m_TagString: PlayerAttack
@@ -199,3 +200,15 @@ PolygonCollider2D:
       - {x: 0.3125, y: 0.1875}
       - {x: 0.3125, y: 0.3125}
   m_UseDelaunayMesh: 0
+--- !u!114 &5283738629882233883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350172490110116460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4031c6efa3e364e4880f658ef721b950, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
