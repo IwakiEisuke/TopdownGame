@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class PlayerController : MonoBehaviour
     public static DamageNumberEffect DamageNumberEffect { get { return Instance.damageNumberEffect; } }
     public static Transform Transform { get { return Instance.transform; } }
 
-    public TextMeshProUGUI statusUI;
+    [SerializeField] Slider hpBar;
+    private static Slider HPBar { get { return Instance.hpBar; } }
 
     Rigidbody2D rb;
 
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        HPBarEffect();
     }
 
     private void Update()
@@ -44,16 +47,6 @@ public class PlayerController : MonoBehaviour
         {
             Move();
         }
-        StatusEffect();
-        if (statusUI != null)
-        {
-            UpdateText();
-        }
-    }
-
-    private void UpdateText()
-    {
-        statusUI.text = $"HP : {status.hp}";
     }
 
     private void Move()
@@ -78,26 +71,33 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector2(Mathf.Clamp(pos.x, min.x + pSize.x, max.x - pSize.x), Mathf.Clamp(pos.y, min.y + pSize.y, max.y - pSize.y));
     }
 
-    public static void TakeDamage(float damage)
+    public static void TakeDamage(float amount)
     {
-        var amount = (int)Math.Clamp(damage - Status.bonusDef, 0, 9999);
-        Status.hp -= amount;
-        DamageNumberEffect.CreateDamageNumberObject(amount);
+        var damage = (int)Math.Clamp(amount - Status.bonusDef, 0, 9999);
+        Status.hp -= damage;
+        DamageNumberEffect.CreateDamageNumberObject(damage);
+        StatusEffect();
     }
 
-    private void StatusEffect()
+    public static void HealHP(float amount)
     {
-        if (status.hp <= 0)
+        var heal = (int)Math.Clamp(amount, 0, 9999);
+        Status.hp = (int)Math.Clamp(Status.hp + heal, 0, Status.maxHP);
+        DamageNumberEffect.CreateHealNumberObject(heal);
+        StatusEffect();
+    }
+
+    private static void StatusEffect()
+    {
+        HPBarEffect();
+        if (Status.hp <= 0)
         {
-            gameObject.SetActive(false);
+            Instance.gameObject.SetActive(false);
         }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag(Tag.Entity))
-    //    {
-    //        Status.hp -= collision.GetComponent<EntityController>().entityData.atk;
-    //    }
-    //}
+    private static void HPBarEffect()
+    {
+        HPBar.value = Status.hp / Status.maxHP;
+    }
 }

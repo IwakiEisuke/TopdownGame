@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DamageNumberEffect : MonoBehaviour
 {
-    GameObject canvas, damageObj;
+    GameObject canvas, numberObj;
     Vector2 pos;
     private void Start()
     {
@@ -15,20 +15,32 @@ public class DamageNumberEffect : MonoBehaviour
     /// <summary>
     /// ダメージ表記を生成して初期化するメソッド。アニメーションは別
     /// </summary>
-    /// <param name="damage"></param>
-    public void CreateDamageNumberObject(int damage)
+    /// <param name="amount"></param>
+    public void CreateDamageNumberObject(int amount)
     {
-        Debug.Log(damage);
         GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(ResetColor());
-        damageObj = Instantiate(EffectSettings._damageNumberObject, canvas.transform);
-        damageObj.GetComponent<DamageNumberEffectController>().pos = transform.position;
-        damageObj.GetComponent<TextMeshProUGUI>().text = damage.ToString();
+        numberObj = Instantiate(EffectSettings._damageNumberObject, canvas.transform);
+        numberObj.GetComponent<DamageNumberEffectController>().pos = transform.position;
+        var tmp = numberObj.GetComponent<TextMeshProUGUI>();
+        tmp.text = amount.ToString();
+        tmp.color = Color.red;
+    }
+
+    public void CreateHealNumberObject(int amount)
+    {
+        //GetComponent<SpriteRenderer>().color = Color.green;
+        StartCoroutine(ResetColor());
+        numberObj = Instantiate(EffectSettings._damageNumberObject, canvas.transform);
+        numberObj.GetComponent<DamageNumberEffectController>().pos = transform.position;
+        var tmp = numberObj.GetComponent<TextMeshProUGUI>();
+        tmp.text = amount.ToString();
+        tmp.color = Color.green;
     }
 
     IEnumerator ResetColor()
     {
-        yield return new WaitForSeconds(0.04f);
+        yield return new WaitForSeconds(0.04f); // 2/60秒ぐらい
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

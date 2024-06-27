@@ -6,7 +6,11 @@ public class Heal : ItemActionBase
     public int effectSize;
     public override void Action(ItemUseController controller, InventoryItemData item)
     {
-        PlayerController.Status.hp += effectSize;
-        item.amount--;
+        var stats = PlayerController.Status;
+        if(stats.hp < stats.maxHP)
+        {
+            PlayerController.HealHP(effectSize);
+            item.amount--;
+        }
     }
 }
