@@ -20,12 +20,15 @@ public class EntityController : MonoBehaviour
     {
         if (collision.GetComponent<ItemStatsContainer>() != null)
         {
-            var itemController = collision.GetComponent<ItemStatsContainer>();
-            TakeDamage(itemController);
-
-            if (collision.gameObject.CompareTag(Tag.PlayerDropItem))
+            //プレイヤーの攻撃に当たった場合ダメージを受けて攻撃を破壊する
+            if (collision.gameObject.CompareTag(Tag.PlayerDropItem) || collision.gameObject.CompareTag(Tag.PlayerAttack))
             {
-                Destroy(collision.gameObject);
+                var itemController = collision.GetComponent<ItemStatsContainer>();
+                TakeDamage(itemController);
+                if (collision.gameObject.CompareTag(Tag.PlayerDropItem))
+                {
+                    Destroy(collision.gameObject);
+                }
             }
 
             if (status.hp <= 0)

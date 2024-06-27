@@ -7,6 +7,7 @@ TagManager:
   - EntityDropItem
   - PlayerDropItem
   - Entity
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX

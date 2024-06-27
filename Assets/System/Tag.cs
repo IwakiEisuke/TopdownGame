@@ -8,4 +8,5 @@ public static class Tag
     public const string PlayerDropItem = "PlayerDropItem";
     public const string Entity = "Entity";
     public const string Player = "Player";
+    public const string PlayerAttack = "PlayerAttack";
 }
