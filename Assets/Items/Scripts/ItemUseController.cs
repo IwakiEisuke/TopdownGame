@@ -16,7 +16,6 @@ public class ItemUseController : MonoBehaviour
     private void Start()
     {
         ItemObjectCreator.itemBase = itemBase;
-        SetItemPointer(0);
     }
 
     private void Update()
@@ -42,8 +41,6 @@ public class ItemUseController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
                 selectedItem = i;
-
-                SetItemPointer(selectedItem);
                 break;
             }
         }
@@ -61,14 +58,5 @@ public class ItemUseController : MonoBehaviour
         //選択アイテム番号が範囲外にならない処理
         selectedItem = (selectedItem + Inventory.Items.Count) % Inventory.Items.Count;
 
-    }
-
-    private void SetItemPointer(int i)
-    {
-        text.text = "<-";
-        for (int j = Inventory.Items.Count; j > i; j--)
-        {
-            text.text += "\n";
-        }
     }
 }

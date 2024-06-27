@@ -13,7 +13,6 @@ public class InventoryItemData : ScriptableObject
     public Sprite sprite;
     public Sprite UISprite;
     public TileBase[] itemTiles;
-    public bool isThrowable;
     public Recipe[] recipes;
     public TransformRecipe[] recipesTransform;
     public ItemStatus status;

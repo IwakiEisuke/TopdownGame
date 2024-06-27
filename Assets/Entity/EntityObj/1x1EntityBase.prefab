@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5935316384179581484}
   - component: {fileID: -5764560056677160634}
   m_Layer: 7
-  m_Name: EntityBase
+  m_Name: 1x1EntityBase
   m_TagString: Entity
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

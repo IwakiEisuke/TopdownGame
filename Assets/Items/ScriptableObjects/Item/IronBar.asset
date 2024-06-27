@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3520c01c40f6de4498d4bab181cf72b5, type: 3}
   m_Name: IronBar
   m_EditorClassIdentifier: 
-  ID: 6
-  amount: 83
+  ID: 8
+  amount: 94
   sprite: {fileID: -111809093, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   UISprite: {fileID: -1349324096, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
-  isThrowable: 0
   recipes: []
   recipesTransform:
   - requireItems:
@@ -26,7 +25,7 @@ MonoBehaviour:
     requireFacilities:
     - {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
   status:
-    atk: 6
+    atk: 7
     mass: 1
     power: 10
     torque: 1
