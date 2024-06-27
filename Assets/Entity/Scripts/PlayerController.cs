@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour
     public static PlayerController Instance { get; private set; }
 
     [SerializeField] public PlayerStatus status;
+    [SerializeField] DamageNumberEffect damageNumberEffect;
     public static PlayerStatus Status
     {
         get { return Instance.status; }
         set { Instance.status = value; }
     }
+    public static DamageNumberEffect DamageNumberEffect { get { return Instance.damageNumberEffect; } }
     public static Transform Transform { get { return Instance.transform; } }
 
     public TextMeshProUGUI statusUI;
@@ -76,9 +78,11 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector2(Mathf.Clamp(pos.x, min.x + pSize.x, max.x - pSize.x), Mathf.Clamp(pos.y, min.y + pSize.y, max.y - pSize.y));
     }
 
-    public static void Damage(float damage)
+    public static void TakeDamage(float damage)
     {
-        Status.hp -= (int)Math.Clamp(damage - Status.bonusDef, 0, 9999);
+        var amount = (int)Math.Clamp(damage - Status.bonusDef, 0, 9999);
+        Status.hp -= amount;
+        DamageNumberEffect.CreateDamageNumberObject(amount);
     }
 
     private void StatusEffect()

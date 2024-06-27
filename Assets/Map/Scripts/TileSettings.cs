@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(menuName = "TileSettings")]
+[CreateAssetMenu(fileName = "TileSettings", menuName = "Settings/TileSettings")]
 public class TileSettings : ScriptableObject
 {
     [SerializeField] TileBase[] grounds;

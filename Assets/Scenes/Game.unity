@@ -1156,7 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527887800}
   m_Layer: 0
-  m_Name: Lights
+  m_Name: EnvLights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2130,6 +2130,18 @@ MonoBehaviour:
   startEvent:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 11400000, guid: 126393b2bb272bd4bb32c7c279934bb7, type: 2}
+        m_TargetAssemblyTypeName: EffectSettings, Assembly-CSharp
+        m_MethodName: Initialize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2043916654}
         m_TargetAssemblyTypeName: MapManager, Assembly-CSharp
         m_MethodName: StartProcess
@@ -2915,6 +2927,7 @@ GameObject:
   - component: {fileID: 2038685642}
   - component: {fileID: 2038685643}
   - component: {fileID: 2038685644}
+  - component: {fileID: 2038685645}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -3102,6 +3115,7 @@ MonoBehaviour:
     bonusAtk: 0
     bonusDef: 0
     speed: 7
+  damageNumberEffect: {fileID: 2038685645}
   statusUI: {fileID: 15885105}
 --- !u!58 &2038685642
 CircleCollider2D:
@@ -3190,6 +3204,18 @@ MonoBehaviour:
   graphicRaycaster: {fileID: 125060346}
   eventSystem: {fileID: 702901383}
   clickedPos: {x: 0, y: 0, z: 0}
+--- !u!114 &2038685645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038685633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d115bb341810f408ca8044a1bd7800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2041007868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4414586123891981013, guid: 4f398841d2287294382227941cc0694a, type: 3}

@@ -1,4 +1,3 @@
-using DG.Tweening;
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -13,7 +12,7 @@ public class EntityController : MonoBehaviour
     {
 
         gameObject.AddComponent(Type.GetType(entityData.stateMachine.name));
-        
+
         status.hp = entityData.hp;
     }
 
@@ -22,12 +21,7 @@ public class EntityController : MonoBehaviour
         if (collision.GetComponent<ItemStatsContainer>() != null)
         {
             var itemController = collision.GetComponent<ItemStatsContainer>();
-            var damage = itemController.atk + PlayerController.Status.bonusAtk - entityData.def;
-
-            if (damage >= 0)
-            {
-                status.hp -= damage;
-            }
+            TakeDamage(itemController);
 
             if (collision.gameObject.CompareTag(Tag.PlayerDropItem))
             {
@@ -49,8 +43,15 @@ public class EntityController : MonoBehaviour
 
         if (collision.CompareTag(Tag.Player))
         {
-            PlayerController.Damage(entityData.atk);
+            PlayerController.TakeDamage(entityData.atk);
         }
+    }
+
+    private void TakeDamage(ItemStatsContainer itemController)
+    {
+        var damage = (int)Math.Clamp((itemController.atk + PlayerController.Status.bonusAtk - entityData.def), 0, 9999);
+        status.hp -= damage;
+        GetComponent<DamageNumberEffect>().CreateDamageNumberObject(damage);
     }
 }
 

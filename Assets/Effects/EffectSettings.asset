@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9cd953323a82248bdc147819796160, type: 3}
-  m_Name: O_CaveLightupEntrance
+  m_Script: {fileID: 11500000, guid: 3a2ca58c35f1f6e4a91dafdcbf644992, type: 3}
+  m_Name: EffectSettings
   m_EditorClassIdentifier: 
-  _tileSettings: []
-  entranceLight: {fileID: 3379862025857350126, guid: 19c740f07ec66e54092c36cde24ab051, type: 3}
+  damageNumberObject: {fileID: 3382995323022213974, guid: 84ef5489e27584c4cb9a925d7f136325, type: 3}
