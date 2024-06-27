@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
         set { Instance.status = value; }
     }
     public static DamageNumberEffect DamageNumberEffect { get { return Instance.damageNumberEffect; } }
+    /// <summary>
+    /// ÉvÉåÉCÉÑÅ[ÇÃTransform
+    /// </summary>
     public static Transform Transform { get { return Instance.transform; } }
 
     [SerializeField] Slider hpBar;
@@ -90,14 +93,21 @@ public class PlayerController : MonoBehaviour
     private static void StatusEffect()
     {
         HPBarEffect();
-        if (Status.hp <= 0)
-        {
-            Instance.gameObject.SetActive(false);
-        }
+        IsGameOver();
     }
 
     private static void HPBarEffect()
     {
         HPBar.value = Status.hp / Status.maxHP;
+    }
+
+    private static void IsGameOver()
+    {
+        if (Status.hp <= 0)
+        {
+            Transform.up = Transform.right;
+            Debug.Log("GameOver");
+            Instance.GetComponent<GameOverManager>().InvokeGameOverEvent();
+        }
     }
 }
