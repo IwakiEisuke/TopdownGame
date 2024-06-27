@@ -7,12 +7,12 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
 
-    [SerializeField] public PlayerStatus status;
+    [SerializeField] PlayerStatus status;
     [SerializeField] DamageNumberEffect damageNumberEffect;
     public static PlayerStatus Status
     {
         get { return Instance.status; }
-        set { Instance.status = value; }
+        private set { Instance.status = value; }
     }
     public static DamageNumberEffect DamageNumberEffect { get { return Instance.damageNumberEffect; } }
     /// <summary>
@@ -77,16 +77,16 @@ public class PlayerController : MonoBehaviour
     public static void TakeDamage(float amount)
     {
         var damage = (int)Math.Clamp(amount - Status.bonusDef, 0, 9999);
-        Status.hp -= damage;
         DamageNumberEffect.CreateDamageNumberObject(damage);
+        Status.hp = (int)Math.Clamp(Status.hp - damage, 0, Status.maxHP);
         StatusEffect();
     }
 
     public static void HealHP(float amount)
     {
         var heal = (int)Math.Clamp(amount, 0, 9999);
-        Status.hp = (int)Math.Clamp(Status.hp + heal, 0, Status.maxHP);
         DamageNumberEffect.CreateHealNumberObject(heal);
+        Status.hp = (int)Math.Clamp(Status.hp + heal, 0, Status.maxHP);
         StatusEffect();
     }
 
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
         {
             Transform.up = Transform.right;
             Debug.Log("GameOver");
-            Instance.GetComponent<GameOverManager>().InvokeGameOverEvent();
+            Instance.GetComponent<GameOverManager>().GameOverEvent();
         }
     }
 }
