@@ -7,6 +7,6 @@ public class Throw : ItemActionBase
     {
 
         item.amount--;
-        ItemObject.CreateAndThrow(controller.player, item, Tag.PlayerDropItem);
+        ItemObjectCreator.CreateAndThrow(controller.player, item, Tag.PlayerDropItem);
     }
 }

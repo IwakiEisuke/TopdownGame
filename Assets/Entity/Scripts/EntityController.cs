@@ -37,7 +37,7 @@ public class EntityController : MonoBehaviour
                 {
                     for (int i = 0; i < drop.amount + Random.Range(0, drop.addFluctuation + 1); i++)
                     {
-                        ItemObject.CreateAndDrop(gameObject, drop.dropItem, 2, 0, Tag.EntityDropItem);
+                        ItemObjectCreator.CreateAndDrop(gameObject, drop.dropItem, 2, 0, Tag.EntityDropItem);
                     }
                 }
                 Destroy(gameObject);

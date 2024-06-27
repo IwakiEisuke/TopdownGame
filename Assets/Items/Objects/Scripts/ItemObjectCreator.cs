@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class ItemObject : MonoBehaviour
+public class ItemObjectCreator : MonoBehaviour
 {
     /// <summary>
     /// itemBase‚ð‘ã“ü‚µ‚Ä‚­‚¾‚³‚¢

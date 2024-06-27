@@ -10,7 +10,7 @@ public class AttackScript : ItemActionBase
     [SerializeField] MonoScript attachScript;
     public override void Action(ItemUseController controller, InventoryItemData item)
     {
-        var itemInstance = ItemObject.Create(controller.player, item);
+        var itemInstance = ItemObjectCreator.Create(controller.player, item);
         var script = itemInstance.AddComponent(Type.GetType(attachScript.name));
     }
 }

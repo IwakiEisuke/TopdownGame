@@ -15,7 +15,7 @@ public class ItemUseController : MonoBehaviour
 
     private void Start()
     {
-        ItemObject.itemBase = itemBase;
+        ItemObjectCreator.itemBase = itemBase;
         SetItemPointer(0);
     }
 
