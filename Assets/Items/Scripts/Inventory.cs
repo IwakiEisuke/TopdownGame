@@ -102,13 +102,12 @@ public class Inventory : MonoBehaviour
         return GetInventoryItem(ItemUseController.selectedItem);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag(Tag.EntityDropItem))
-        {
-            AddItem(collision.GetComponent<ItemStatsContainer>().ID);
-            Destroy(collision.gameObject);
-        }
-
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag(Tag.EntityDropItem))
+    //    {
+    //        AddItem(collision.GetComponent<ItemStatsContainer>().ID);
+    //        Destroy(collision.gameObject);
+    //    }
+    //}
 }
