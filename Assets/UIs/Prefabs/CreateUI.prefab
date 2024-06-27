@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ff50967d418d04281662477a017e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipeUI: {fileID: 2647935324637018440, guid: ddd2ae9bd2e77fe4da57c083edf1a586, type: 3}
+  recipeRowUI: {fileID: 0}
 --- !u!1 &5300429731540108903
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6538118204854466951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -203,8 +203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -336.14, y: -359}
-  m_SizeDelta: {x: 650.28, y: 690.696}
+  m_AnchoredPosition: {x: -301.89978, y: -322.6317}
+  m_SizeDelta: {x: 581.7996, y: 617.9593}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2402849532434998636
 CanvasRenderer:
