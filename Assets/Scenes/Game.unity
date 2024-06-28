@@ -3847,6 +3847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceLight: {fileID: 3379862025857350126, guid: 2de5a12ad29dcd44e82b309eff3cbf64, type: 3}
+  tileSettings: {fileID: 11400000, guid: 159f3db2f4b071f45b87a7b6b7979133, type: 2}
 --- !u!114 &1984632985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4163,10 +4164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileSettings: {fileID: 11400000, guid: 159f3db2f4b071f45b87a7b6b7979133, type: 2}
-  canvasUI: {fileID: 5564778395723627066, guid: 9b6a6205e462af44c8871c03177f6a53, type: 3}
-  graphicRaycaster: {fileID: 125060346}
-  eventSystem: {fileID: 702901383}
   clickedPos: {x: 0, y: 0, z: 0}
+  ActiveTileObject: {fileID: 0}
 --- !u!1 &2041007868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4414586123891981013, guid: 4f398841d2287294382227941cc0694a, type: 3}

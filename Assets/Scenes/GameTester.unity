@@ -3770,6 +3770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entranceLight: {fileID: 3379862025857350126, guid: 2de5a12ad29dcd44e82b309eff3cbf64, type: 3}
+  tileSettings: {fileID: 11400000, guid: 159f3db2f4b071f45b87a7b6b7979133, type: 2}
 --- !u!114 &1984632985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4046,7 +4047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98581f350afa33d44a454437a8cf27a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initHaveItems: 6400000064000000640000006400000064000000640000006400000064000000640000006400000064000000
+  initHaveItems: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   items:
   - {fileID: 11400000, guid: 8a9873fa22f846a4e85178fff87ec146, type: 2}
   - {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}

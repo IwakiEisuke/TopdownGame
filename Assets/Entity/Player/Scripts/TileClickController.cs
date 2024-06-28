@@ -17,7 +17,7 @@ public class TileClickController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            //クリックしたタイルを取得
+            //クリックしたタイル位置を取得
             var clickPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             clickPos.z = 0;
             var map = MapManager._currentObjectMap;
@@ -26,7 +26,7 @@ public class TileClickController : MonoBehaviour
             //指定のタイルをクリックした場合イベントを実行
             foreach (var tile in tileSettings.Facilities)
             {
-                if (map.GetTile(targetCellPos) == tile.Tile)
+                if (tile.ClickEvent != null && map.GetTile(targetCellPos) == tile.Tile)
                 {
                     ActiveTileObject = tile;
                     clickedPos = targetCellPos;

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Object/TileClickEvents/InteractTileObject")]
-public class InteractTileObject : TileClickEvent
+[CreateAssetMenu(menuName = "Object/TileClickEvents/ClickEventWithConsumeItems")]
+public class ClickEventWithConsumeItems : TileClickEvent
 {
     [SerializeField] Recipe consumeForInteract;
     public override void Enter(TileClickController obj, Vector3Int cellPos, TileObject tile)

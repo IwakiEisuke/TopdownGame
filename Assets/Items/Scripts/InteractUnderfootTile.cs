@@ -4,6 +4,7 @@ using UnityEngine.Tilemaps;
 public class InteractUnderfootTile : MonoBehaviour
 {
     [SerializeField] GameObject entranceLight;
+    [SerializeField] TileSettings tileSettings;
     // Update is called once per frame
     void Update()
     {
@@ -79,7 +80,17 @@ public class InteractUnderfootTile : MonoBehaviour
                 }
             }
 
-            
+            //TileObjectにアサインされているTileInteractEventを実行
+            foreach(var tile in tileSettings.Facilities)
+            {
+                if(MapManager._currentObjectMap.GetTile(targetPos) == tile.Tile)
+                {
+                    if(tile.InteractEvent != null)
+                    {
+                        tile.InteractEvent.Enter(this, targetPos, tile);
+                    }
+                }
+            }
         }
     }
 

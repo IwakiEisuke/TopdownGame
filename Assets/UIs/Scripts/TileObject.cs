@@ -10,8 +10,10 @@ public class TileObject : ScriptableObject
     [SerializeField] Sprite tileUISprite;
     [SerializeField] Recipe recipe;
     [SerializeField] TileClickEvent clickEvent;
+    [SerializeField] TileInteractEvent interactEvent;
     public TileBase Tile { get { return tile; } }
     public Sprite TileUISprite {  get { return tileUISprite; } }
     public Recipe Recipe { get { return recipe; } }
     public TileClickEvent ClickEvent { get { return clickEvent; } }
+    public TileInteractEvent InteractEvent { get {return interactEvent; } }
 }
