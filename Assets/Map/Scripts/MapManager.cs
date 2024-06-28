@@ -77,7 +77,7 @@ public class MapManager : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("LightControllerがアタッチされていません");
+                Debug.LogWarning("MapManagerにLightControllerがアタッチされていません");
             }
             FollowTarget.SetBounds();
         }

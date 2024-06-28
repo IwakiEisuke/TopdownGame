@@ -15,6 +15,10 @@ public class FollowTarget : MonoBehaviour
     {
         var target = followTarget.transform.position;
 
+        // カメラのビューポートサイズを計算
+        _halfHeight = Camera.main.orthographicSize;
+        _halfWidth = Camera.main.aspect * _halfHeight;
+
         if (clampToMapBounds)
         {
             target.x = Mathf.Clamp(target.x, _minBounds.x + _halfWidth, _maxBounds.x - _halfWidth);
@@ -31,9 +35,5 @@ public class FollowTarget : MonoBehaviour
         Bounds bounds = MapManager._currentGroundMap.localBounds;
         _minBounds = bounds.min;
         _maxBounds = bounds.max;
-
-        // カメラのビューポートサイズを計算
-        _halfHeight = Camera.main.orthographicSize;
-        _halfWidth = Camera.main.aspect * _halfHeight;
     }
 }
