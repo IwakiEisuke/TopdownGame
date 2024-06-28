@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BossTest
   m_EditorClassIdentifier: 
   _mapAlgo: {fileID: 11400000, guid: 86a9f7ead0e5ea54fbad705ffa7c09a4, type: 2}
-  _objectAlgo: {fileID: 11400000, guid: 0c7e6931de345c742be87d04740a6674, type: 2}
+  _objectAlgo: {fileID: 11400000, guid: e99d0dedae98ad740b43368d8b71761a, type: 2}
   _entityAlgo: {fileID: 11400000, guid: 5f08c8827f794774f91841494f10619c, type: 2}
   _envGlobalLightSetting: {fileID: 11400000, guid: ea16b55d70f1aaf4e9691e85604bfafc, type: 2}
   _maxFloor: 0
