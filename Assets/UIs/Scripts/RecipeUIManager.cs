@@ -26,7 +26,7 @@ public class RecipeUIManager : MonoBehaviour
         }
         textMesh.text = newText;
 
-        button.onClick.AddListener(() => CreateFromRecipe.RecipeProcess(recipe, () => Inventory.AddItem(toItem)));
+        button.onClick.AddListener(() => Recipe.RecipeProcess(recipe, () => Inventory.AddItem(toItem)));
     }
 
     public void CreateTransformRecipeUI(InventoryItemData toItem, int recipeIndex)
@@ -41,7 +41,7 @@ public class RecipeUIManager : MonoBehaviour
         }
         textMesh.text = newText;
 
-        button.onClick.AddListener(() => CreateFromRecipe.RecipeProcess(recipe, () => Inventory.AddItem(toItem)));
+        button.onClick.AddListener(() => Recipe.RecipeProcess(recipe, () => Inventory.AddItem(toItem)));
     }
 
     public void CreateTileRecipeUI(TileObject toTile)

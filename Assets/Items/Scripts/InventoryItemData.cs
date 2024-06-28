@@ -2,8 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Object/New Item")]
@@ -50,6 +48,69 @@ public class Recipe : IEnumerable<ConsumeItemSetting>
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
+    }
+
+    /// <summary>
+    /// 要求されたアイテムを持っている場合消費し、actを実行します
+    /// </summary>
+    /// <param name="recipe"></param>
+    /// <param name="act"></param>
+    public static void RecipeProcess(Recipe recipe, Action act)
+    {
+        if (IsCreatable(recipe))
+        {
+            ConsumeItems(recipe);
+            act();
+        }
+    }
+
+    /// <summary>
+    /// 要求されたアイテムを持っているかチェックした後消費します
+    /// </summary>
+    /// <param name="recipe"></param>
+    public static void RecipeProcess(Recipe recipe)
+    {
+        if (IsCreatable(recipe))
+        {
+            ConsumeItems(recipe);
+        }
+    }
+
+    /// <summary>
+    /// Recipeで要求されたアイテムを消費する。所持数を事前にチェックする場合IsCreatableメソッドが必要。
+    /// </summary>
+    /// <param name="recipe"></param>
+    public static void ConsumeItems(Recipe recipe)
+    {
+        foreach (var require in recipe)
+        {
+            require.item.amount -= require.amount;
+        }
+    }
+
+    /// <summary>
+    /// 要求アイテムを全て持っているかチェックする
+    /// </summary>
+    /// <param name="recipe"></param>
+    /// <returns></returns>
+    public static bool IsCreatable(Recipe recipe)
+    {
+        if (recipe == null)
+        {
+            return false;
+        }
+        else
+        {
+            foreach (var require in recipe)
+            {
+                //require.item.amountはitemの所持数。require.amountは要求数。
+                if (require.item.amount < require.amount)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
 

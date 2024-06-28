@@ -12,13 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6421017bd5fade043a44f4a043808786, type: 3}
   m_Name: AlienDoor
   m_EditorClassIdentifier: 
-  tile: {fileID: 11400000, guid: 6bbe56a31eec76442a8da7564eb527db, type: 2}
-  tileUISprite: {fileID: 1020519531, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
+  tile: {fileID: 11400000, guid: 6d9a88d6f79a56340896613a179fe45e, type: 2}
+  tileUISprite: {fileID: 21300000, guid: c629639a8fc6d0444adabd51bf5656a5, type: 3}
   recipe:
-    requireItems:
-    - item: {fileID: 11400000, guid: 8a9873fa22f846a4e85178fff87ec146, type: 2}
-      amount: 4
-    - item: {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}
-      amount: 4
-  clickEvent: {fileID: 11400000, guid: d148416405879244580fd0e0def574dc, type: 2}
-  _UI: {fileID: 5873672062127136683, guid: d3dd7fa2431623b4eb425b7bec35bb90, type: 3}
+    requireItems: []
+  clickEvent: {fileID: 11400000, guid: 898810abcd6a5054e9ba9081195859c8, type: 2}

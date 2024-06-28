@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d20bf47b2b2d78449b9862977209d7d, type: 3}
-  m_Name: Click Camp Fire Event
+  m_Script: {fileID: 11500000, guid: a9c7f589a4c982c449d2cbf90cf0fe57, type: 3}
+  m_Name: OpenCampfireUI
   m_EditorClassIdentifier: 
-  tileObject: {fileID: 11400000, guid: bfb4f3ce2941c9a4797c59d4b9defe1e, type: 2}
+  UIPref: {fileID: 5873672062127136683, guid: d3dd7fa2431623b4eb425b7bec35bb90, type: 3}
+  canvasUI: {fileID: 5564778395723627066, guid: 9b6a6205e462af44c8871c03177f6a53, type: 3}

@@ -20,5 +20,4 @@ MonoBehaviour:
       amount: 8
     - item: {fileID: 11400000, guid: 5880eb587f7582e4d85fb186c11049c2, type: 2}
       amount: 4
-  clickEvent: {fileID: 11400000, guid: d148416405879244580fd0e0def574dc, type: 2}
-  _UI: {fileID: 5873672062127136683, guid: 43a4faa1a236c28469706d1bfb7204d5, type: 3}
+  clickEvent: {fileID: 11400000, guid: 0cca81104ef60f74d9c975113f605b87, type: 2}

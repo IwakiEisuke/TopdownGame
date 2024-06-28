@@ -21,14 +21,14 @@ public class CreateFromRecipe : MonoBehaviour
         var selectedItem = Inventory.GetSelectedItem();
 
         var recipe = SelectRecipe(selectedItem, recipeType, recipeID);
-        RecipeProcess(recipe, () => Inventory.AddSelectedItem());
+        Recipe.RecipeProcess(recipe, () => Inventory.AddSelectedItem());
     }
 
     public static void CreateTile(Vector3Int pos, TileObject obj)
     {
         var recipe = obj.Recipe;
         var tile = obj.Tile;
-        RecipeProcess(recipe, () => MapManager._currentObjectMap.SetTile(pos, tile));
+        Recipe.RecipeProcess(recipe, () => MapManager._currentObjectMap.SetTile(pos, tile));
     }
 
     private static Recipe SelectRecipe(InventoryItemData item, RecipeType recipeType, int recipeID)
@@ -52,52 +52,7 @@ public class CreateFromRecipe : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 要求されたアイテムを持っているかチェックした後消費し、actを実行します
-    /// </summary>
-    /// <param name="recipe"></param>
-    /// <param name="act"></param>
-    public static void RecipeProcess(Recipe recipe, Action act)
-    {
-        if (IsCreatable(recipe))
-        {
-            ConsumeItems(recipe);
-            act();
-        }
-    }
-
-    private static void ConsumeItems(Recipe recipe)
-    {
-        foreach (var require in recipe)
-        {
-            require.item.amount -= require.amount;
-        }
-    }
-
-    /// <summary>
-    /// 要求アイテムを全て持っているかチェックする
-    /// </summary>
-    /// <param name="recipe"></param>
-    /// <returns></returns>
-    private static bool IsCreatable(Recipe recipe)
-    {
-        if (recipe == null)
-        {
-            return false;
-        }
-        else
-        {
-            foreach (var require in recipe)
-            {
-                //require.item.amountはitemの所持数。require.amountは要求数。
-                if (require.item.amount < require.amount)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
+    
 }
 
 public enum RecipeType
