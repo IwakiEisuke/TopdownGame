@@ -5,6 +5,9 @@ public class InteractUnderfootTile : MonoBehaviour
 {
     [SerializeField] GameObject entranceLight;
     [SerializeField] TileSettings tileSettings;
+    [SerializeField] AudioSource enterAS;
+    [SerializeField] AudioSource pickupAS;
+    [SerializeField] AudioClip[] pickupSE;
     // Update is called once per frame
     void Update()
     {
@@ -26,6 +29,7 @@ public class InteractUnderfootTile : MonoBehaviour
                 {
                     if (underfootTile == tile)
                     {
+                        pickupAS.PlayOneShot(pickupSE[Random.Range(0, pickupSE.Length)]);
                         item.amount++;
                         objectMap.SetTile(targetPos, null);
                     }
@@ -43,7 +47,7 @@ public class InteractUnderfootTile : MonoBehaviour
                         {
                             if (targetPos == point.pos)
                             {
-                                Debug.Log("It's a cave");
+                                enterAS.Play();
 
                                 int index;
                                 Vector3Int movePos;

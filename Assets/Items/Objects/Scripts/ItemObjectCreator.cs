@@ -46,7 +46,7 @@ public class ItemObjectCreator : MonoBehaviour
         return item;
     }
 
-    public static void CreateAndThrow(GameObject fromObj, InventoryItemData itemData, string itemMode)
+    public static GameObject CreateAndThrow(GameObject fromObj, InventoryItemData itemData, string itemMode)
     {
         var item = CreateInObjectMap(fromObj, itemData, itemMode);
 
@@ -61,6 +61,8 @@ public class ItemObjectCreator : MonoBehaviour
         rb.AddTorque(itemData.status.torque, ForceMode2D.Impulse);
         rb.drag = itemData.status.linearDrag;
         rb.angularDrag = itemData.status.angularDrag;
+
+        return item;
     }
 
     public static void CreateAndDrop(GameObject fromObj, InventoryItemData itemData, float power, float torque, string itemMode)

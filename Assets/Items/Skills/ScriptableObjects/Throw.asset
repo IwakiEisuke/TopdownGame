@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79bc52aa8da85c4bba339771f3a06c5, type: 3}
   m_Name: Throw
   m_EditorClassIdentifier: 
-  effectSize: 0
+  throwSE: {fileID: 8300000, guid: 7e6c942b7a1cb4340b91e03627f311c4, type: 3}
