@@ -16,6 +16,7 @@ public class InventoryItemData : ScriptableObject
     public ItemStatus status;
     public GameObject light;
     public ItemActionBase[] skills;
+    public AudioClip pickupSE;
 }
 
 [Serializable]

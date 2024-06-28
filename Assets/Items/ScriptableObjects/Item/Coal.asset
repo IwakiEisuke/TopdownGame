@@ -18,7 +18,6 @@ MonoBehaviour:
   UISprite: {fileID: 1832800158, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: d3d9106cc9d273941b58319812bec42a, type: 2}
-  isThrowable: 0
   recipes: []
   recipesTransform: []
   status:
@@ -29,3 +28,5 @@ MonoBehaviour:
     linearDrag: 3
     angularDrag: 3
   light: {fileID: 0}
+  skills: []
+  pickupSE: {fileID: 8300000, guid: ab9336f44ba2e6b49a5f5e4791a807fe, type: 3}

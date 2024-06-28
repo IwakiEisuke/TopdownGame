@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemController : MonoBehaviour
@@ -13,6 +14,13 @@ public class ItemController : MonoBehaviour
         if (CompareTag(Tag.EntityDropItem) && collision.CompareTag(Tag.Player))
         {
             Inventory.AddItem(GetComponent<ItemStatsContainer>().ID);
+            var pickupSE = Inventory.GetInventoryItem(GetComponent<ItemStatsContainer>().ID).pickupSE;
+            if (pickupSE != null)
+            {
+                var audio = collision.AddComponent<AudioSource>();
+                audio.PlayOneShot(pickupSE);
+                Destroy(audio, pickupSE.length);
+            }
             Destroy(gameObject);
         }
 

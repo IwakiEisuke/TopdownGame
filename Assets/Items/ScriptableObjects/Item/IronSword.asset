@@ -38,3 +38,4 @@ MonoBehaviour:
   light: {fileID: 0}
   skills:
   - {fileID: 11400000, guid: 63395ed2bf5e6d14c8481a281ed1320a, type: 2}
+  pickupSE: {fileID: 8300000, guid: ab9336f44ba2e6b49a5f5e4791a807fe, type: 3}

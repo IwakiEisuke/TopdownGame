@@ -28,3 +28,4 @@ MonoBehaviour:
     angularDrag: 3
   light: {fileID: 0}
   skills: []
+  pickupSE: {fileID: 8300000, guid: bfe09746291b23c438928e353a3d8b59, type: 3}

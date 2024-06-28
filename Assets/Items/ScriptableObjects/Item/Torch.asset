@@ -17,7 +17,6 @@ MonoBehaviour:
   sprite: {fileID: -1888618777, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   UISprite: {fileID: 1497199551, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
-  isThrowable: 1
   recipes:
   - requireItems:
     - item: {fileID: 11400000, guid: 5880eb587f7582e4d85fb186c11049c2, type: 2}
@@ -35,3 +34,4 @@ MonoBehaviour:
   light: {fileID: 3379862025857350126, guid: 2de5a12ad29dcd44e82b309eff3cbf64, type: 3}
   skills:
   - {fileID: 11400000, guid: c39df12e50b745d46afb3af29cdf56b2, type: 2}
+  pickupSE: {fileID: 8300000, guid: ab9336f44ba2e6b49a5f5e4791a807fe, type: 3}
