@@ -3704,8 +3704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status:
-    maxHP: 10
-    hp: 10
+    maxHP: 1000
+    hp: 1000
     bonusAtk: 0
     bonusDef: 0
     speed: 7
