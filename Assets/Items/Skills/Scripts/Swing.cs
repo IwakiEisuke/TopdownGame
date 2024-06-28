@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Skills/Swing")]
@@ -11,8 +12,6 @@ public class Swing : ItemActionBase
         dir = dir.normalized;
 
         var itemInstance = Instantiate(swingObj, controller.player.transform);
-
-        
         itemInstance.transform.up = dir;
         var swing = itemInstance.GetComponent<SwingController>();
         swing.basisAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;

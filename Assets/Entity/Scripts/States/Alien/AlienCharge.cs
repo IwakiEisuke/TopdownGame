@@ -19,7 +19,7 @@ public class AlienCharge : AlienStateBase
         laserPointer.endWidth = 0.02f;
         laserPointer.enabled = true;
 
-        AudioSource.PlayClipAtPoint(alien.chargeSE, alien.transform.position);
+        alien.chargeSE.Play();
     }
 
     public override void Exit(Alien alien)

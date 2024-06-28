@@ -10,7 +10,7 @@ public class AlienBeam : AlienStateBase
     readonly float firingDurationInit = 0.5f;
     public override void Enter(Alien alien)
     {
-        AudioSource.PlayClipAtPoint(alien.beamSE, alien.transform.position);
+        alien.beamSE.Play();
 
         var laserPointer = alien.laserPointer;
         //自分からプレイヤーにレイを飛ばす

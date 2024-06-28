@@ -12,9 +12,11 @@ public class Alien : MonoBehaviour
     public AlienRapidFire alienRapidFire = new();
     public AlienKick alienKick = new();
     public LineRenderer laserPointer;
-    public AudioClip chargeSE;
-    public AudioClip beamSE;
+    public AudioSource chargeSE;
+    public AudioSource beamSE;
     public AudioClip[] StepsSE;
+    [SerializeField] AudioSource bgm;
+    [SerializeField] float bgmRange, maxBGMVolume;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class Alien : MonoBehaviour
     void Update()
     {
         currentState.UpdateState(this);
+        bgm.volume = (bgmRange - Vector2.Distance(transform.position, PlayerController.Transform.position)) / bgmRange * maxBGMVolume;
     }
 
     public virtual void SwitchState(AlienStateBase state)

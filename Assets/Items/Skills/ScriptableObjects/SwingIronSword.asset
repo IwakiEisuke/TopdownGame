@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235382fe5cfe74040b809db7d7448a9e, type: 3}
   m_Name: SwingIronSword
   m_EditorClassIdentifier: 
-  effectSize: 0
   swingObj: {fileID: 756946811644797760, guid: 16f9a3ef4c3cc9348b6769261ccb1af6, type: 3}
+  swingSE: {fileID: 8300000, guid: fd43afeaaed22e240a5c0fc101172c8e, type: 3}
