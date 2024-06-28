@@ -220,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d115bb341810f408ca8044a1bd7800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSE: {fileID: 8300000, guid: 34162168f4b43fb4ab64c5d1c3605ca1, type: 3}
+  healSE: {fileID: 0}
 --- !u!114 &-8146329111245079166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +242,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 57649cc71c962ee49a1bd15f4d91e24a, type: 3}
   bgm: {fileID: 138267388029249351}
   bgmRange: 15
-  maxBGMVolume: 0.5
+  maxBGMVolume: 0.2
 --- !u!82 &5899059060406047347
 AudioSource:
   m_ObjectHideFlags: 0

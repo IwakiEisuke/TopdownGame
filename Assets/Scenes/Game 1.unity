@@ -1588,7 +1588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &527887800
 Transform:
   m_ObjectHideFlags: 0
@@ -3328,11 +3328,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497ee4caef5249946b3efda1cd130d44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createMapSetsCount: 50
-  createEnvs:
-  - {fileID: 11400000, guid: 4252c22038811154695e3c36ee845f0e, type: 2}
-  - {fileID: 11400000, guid: 8cc77d233b1222a42b8a3fa57cd6538b, type: 2}
-  createdMapSets: []
+  createMapSetsCount: 0
+  createEnvs: []
+  createdMapSets:
+  - index: 0
+    topLayer: 0
+    lowLayer: 0
+    env: {fileID: 11400000, guid: 4252c22038811154695e3c36ee845f0e, type: 2}
+    stairs:
+    - points:
+      - pos: {x: 8, y: 0, z: 0}
+        mapIndex: 0
+      - pos: {x: 0, y: 0, z: 0}
+        mapIndex: 0
 --- !u!4 &1129227367
 Transform:
   m_ObjectHideFlags: 0
@@ -5463,7 +5471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maps: []
-  _startEnv: {fileID: 11400000, guid: 29735999a95cf1d48a70837ff62df102, type: 2}
+  _startEnv: {fileID: 11400000, guid: 310fb3bd7e7bf5649af37cc54f7c6da3, type: 2}
   lightController: {fileID: 1119709155}
 --- !u!4 &2043916655
 Transform:

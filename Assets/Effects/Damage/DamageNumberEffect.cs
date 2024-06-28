@@ -1,10 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class DamageNumberEffect : MonoBehaviour
 {
+    [SerializeField] AudioClip damageSE, healSE;
     GameObject canvas, numberObj;
     Vector2 pos;
     private void Start()
@@ -21,10 +21,11 @@ public class DamageNumberEffect : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.red;
         StartCoroutine(ResetColor());
         numberObj = Instantiate(EffectSettings._damageNumberObject, canvas.transform);
+        numberObj.GetComponent<AudioSource>().PlayOneShot(damageSE);
         numberObj.GetComponent<DamageNumberEffectController>().pos = transform.position;
         var tmp = numberObj.GetComponent<TextMeshProUGUI>();
         tmp.text = amount.ToString();
-        if(amount >= PlayerController.Status.maxHP / 2)
+        if (amount >= PlayerController.Status.maxHP / 2)
         {
             tmp.fontSize = 54;
         }
@@ -36,6 +37,7 @@ public class DamageNumberEffect : MonoBehaviour
         //GetComponent<SpriteRenderer>().color = Color.green;
         StartCoroutine(ResetColor());
         numberObj = Instantiate(EffectSettings._damageNumberObject, canvas.transform);
+        numberObj.GetComponent<AudioSource>().PlayOneShot(healSE);
         numberObj.GetComponent<DamageNumberEffectController>().pos = transform.position;
         var tmp = numberObj.GetComponent<TextMeshProUGUI>();
         tmp.text = amount.ToString();
