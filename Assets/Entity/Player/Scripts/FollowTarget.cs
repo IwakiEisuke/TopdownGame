@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
-using UnityEngine.Tilemaps;
-using static UnityEditor.PlayerSettings;
 
 public class FollowTarget : MonoBehaviour
 {

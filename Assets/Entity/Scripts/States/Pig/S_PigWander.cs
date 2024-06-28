@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using static UnityEditor.Timeline.Actions.MenuPriority;
+﻿using UnityEngine;
 
 public class S_PigWander : StateBase
 {
