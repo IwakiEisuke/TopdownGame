@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class AlienCharge : AlienStateBase
 {
-    float stateDuration, lazerCastTime;
-    LineRenderer lazerPointer;
+    float stateDuration, laserCastTime;
+    LineRenderer laserPointer;
 
     public override void Enter(Alien alien)
     {
         Debug.Log("EnterCharge");
         stateDuration = 1f;
-        lazerCastTime = 0.02f;
-        lazerPointer = alien.lazerPointer;
-        lazerPointer.startColor = Color.red * new Color(1, 1, 1, 0.6f);
-        lazerPointer.endColor = Color.red * new Color(1, 1, 1, 0.2f);
-        lazerPointer.startWidth = 0.065f;
-        lazerPointer.endWidth = 0.02f;
-        lazerPointer.enabled = true;
+        laserCastTime = 0.02f;
+        laserPointer = alien.laserPointer;
+        laserPointer.startColor = Color.red * new Color(1, 1, 1, 0.6f);
+        laserPointer.endColor = Color.red * new Color(1, 1, 1, 0.2f);
+        laserPointer.startWidth = 0.065f;
+        laserPointer.endWidth = 0.02f;
+        laserPointer.enabled = true;
+
+        AudioSource.PlayClipAtPoint(alien.chargeSE, alien.transform.position);
     }
 
     public override void Exit(Alien alien)
@@ -28,30 +30,30 @@ public class AlienCharge : AlienStateBase
     public override void UpdateState(Alien alien)
     {
         stateDuration -= Time.deltaTime;
-        lazerCastTime -= Time.deltaTime;
-        var lazerOrigin = lazerPointer.transform.position;
+        laserCastTime -= Time.deltaTime;
+        var laserOrigin = laserPointer.transform.position;
 
-        var hits = Physics2D.RaycastAll(lazerOrigin, PlayerController.Transform.position - alien.transform.position, 30, LayerMask.GetMask(Layer.Entity, Layer.Object));
+        var hits = Physics2D.RaycastAll(laserOrigin, PlayerController.Transform.position - alien.transform.position, 30, LayerMask.GetMask(Layer.Entity, Layer.Object));
 
         if (hits.Length >= 3)
         {
-            var lazer = new Vector3[]
+            var laser = new Vector3[]
             {
-            lazerOrigin,
-            Vector3.Lerp(lazerOrigin, hits[2].point, 0.5f),
-            Vector3.Lerp(lazerOrigin, hits[2].point, 0.5f),
+            laserOrigin,
+            Vector3.Lerp(laserOrigin, hits[2].point, 0.5f),
+            Vector3.Lerp(laserOrigin, hits[2].point, 0.5f),
             };
 
-            if (lazerCastTime < 0)
+            if (laserCastTime < 0)
             {
-                lazer[2] = hits[2].point;
+                laser[2] = hits[2].point;
             }
 
-            lazerPointer.SetPositions(lazer);
+            laserPointer.SetPositions(laser);
         }
 
-        //lazerPointer.SetPosition(0, lazerOrigin);
-        //lazerPointer.SetPosition(1, hits[2].point);
+        //laserPointer.SetPosition(0, laserOrigin);
+        //laserPointer.SetPosition(1, hits[2].point);
 
         if (stateDuration < 0)
         {

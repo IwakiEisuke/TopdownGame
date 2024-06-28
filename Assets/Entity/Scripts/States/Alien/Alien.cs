@@ -11,11 +11,14 @@ public class Alien : MonoBehaviour
     public AlienBeam alienBeam = new();
     public AlienRapidFire alienRapidFire = new();
     public AlienKick alienKick = new();
-    public LineRenderer lazerPointer;
+    public LineRenderer laserPointer;
+    public AudioClip chargeSE;
+    public AudioClip beamSE;
+    public AudioClip[] StepsSE;
     // Start is called before the first frame update
     void Start()
     {
-        lazerPointer = GetComponentInChildren<LineRenderer>();
+        laserPointer = GetComponentInChildren<LineRenderer>();
         currentState = alienMove;
         currentState.Enter(this);
     }

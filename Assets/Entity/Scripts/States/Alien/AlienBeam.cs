@@ -10,13 +10,15 @@ public class AlienBeam : AlienStateBase
     readonly float firingDurationInit = 0.5f;
     public override void Enter(Alien alien)
     {
-        var lazerPointer = alien.lazerPointer;
+        AudioSource.PlayClipAtPoint(alien.beamSE, alien.transform.position);
+
+        var laserPointer = alien.laserPointer;
         //自分からプレイヤーにレイを飛ばす
         //hitsの結果は距離の昇順でソートされており、hitの内2つは自分のコライダーなので3つ以内にプレイヤーがいた場合当たっている判定になる
-        var hits = Physics2D.RaycastAll(lazerPointer.transform.position, PlayerController.Transform.position - alien.transform.position, 30, LayerMask.GetMask(Layer.Entity, Layer.Object));
+        var hits = Physics2D.RaycastAll(laserPointer.transform.position, PlayerController.Transform.position - alien.transform.position, 30, LayerMask.GetMask(Layer.Entity, Layer.Object));
         var rayHitPlayer = hits.Take(3).Any(x => x.collider.CompareTag(Tag.Player));
-        lazerPointer.startColor = Color.blue + Color.green;
-        lazerPointer.endColor = Color.blue + Color.green;
+        laserPointer.startColor = Color.blue + Color.green;
+        laserPointer.endColor = Color.blue + Color.green;
 
         foreach (var hit in hits)
         {
@@ -43,13 +45,13 @@ public class AlienBeam : AlienStateBase
         firingDuration -= Time.deltaTime;
 
         var t = EaseOutPowCircle((firingDurationInit - firingDuration) / firingDurationInit, 10);
-        var lazerPointer = alien.lazerPointer;
-        lazerPointer.startWidth = Mathf.Lerp(1f, 0, t);
-        lazerPointer.endWidth = Mathf.Lerp(1f, 0, t);
+        var laserPointer = alien.laserPointer;
+        laserPointer.startWidth = Mathf.Lerp(1f, 0, t);
+        laserPointer.endWidth = Mathf.Lerp(1f, 0, t);
 
         if (firingDuration < 0)
         {
-            alien.lazerPointer.enabled = false;
+            alien.laserPointer.enabled = false;
         }
         if (duration < 0)
         {

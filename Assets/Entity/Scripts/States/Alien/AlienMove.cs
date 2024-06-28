@@ -44,6 +44,10 @@ public class AlienMove : AlienStateBase
                 alien.SwitchState(alien.alienCharge);
                 return;
             }
+            else
+            {
+                AudioSource.PlayClipAtPoint(alien.StepsSE[Random.Range(0, alien.StepsSE.Length)], alien.transform.position);
+            }
 
             //‹——£‚ªˆê“x‚Å‚àchaseRangeƒ[ƒgƒ‹“à‚É‚È‚é‚Æ’Ç‚¢‚©‚¯‘±‚¯‚é
             if (!chasePlayer && Vector2.Distance(alien.transform.position, PlayerController.Transform.position) < chaseRange)
