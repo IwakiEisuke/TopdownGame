@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Skills/AttackScript")]
 public class AttackScript : ItemActionBase
 {
-    [SerializeField] MonoScript attachScript;
+    [SerializeField] string attachScriptType;
     public override void Action(ItemUseController controller, InventoryItemData item)
     {
         var itemInstance = ItemObjectCreator.Create(controller.player, item);
-        var script = itemInstance.AddComponent(Type.GetType(attachScript.name));
+        var script = itemInstance.AddComponent(Type.GetType(attachScriptType));
     }
 }

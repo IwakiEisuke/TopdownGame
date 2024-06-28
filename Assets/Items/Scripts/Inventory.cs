@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] int[] initHaveItems;
     [SerializeField] List<InventoryItemData> items = new List<InventoryItemData>();
     [SerializeField] TextMeshProUGUI InventorySlotUI;
+    [SerializeField] bool cheatMode;
 
     public static List<InventoryItemData> Items
     {
@@ -35,6 +36,10 @@ public class Inventory : MonoBehaviour
         {
             Items[i].ID = i;
             Items[i].amount = initHaveItems[i];
+            if (cheatMode)
+            {
+                items[i].amount = 500;
+            }
             Debug.Log($"{Items[i].ID} {Items[i].name} {Items[i].amount}");
         }
     }

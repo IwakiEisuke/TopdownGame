@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: IronSword
   m_EditorClassIdentifier: 
   ID: 9
-  amount: 5
+  amount: 500
   sprite: {fileID: 423749916, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   UISprite: {fileID: -115775497, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles: []
-  isThrowable: 0
   recipes: []
   recipesTransform:
   - requireItems:
     - item: {fileID: 11400000, guid: 2d1a05a0c242bd1478bbdc29b7a7fa94, type: 2}
-      amount: 6
+      amount: 15
     - item: {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}
       amount: 2
+    - item: {fileID: 11400000, guid: ae1bd9380775c744295989e479336c55, type: 2}
+      amount: 3
     requireFacilities:
     - {fileID: 11400000, guid: 7a9895d148c8bf94f8fb8709e7efeab5, type: 2}
   status:

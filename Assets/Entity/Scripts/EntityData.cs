@@ -1,4 +1,4 @@
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewEntity", menuName = "Object/New Entity")]
@@ -10,7 +10,7 @@ public class EntityData : ScriptableObject
     public float atk;
     public float def;
     public DropItemSetting[] drops;
-    public MonoScript stateMachine;
+    //public MonoScript stateMachine;
 
     public GameObject CreateEntityInstance(Vector3 pos, GameObject parent)
     {

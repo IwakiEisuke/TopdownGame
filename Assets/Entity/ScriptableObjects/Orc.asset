@@ -12,16 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86c4d9c48b6f904d964efc99feb1dc2, type: 3}
   m_Name: Orc
   m_EditorClassIdentifier: 
-  entityBase: {fileID: 6420331526236845362, guid: 3f2abda5f7f2c5046b6475b899a3aae5, type: 3}
+  entityBase: {fileID: 6420331526236845362, guid: 2a7fce721c95abd42b9f7045ed561243, type: 3}
   sprite: {fileID: 21300000, guid: 9c8951f3ef7bbeb488774f6d4863e37f, type: 3}
   hp: 10
   atk: 3
   def: 3
   drops:
   - dropItem: {fileID: 11400000, guid: 8a9873fa22f846a4e85178fff87ec146, type: 2}
-    amount: 0
-    addFluctuation: 5
+    amount: 2
+    addFluctuation: 4
   - dropItem: {fileID: 11400000, guid: d6fa9d828ea702b4fa70c4522e39a290, type: 2}
-    amount: 0
-    addFluctuation: 5
-  stateMachine: {fileID: 11500000, guid: 50e4c2134def57a4d807557718a09104, type: 3}
+    amount: 4
+    addFluctuation: 8

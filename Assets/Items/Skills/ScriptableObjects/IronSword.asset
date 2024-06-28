@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854932a99bb4fbd4f9efc9343b2230f3, type: 3}
   m_Name: IronSword
   m_EditorClassIdentifier: 
-  attachScript: {fileID: 11500000, guid: b6c46ae69e12ec842a7a212e175f65cb, type: 3}
+  attachScriptType: Swing
