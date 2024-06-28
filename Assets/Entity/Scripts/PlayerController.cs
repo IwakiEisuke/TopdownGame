@@ -48,14 +48,15 @@ public class PlayerController : MonoBehaviour
     {
         if (rb != null)
         {
-            Move();
+            var horizontal = Input.GetAxis("Horizontal");
+            var vertical = Input.GetAxis("Vertical");
+            Move(horizontal, vertical);
         }
     }
 
-    private void Move()
+    public void Move(float horizontal, float vertical)
     {
-        var horizontal = Input.GetAxis("Horizontal");
-        var vertical = Input.GetAxis("Vertical");
+
         var direction = new Vector2(horizontal, vertical);
         if (direction.sqrMagnitude > 1)
         {

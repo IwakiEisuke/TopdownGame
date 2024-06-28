@@ -33,19 +33,22 @@ public class AlienCharge : AlienStateBase
 
         var hits = Physics2D.RaycastAll(lazerOrigin, PlayerController.Transform.position - alien.transform.position, 30, LayerMask.GetMask(Layer.Entity, Layer.Object));
 
-        var lazer = new Vector3[]
+        if (hits.Length >= 3)
         {
+            var lazer = new Vector3[]
+            {
             lazerOrigin,
             Vector3.Lerp(lazerOrigin, hits[2].point, 0.5f),
             Vector3.Lerp(lazerOrigin, hits[2].point, 0.5f),
-        };
+            };
 
-        if(lazerCastTime < 0)
-        {
-            lazer[2] = hits[2].point;
+            if (lazerCastTime < 0)
+            {
+                lazer[2] = hits[2].point;
+            }
+
+            lazerPointer.SetPositions(lazer);
         }
-
-        lazerPointer.SetPositions(lazer);
 
         //lazerPointer.SetPosition(0, lazerOrigin);
         //lazerPointer.SetPosition(1, hits[2].point);

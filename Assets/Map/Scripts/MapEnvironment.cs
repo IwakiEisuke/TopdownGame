@@ -15,6 +15,7 @@ public class MapEnvironment : ScriptableObject
     public EnvGlobalLightSetting _envGlobalLightSetting;
 
     [Header("Elevator Settings")]
+    public int _minFloor;
     public int _maxFloor;
     public AppearanceEnvironmentSetting[] _appearSettings;
     public TileBase stairTile;

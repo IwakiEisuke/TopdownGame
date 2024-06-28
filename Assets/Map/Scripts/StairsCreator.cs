@@ -146,19 +146,33 @@ public class StairsCreator : MonoBehaviour
             var upLayer = 0;
             var lowLayer = 0;
 
-            var offset = 1;
-            var diffLayer = Random.Range(1, s.env._maxFloor);
+            //var offset = 1;
+            //var diffLayer = Random.Range(1, s.env._maxFloor);
 
+
+            //if (s.moveUp)
+            //{
+            //    upLayer = offset + diffLayer;
+            //    lowLayer = offset;
+            //}
+            //else
+            //{
+            //    upLayer = -offset;
+            //    lowLayer = -offset - diffLayer;
+            //}
+
+            var offset = 1;
+            var diffLayer = Random.Range(s.env._minFloor, s.env._maxFloor + 1);
 
             if (s.moveUp)
             {
-                upLayer = offset + diffLayer;
-                lowLayer = offset;
+                upLayer = offset;
+                lowLayer = s.env._minFloor;
             }
             else
             {
                 upLayer = -offset;
-                lowLayer = -offset - diffLayer;
+                lowLayer =-diffLayer;
             }
 
             if (s.moveHorizon)

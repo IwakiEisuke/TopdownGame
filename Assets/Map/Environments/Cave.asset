@@ -16,7 +16,7 @@ MonoBehaviour:
   _objectAlgo: {fileID: 11400000, guid: dcfca5c194305e04291119b021b4daf6, type: 2}
   _entityAlgo: {fileID: 11400000, guid: 30fdce0fe0787714096b14dbc43e86f1, type: 2}
   _envGlobalLightSetting: {fileID: 11400000, guid: 320a06ed16292d54f8578c6758db414e, type: 2}
-  _environmentSetting: {fileID: 0}
+  _minFloor: 1
   _maxFloor: 5
   _appearSettings:
   - _appearEnv: {fileID: 11400000, guid: 29735999a95cf1d48a70837ff62df102, type: 2}
