@@ -5370,7 +5370,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4a95b17a0e183f24cbec0a9bc1454c68, type: 2}
   - {fileID: 11400000, guid: 67c1a223b3a88b74891acdf56255be44, type: 2}
   InventorySlotUI: {fileID: 461001434}
-  cheatMode: 1
+  cheatMode: 0
 --- !u!114 &2038685639
 MonoBehaviour:
   m_ObjectHideFlags: 0
