@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tileSettings: []
   generationSettings:
-  - algo: {fileID: 11400000, guid: 0c7e6931de345c742be87d04740a6674, type: 2}
+  - algo: {fileID: 11400000, guid: cdaf062c300ad524cb7d839ccbced999, type: 2}
     floor: -1
   - algo: {fileID: 11400000, guid: 0c7e6931de345c742be87d04740a6674, type: 2}
     floor: -2

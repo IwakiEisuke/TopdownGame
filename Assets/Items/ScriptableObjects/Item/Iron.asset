@@ -18,6 +18,9 @@ MonoBehaviour:
   UISprite: {fileID: -2067546955, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: a547755b0f5368f49a7f61c7a3695efc, type: 2}
+  itemTileSettings:
+  - tile: {fileID: 11400000, guid: a547755b0f5368f49a7f61c7a3695efc, type: 2}
+    giveAmount: 1
   recipes: []
   recipesTransform: []
   status:

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ public class InventoryItemData : ScriptableObject
     public Sprite sprite;
     public Sprite UISprite;
     public TileBase[] itemTiles;
+    public ItemTileSetting[] itemTileSettings;
     public Recipe[] recipes;
     public TransformRecipe[] recipesTransform;
     public ItemStatus status;
@@ -28,6 +30,13 @@ public class ItemStatus
     public float torque = 1;
     public float linearDrag = 3;
     public float angularDrag = 3;
+}
+
+[Serializable]
+public class ItemTileSetting
+{
+    public TileBase tile;
+    public int giveAmount;
 }
 
 [Serializable]

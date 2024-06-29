@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cf073b008d969342807346e2bbc8fd7, type: 3}
-  m_Name: O_FlatCoalRock
+  m_Name: O_FCave1
   m_EditorClassIdentifier: 
   _tileSettings:
   - _tile: {fileID: 11400000, guid: d3d9106cc9d273941b58319812bec42a, type: 2}
-    _weight: 3
+    _weight: 5
   - _tile: {fileID: 11400000, guid: 00ccb427ab98d9547823a4c2640f859e, type: 2}
+    _weight: 2
+  - _tile: {fileID: 11400000, guid: 35f15e41735aa1e41bd44553244b4d2c, type: 2}
     _weight: 1
   count: 300

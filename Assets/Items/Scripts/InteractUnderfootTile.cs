@@ -25,15 +25,25 @@ public class InteractUnderfootTile : MonoBehaviour
             //‘«Œ³‚ÌƒAƒCƒeƒ€‚ðŠl“¾
             foreach (var item in Inventory.Items)
             {
-                foreach (var tile in item.itemTiles)
+                //foreach (var tile in item.itemTiles)
+                //{
+                //    if (underfootTile == tile)
+                //    {
+                //        pickupAS.PlayOneShot(pickupSE[Random.Range(0, pickupSE.Length)]);
+                //        item.amount++;
+                //        objectMap.SetTile(targetPos, null);
+                //    }
+                //}
+
+                foreach (var tileSetting in item.itemTileSettings)
                 {
-                    if (underfootTile == tile)
+                    if(underfootTile == tileSetting.tile)
                     {
                         pickupAS.PlayOneShot(pickupSE[Random.Range(0, pickupSE.Length)]);
-                        item.amount++;
+                        item.amount += tileSetting.giveAmount;
                         objectMap.SetTile(targetPos, null);
                     }
-                }
+                }    
             }
 
             //‘«Œ³‚ÌŠK’i‚ð”»’è

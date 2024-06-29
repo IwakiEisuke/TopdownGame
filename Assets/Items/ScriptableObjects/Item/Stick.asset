@@ -13,11 +13,23 @@ MonoBehaviour:
   m_Name: Stick
   m_EditorClassIdentifier: 
   ID: 1
-  amount: 100
+  amount: 515
   sprite: {fileID: 1398262134, guid: 108b858b21fad9748a5a5e8679cc6f8a, type: 3}
   UISprite: {fileID: 1276715021, guid: 716ed29ce187a144282b2fc87de7c74a, type: 3}
   itemTiles:
   - {fileID: 11400000, guid: 35f15e41735aa1e41bd44553244b4d2c, type: 2}
+  - {fileID: 11400000, guid: c61719266307a1b4da0a5dd844f8b6fa, type: 2}
+  - {fileID: 11400000, guid: 884762e9bb8758344b0c228c503bab09, type: 2}
+  - {fileID: 11400000, guid: 1e66b6f6c50fe3547a67c6cca3e730b2, type: 2}
+  itemTileSettings:
+  - tile: {fileID: 11400000, guid: 35f15e41735aa1e41bd44553244b4d2c, type: 2}
+    giveAmount: 1
+  - tile: {fileID: 11400000, guid: c61719266307a1b4da0a5dd844f8b6fa, type: 2}
+    giveAmount: 1
+  - tile: {fileID: 11400000, guid: 884762e9bb8758344b0c228c503bab09, type: 2}
+    giveAmount: 2
+  - tile: {fileID: 11400000, guid: 1e66b6f6c50fe3547a67c6cca3e730b2, type: 2}
+    giveAmount: 5
   recipes: []
   recipesTransform: []
   status:

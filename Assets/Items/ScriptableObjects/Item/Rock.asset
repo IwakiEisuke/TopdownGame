@@ -19,6 +19,11 @@ MonoBehaviour:
   itemTiles:
   - {fileID: 11400000, guid: 145165fecd91a0c41bedea7da439c9e6, type: 2}
   - {fileID: 11400000, guid: 00ccb427ab98d9547823a4c2640f859e, type: 2}
+  itemTileSettings:
+  - tile: {fileID: 11400000, guid: 145165fecd91a0c41bedea7da439c9e6, type: 2}
+    giveAmount: 1
+  - tile: {fileID: 11400000, guid: 00ccb427ab98d9547823a4c2640f859e, type: 2}
+    giveAmount: 1
   recipes: []
   recipesTransform: []
   status:
