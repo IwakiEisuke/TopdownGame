@@ -8,6 +8,8 @@ public class OpenFacilityUI : TileClickEvent
 {
     [SerializeField] GameObject UIPref;
     [SerializeField] GameObject canvasUI;
+    [SerializeField] AudioClip openSE, closeSE;
+    [SerializeField] float openSEVolume, closeSEVolume;
     GraphicRaycaster graphicRaycaster;
     EventSystem eventSystem;
 
@@ -19,6 +21,7 @@ public class OpenFacilityUI : TileClickEvent
         Setup(obj, cellPos, UIPref);
         var creator = uiInstance.GetComponentInChildren<RecipeUICreator>();
         creator.CreateTransformUI(tileObj.Tile);
+        obj.audioSource.PlayOneShot(openSE, openSEVolume);
     }
 
     public override void UpdateEvent(TileClickController obj, Vector3Int cellPos)
@@ -38,6 +41,7 @@ public class OpenFacilityUI : TileClickEvent
     {
         DestroyUI(uiInstance);
         obj.ActiveTileObject = null;
+        obj.audioSource.PlayOneShot(closeSE, closeSEVolume);
     }
 
     public void Setup(TileClickController obj, Vector3Int cellPos, GameObject UIPref)

@@ -1036,7 +1036,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1505,7 +1505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 1843883287}
-  clampToMapBounds: 0
+  clampToMapBounds: 1
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2871,9 +2871,9 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 881233677
-  m_SortingLayer: -2
-  m_SortingOrder: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2892,15 +2892,39 @@ Tilemap:
   m_Enabled: 1
   m_Tiles: {}
   m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
+  m_TileAssetArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  m_TileMatrixArray:
+  - m_RefCount: 0
+    m_Data:
+      e00: 0
+      e01: 0
+      e02: -1.1990398e+20
+      e03: -1.1990398e+20
+      e10: 0
+      e11: 0
+      e12: 7.3e-43
+      e13: 7.3e-43
+      e20: -7.8676066e-11
+      e21: 1.9085696e+15
+      e22: 4.58141e-19
+      e23: -2.0118823e+29
+      e30: 4.5904e-41
+      e31: 7.34e-43
+      e32: 7.31e-43
+      e33: 7.33e-43
+  m_TileColorArray:
+  - m_RefCount: 0
+    m_Data: {r: 7.3235e-41, g: 7.3235e-41, b: 7.3235e-41, a: 7.3235e-41}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
+  m_Origin: {x: 0, y: -7, z: 0}
+  m_Size: {x: 11, y: 10, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2971,7 +2995,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016953709}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3885,8 +3909,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d115bb341810f408ca8044a1bd7800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageSE: {fileID: 8300000, guid: 34162168f4b43fb4ab64c5d1c3605ca1, type: 3}
-  healSE: {fileID: 0}
+  damageSE: {fileID: 8300000, guid: 59349ff9a73d386479986d8068bf7b50, type: 3}
+  healSE: {fileID: 8300000, guid: f04b273ffaebc1d41815764490371a9f, type: 3}
 --- !u!1 &1402124584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5514,7 +5538,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4a95b17a0e183f24cbec0a9bc1454c68, type: 2}
   - {fileID: 11400000, guid: 67c1a223b3a88b74891acdf56255be44, type: 2}
   InventorySlotUI: {fileID: 461001434}
-  cheatMode: 0
+  cheatMode: 1
 --- !u!114 &2038685639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5609,6 +5633,7 @@ MonoBehaviour:
   maps: []
   _startEnv: {fileID: 11400000, guid: 29735999a95cf1d48a70837ff62df102, type: 2}
   lightController: {fileID: 1119709155}
+  _mapMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
 --- !u!4 &2043916655
 Transform:
   m_ObjectHideFlags: 0

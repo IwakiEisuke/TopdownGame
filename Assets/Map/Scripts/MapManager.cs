@@ -23,6 +23,9 @@ public class MapManager : MonoBehaviour
     [SerializeField] GlobalLightController lightController;
     private static Tilemap currentGroundMap;
 
+    [SerializeField] Material _mapMaterial;
+    public static Material MapMaterial { get => Instance._mapMaterial; private set => Instance._mapMaterial = value; }
+
     public static GlobalLightController LightController { get => Instance.lightController; private set => Instance.lightController = value; }
 
     private void Awake()
@@ -159,6 +162,8 @@ public class MapManager : MonoBehaviour
                 0
                 );
 
+        O_map.GetComponent<TilemapRenderer>().material = MapMaterial;
+        G_map.GetComponent<TilemapRenderer>().material = MapMaterial;
         O_map.gameObject.layer = LayerMask.NameToLayer(Layer.Object);
         AddMap(map);
         SetCurrentMap(map);
@@ -189,6 +194,8 @@ public class MapManager : MonoBehaviour
                 Maps[index]._layer
                 );
 
+        O_map.GetComponent<TilemapRenderer>().material = MapMaterial;
+        G_map.GetComponent<TilemapRenderer>().material = MapMaterial;
         O_map.gameObject.layer = LayerMask.NameToLayer(Layer.Object);
         SetCurrentMap(index);
         PlaceStair(Maps[index]);

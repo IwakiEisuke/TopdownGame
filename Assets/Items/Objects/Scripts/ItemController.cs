@@ -4,6 +4,7 @@ using UnityEngine;
 public class ItemController : MonoBehaviour
 {
     Rigidbody2D rb;
+    [SerializeField] float audioVolume;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,6 +19,7 @@ public class ItemController : MonoBehaviour
             if (pickupSE != null)
             {
                 var audio = collision.AddComponent<AudioSource>();
+                audio.volume = audioVolume;
                 audio.PlayOneShot(pickupSE);
                 Destroy(audio, pickupSE.length);
             }

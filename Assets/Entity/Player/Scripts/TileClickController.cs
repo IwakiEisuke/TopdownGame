@@ -7,6 +7,7 @@ public class TileClickController : MonoBehaviour
 {
     [SerializeField] TileSettings tileSettings;
     [SerializeField] Vector3Int clickedPos;
+    public AudioSource audioSource;
     public TileObject ActiveTileObject;
 
     private void Update()

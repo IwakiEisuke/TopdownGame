@@ -12,9 +12,9 @@ public class Alien : MonoBehaviour
     public AlienRapidFire alienRapidFire = new();
     public AlienKick alienKick = new();
     public LineRenderer laserPointer;
-    public AudioSource chargeSE;
-    public AudioSource beamSE;
+    public AudioSource chargeSE, beamSE;
     public AudioClip[] StepsSE;
+    public float stepsVolume;
     [SerializeField] AudioSource bgm;
     [SerializeField] float bgmRange, maxBGMVolume;
     // Start is called before the first frame update

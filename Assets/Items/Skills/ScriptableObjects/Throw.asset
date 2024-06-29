@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Throw
   m_EditorClassIdentifier: 
   throwSE: {fileID: 8300000, guid: 7e6c942b7a1cb4340b91e03627f311c4, type: 3}
-  SEVolume: 0.2
+  SEVolume: 0.1

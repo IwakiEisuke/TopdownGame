@@ -46,7 +46,7 @@ public class AlienMove : AlienStateBase
             }
             else
             {
-                AudioSource.PlayClipAtPoint(alien.StepsSE[Random.Range(0, alien.StepsSE.Length)], alien.transform.position);
+                AudioSource.PlayClipAtPoint(alien.StepsSE[Random.Range(0, alien.StepsSE.Length)], alien.transform.position, alien.stepsVolume);
             }
 
             //‹——£‚ªˆê“x‚Å‚àchaseRangeƒ[ƒgƒ‹“à‚É‚È‚é‚Æ’Ç‚¢‚©‚¯‘±‚¯‚é

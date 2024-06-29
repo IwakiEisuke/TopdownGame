@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPref: {fileID: 5873672062127136683, guid: 43a4faa1a236c28469706d1bfb7204d5, type: 3}
   canvasUI: {fileID: 5564778395723627066, guid: 9b6a6205e462af44c8871c03177f6a53, type: 3}
+  openSE: {fileID: 8300000, guid: 2c068d9221d90214aaf30e4b34c45f64, type: 3}
+  closeSE: {fileID: 8300000, guid: 2c068d9221d90214aaf30e4b34c45f64, type: 3}
+  openSEVolume: 1
+  closeSEVolume: 1
