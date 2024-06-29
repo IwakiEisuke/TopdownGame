@@ -11,7 +11,7 @@ public class InteractUnderfootTile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1))
         {
             var objectMap = MapManager._currentObjectMap;
             var targetPos = Vector3Int.FloorToInt(transform.position);

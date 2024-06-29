@@ -22,7 +22,7 @@ public class ItemUseController : MonoBehaviour
     {
         coolTime -= Time.deltaTime;
         //アイテム使用処理
-        if (Input.GetKeyDown(KeyCode.Space) && coolTime <= 0)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftControl)) && coolTime <= 0)
         {
             var item = Inventory.GetSelectedItem();
 
