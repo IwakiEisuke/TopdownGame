@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ItemUseController : MonoBehaviour
 {
+    [SerializeField] AudioSource selectAS;
     public GameObject player;
     public GameObject itemBase;
     public float power;
@@ -40,6 +41,7 @@ public class ItemUseController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
+                selectAS.Play();
                 selectedItem = i;
                 break;
             }
@@ -48,15 +50,16 @@ public class ItemUseController : MonoBehaviour
         //マウスホイールでアイテム選択
         if (Input.mouseScrollDelta.y > 0)
         {
+            selectAS.Play();
             selectedItem--;
         }
         if (Input.mouseScrollDelta.y < 0)
         {
+            selectAS.Play();
             selectedItem++;
         }
 
         //選択アイテム番号が範囲外にならない処理
         selectedItem = (selectedItem + Inventory.Items.Count) % Inventory.Items.Count;
-
     }
 }
