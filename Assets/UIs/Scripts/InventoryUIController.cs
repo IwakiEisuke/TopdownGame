@@ -50,8 +50,6 @@ public class InventoryUIController : MonoBehaviour
         }
 
         var t = Mathf.Clamp01(distance / size);
-        Debug.Log(t);
-
         ui.alpha = Mathf.Lerp(aMin, aMax, t);
     }
 }
