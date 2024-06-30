@@ -23,7 +23,7 @@ public class RecipeUICreator : MonoBehaviour
         }
     }
 
-    public void CreateTransformUI(TileBase equipment)
+    public void CreateTransformRecipeUI(TileBase equipment)
     {
         var items = Inventory.Items;
         foreach (var item in items)

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 [CreateAssetMenu(menuName = "Object/TileClickEvents/OpenFacilityUI")]
 public class OpenFacilityUI : TileClickEvent
 {
+    [SerializeField] string parentName;
     [SerializeField] GameObject UIPref;
     [SerializeField] GameObject canvasUI;
     [SerializeField] AudioClip openSE, closeSE;
@@ -20,7 +21,7 @@ public class OpenFacilityUI : TileClickEvent
         eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         Setup(obj, cellPos, UIPref);
         var creator = uiInstance.GetComponentInChildren<RecipeUICreator>();
-        creator.CreateTransformUI(tileObj.Tile);
+        creator.CreateTransformRecipeUI(tileObj.Tile);
         obj.audioSource.PlayOneShot(openSE, openSEVolume);
     }
 
@@ -31,7 +32,7 @@ public class OpenFacilityUI : TileClickEvent
         //なんらかのUIを開いている状態でUI以外をクリックすると閉じる
         //UIを開いてない状態でUIを持っているタイルをクリックするとUIを開く
 
-        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI(Input.mousePosition))
+        if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && !IsPointerOverUI(Input.mousePosition))
         {
             Exit(obj);
         }
@@ -58,19 +59,21 @@ public class OpenFacilityUI : TileClickEvent
     public GameObject CreateUI(GameObject ui)
     {
         //このUI専用のCanvasを作成する
-        var canvas = Instantiate(canvasUI);
-        canvas.name = ui.name + "Canvas";
+        //var canvas = Instantiate(canvasUI);
+        //canvas.name = ui.name + "Canvas";
 
-        //var canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //メインのCanvasに入れたい場合こっち
+        var canvas = GameObject.Find("Canvas").GetComponent<Canvas>(); //メインのCanvasに入れたい場合こっち
 
         graphicRaycaster = canvas.GetComponent<GraphicRaycaster>();
         var obj = Instantiate(ui, canvas.transform);
+        obj.transform.parent = GameObject.Find(parentName).transform;
         return obj;
     }
 
     public void DestroyUI(GameObject ui)
     {
-        Destroy(ui.transform.parent.gameObject);
+        //Destroy(ui.transform.parent.gameObject);
+        Destroy(ui);
     }
 
     /// <summary>

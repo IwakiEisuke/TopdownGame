@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c7f589a4c982c449d2cbf90cf0fe57, type: 3}
   m_Name: OpenCampfireUI
   m_EditorClassIdentifier: 
+  parentName: RecipeUI
   UIPref: {fileID: 5873672062127136683, guid: d3dd7fa2431623b4eb425b7bec35bb90, type: 3}
   canvasUI: {fileID: 5564778395723627066, guid: 9b6a6205e462af44c8871c03177f6a53, type: 3}
   openSE: {fileID: 8300000, guid: 2c068d9221d90214aaf30e4b34c45f64, type: 3}

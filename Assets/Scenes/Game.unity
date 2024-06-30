@@ -2439,6 +2439,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734121138}
   m_CullTransparentMesh: 1
+--- !u!1 &819490995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 819490996}
+  m_Layer: 5
+  m_Name: RecipeUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &819490996
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819490995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1080664038}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &843296971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3476,6 +3511,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 819490996}
   - {fileID: 680515048}
   - {fileID: 930669797}
   - {fileID: 970325266}
@@ -4940,11 +4976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 566.7607
+      value: 561.79
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 601.9859
+      value: 595.336
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4976,11 +5012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -294.38037
+      value: -291.89
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -314.6449
+      value: -311.31995
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5679,6 +5715,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2038685644}
+        m_TargetAssemblyTypeName: TileClickController, Assembly-CSharp
+        m_MethodName: ForcedExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   gameRestartEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5879,6 +5927,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2038685644}
+        m_TargetAssemblyTypeName: TileClickController, Assembly-CSharp
+        m_MethodName: ForcedExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 64
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   gameResetEvents:
     m_PersistentCalls:
       m_Calls:
@@ -6068,6 +6128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasUI: {fileID: 125060345}
   selectAS: {fileID: 1376835949}
+  tileSettings: {fileID: 11400000, guid: 159f3db2f4b071f45b87a7b6b7979133, type: 2}
+  tileClickController: {fileID: 2038685644}
   player: {fileID: 2038685633}
   itemBase: {fileID: 8541882531679391778, guid: e07b83eda73b44c45862c57a8ea48339, type: 3}
   power: 10
@@ -6100,7 +6162,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4a95b17a0e183f24cbec0a9bc1454c68, type: 2}
   - {fileID: 11400000, guid: 67c1a223b3a88b74891acdf56255be44, type: 2}
   InventorySlotUI: {fileID: 461001434}
-  cheatMode: 0
+  cheatMode: 1
 --- !u!114 &2038685639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6422,7 +6484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 561.7881
+      value: 561.79
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -6458,7 +6520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -291.89404
+      value: -291.89
       objectReference: {fileID: 0}
     - target: {fileID: 6538118204854466951, guid: 4f398841d2287294382227941cc0694a, type: 3}
       propertyPath: m_AnchoredPosition.y

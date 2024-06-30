@@ -10,6 +10,8 @@ public class ItemUseController : MonoBehaviour
 {
     [SerializeField] GameObject canvasUI;
     [SerializeField] AudioSource selectAS;
+    [SerializeField] TileSettings tileSettings;
+    [SerializeField] TileClickController tileClickController;
     public GameObject player;
     public GameObject itemBase;
     public float power;
@@ -31,12 +33,30 @@ public class ItemUseController : MonoBehaviour
     private void Update()
     {
         coolTime -= Time.deltaTime;
+
+        //アイテムを使用できる条件判定
+        var usable = false;
+        if (Input.GetMouseButtonDown(0))
+        {
+            var targetCellPos = Vector3Int.FloorToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            targetCellPos.z = 0;
+            var facilities = tileSettings.Facilities.Select(x => x.Tile).ToArray();
+            var targetCell = MapManager._currentObjectMap.GetTile(targetCellPos);
+            var isTargetCellFacility = facilities.Contains(targetCell);
+            var isNotClickUIorEventTiles = !IsPointerOverUI(Input.mousePosition) && !isTargetCellFacility;
+            usable = isNotClickUIorEventTiles && !tileClickController.ActiveTileObject;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            usable = true;
+        }
+
         //アイテム使用処理
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.LeftControl)) && coolTime <= 0)
+        if (usable && coolTime <= 0)
         {
             var item = Inventory.GetSelectedItem();
 
-            if (item.amount > 0 && !IsPointerOverUI(Input.mousePosition))
+            if (item.amount > 0)
             {
                 foreach (var skill in item.skills)
                 {
